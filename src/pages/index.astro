@@ -1,0 +1,377 @@
+---
+import Icon from "astro-icon";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ToldosMania">
+    <div class="navbar bg-blue-500 text-white p-4">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16"></path></svg
+                    >
+                </label>
+                <ul
+                    tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/#materiais">Materiais</a></li>
+                    <li><a href="/#produtos">Produtos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <a class="btn btn-ghost normal-case text-xl" href="/"
+                ><img
+                    src="/logo.jpg"
+                    alt="Logo ToldosMania"
+                    class="object-scale-down h-12 w-32 rounded-xl border-4 bg-white border-white"
+                /></a
+            >
+            <ul class="menu menu-horizontal px-1 xl:text-lg">
+                <li><a href="/">Início</a></li>
+                <li><a href="/#materiais">Materiais</a></li>
+                <li><a href="/#produtos">Produtos</a></li>
+            </ul>
+            <a
+                href="/#contato"
+                class="btn btn-info text-white sm:btn-md border-b-4 hover:bg-white hover:text-gray-800 hover:border-blue-200"
+                >Contato</a
+            >
+        </div>
+        <div class="navbar-end">
+            <a class="btn btn-ghost normal-case text-xl lg:hidden" href="/"
+                ><img
+                    src="/logo.jpg"
+                    alt="Logo ToldosMania"
+                    class="object-scale-down h-12 w-32 rounded-xl border-4 bg-white border-white"
+                /></a
+            >
+        </div>
+    </div>
+    <main class="scroll-smooth">
+        <div
+            class="hero"
+            style="min-height: 80vh; background-image: url(/hero_bg/toldo_sample.webp);"
+            id="ToldosManiaMainHero"
+        >
+            <div class="hero-overlay bg-opacity-70"></div>
+            <div class="hero-content text-center text-white">
+                <div class="max-w-xl">
+                    <h1 class="mb-5 text-4xl font-bold">
+                        Somos especializados na fabricação e instalação de
+                        toldos e coberturas com design moderno.
+                    </h1>
+                    <p class="mb-5 text-lg">
+                        Compromissados em satisfazer nossos clientes e
+                        fornecedores, garantindo a qualidade e durabilidade de
+                        nossos produtos.
+                    </p>
+                    <a
+                        href="#produtos"
+                        class="btn btn-info xl:btn-lg sm:btn-md border-b-4 border-blue-200 bg-white hover:bg-gray-300 hover:border-gray-300 text-gray-800"
+                        >Veja Nossos Produtos</a
+                    >
+                    <a
+                        href="#contato"
+                        class="btn btn-info text-white xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
+                        >Contato
+                        <Icon
+                            pack="mdi"
+                            name="arrow-right"
+                            style="width: 30px; height: 30px"
+                        /></a
+                    >
+                </div>
+            </div>
+        </div>
+        <section class="bg-white text-base-100 p-3 py-10" id="materiais">
+            <h1 class="divider text-2xl text-bold pb-2">Nossos Materiais</h1>
+            <p class="text-center text-lg pb-8">
+                Materiais utilizados para a fabricação de nossos produtos
+            </p>
+            <div class="flex flex-wrap justify-center">
+                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
+                    <figure>
+                        <img
+                            src="/materiais/lona_sample.jpg"
+                            alt="Material de Lona"
+                            class="max-w-lg h-56"
+                        />
+                    </figure>
+
+                    <div class="card-body">
+                        <h2 class="card-title">Lona</h2>
+                        <p>
+                            O produto é aditivado para resistir aos raios UV
+                            dando maior durabilidade, e garantindo cores vivas
+                            por mais tempo. Auto-extinguível: não propaga o fogo
+                            desde que eliminada sua fonte. Antioxidante: promove
+                            maior durabilidade e reduz o efeito de oxidação.
+                            Antifungo: reduz a ação dos fungos no toldo.
+                        </p>
+                    </div>
+                </div>
+                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
+                    <figure>
+                        <img
+                            src="/materiais/policarbonato_sample1.png"
+                            alt="Material de Lona"
+                            class="max-w-lg h-56"
+                        />
+                    </figure>
+
+                    <div class="card-body">
+                        <h2 class="card-title">Policarbonato</h2>
+                        <p>
+                            Placa de policarbonato compacta 3mm ou alveolar 6mm
+                            recebe proteção UV na parte superior que será
+                            exposta ao sol, garantindo assim maior durabilidade
+                            e evitando o ressecamento, amarelecimento e
+                            descoloração da chapa. Placa compacta é maciça
+                            lembra o vidro liso à placa alveolar lembra o vidro
+                            canelado.
+                        </p>
+                    </div>
+                </div>
+                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
+                    <figure>
+                        <img
+                            src="/materiais/tela_sombreamento.jpg"
+                            alt="Material de Lona"
+                            class="max-w-lg h-56"
+                        />
+                    </figure>
+
+                    <div class="card-body">
+                        <h2 class="card-title">Tela de Sombreamento</h2>
+                        <p>
+                            Confeccionada em polietileno de alta densidade e com
+                            aditivos especiais que proporcionam caracteríscas
+                            importantes as telas com proteção contra raios ultra
+                            violetas e redução da luminocidade solar. Produto
+                            passa água, não é impermeabilizado.
+                        </p>
+                    </div>
+                </div>
+                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
+                    <figure>
+                        <img
+                            src="/materiais/aço_galvanizado.jpg"
+                            alt="Material de Lona"
+                            class="max-w-lg h-56"
+                        />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Aço Galvanizado</h2>
+                        <p>
+                            Para confecção de nossas estruturas utilizamos tubos
+                            de aço galvanizado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-100 text-base-100 p-3 py-10" id="produtos">
+            <h1 class="divider text-2xl text-bold pb-2">Galeria de Produtos</h1>
+            <p class="text-center text-lg pb-8">Pressione para ver mais</p>
+            <div class="flex flex-wrap justify-center">
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card w-96 bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/galeria/toldos"
+                    >
+                        <figure>
+                            <img
+                                src="/produtos/toldo.jpg"
+                                alt="Toldos"
+                                class="max-w-lg h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Toldos
+                        </div>
+                    </a>
+                </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card w-96 bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/galeria/lona"
+                    >
+                        <figure>
+                            <img
+                                src="/produtos/lona.jpg"
+                                alt="Toldos"
+                                class="max-w-lg h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Lonas
+                        </div>
+                    </a>
+                </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card w-96 bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/galeria/tela"
+                    >
+                        <figure>
+                            <img
+                                src="/produtos/tela_sombreamento.jpg"
+                                alt="Toldos"
+                                class="max-w-lg h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Telas de Sombreamento
+                        </div>
+                    </a>
+                </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card w-96 bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/galeria/tela"
+                    >
+                        <figure>
+                            <img
+                                src="/produtos/cortina_rolo.png"
+                                alt="Cortinas Rolô"
+                                class="max-w-lg h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Cortinas Rolô
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="p-3 py-10 bg-white" id="contato">
+            <h1 class="divider text-center text-2xl text-black pb-8">
+                Se interessou? Entre em contato conosco!
+            </h1>
+            <div class="flex flex-row flex-wrap justify-center">
+                <div
+                    class="flex flex-col bg-white text-black border shadow-md p-5 max-w-md m-3"
+                >
+                    <h1 class="sm:text-xl xl:text-2xl text-center mb-3">
+                        Atendemos toda Grande São Paulo<br /> Região e Litoral de
+                        segunda à sexta, das 8:00 às 18:00h
+                    </h1>
+                    <p class="text-center">
+                        Fale com nossos vendedores, solicite seu orçamento sem
+                        compromisso e verifique as condições de pagamento. <br
+                        />
+                    </p>
+                    <div class="mt-3 flex flex-col">
+                        <a
+                            class="btn btn-accent border-b-4 text-white m-3 text-xl"
+                            href="wa.me">(11) 96420-1127 (Whatsapp)</a
+                        >
+
+                        <a
+                            class="btn btn-info border-b-4 border-b-blue-300 text-white m-3 text-xl"
+                            href="tel:26856588">(11) 2685-6588</a
+                        >
+
+                        <a
+                            class="btn btn-info border-b-4 border-b-blue-300 text-white m-3 text-xl"
+                            href="mailto:vendas@toldosmania.com.br"
+                            >vendas@toldosmania.com.br</a
+                        >
+                        <a
+                            href="https://goo.gl/maps/su5as6pW1eMrF8JH6"
+                            class="btn btn-info border-b-4 border-b-blue-300 text-white m-3"
+                        >
+                            R. Profº Vasconcelos Sarmento, 170 - Vila Ré /Penha
+                            - São Paulo
+                        </a>
+                    </div>
+
+                    <div class="flex flex-row justify-center items-center">
+                        <img
+                            src="/public/facebook_icon.png"
+                            alt="whatsapp logo"
+                            class="h-16 w-16"
+                        />
+                        <img
+                            src="/public/ig_icon.png"
+                            alt="facebook logo"
+                            class="h-16 w-16"
+                        />
+                        <a href="wa.me"
+                            ><img
+                                src="/public/wpp_icon.png"
+                                alt="whatsapp logo"
+                                class="h-16 w-16"
+                            /></a
+                        >
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col bg-white text-black border shadow-md p-5 max-w-lg m-3"
+                >
+                    <img
+                        src="/cartoes.png"
+                        alt=""
+                        class="h-72 w-72 max-h-fit max-w-fit"
+                    />
+                    <h1 class="text-center text-2xl text-blue-700">
+                        Também aceitamos Pix!
+                    </h1>
+                    <p>Boletos aceitos somente para empresas</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer p-10 bg-blue-500 text-white">
+        <div>
+            <img
+                src="/logo.jpg"
+                alt="Logo ToldosMania"
+                class="object-scale-down h-24 w-64 rounded-xl border-4 bg-white border-white"
+            />
+            <p>
+                ToldosMania<br />Satisfazendo nossos clientes e fornecedores
+                desde 2005
+            </p>
+        </div>
+        <div>
+            <span class="footer-title">Services</span>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+        </div>
+        <div>
+            <span class="footer-title">Company</span>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+        </div>
+        <div>
+            <span class="footer-title">Legal</span>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+        </div>
+    </footer>
+
+    <style></style>
+</Layout>
