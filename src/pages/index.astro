@@ -1,6 +1,7 @@
 ---
 import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
+import FooterMain from "../components/FooterMain.astro";
 ---
 
 <Layout title="ToldosMania">
@@ -96,8 +97,108 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
         </div>
-        <section class="bg-white text-base-100 p-3 py-10" id="materiais">
-            <h1 class="divider text-2xl text-bold pb-2">Nossos Materiais</h1>
+        <section class="bg-gray-100 text-base-100 p-3 py-10" id="produtos">
+            <h1 class="divider text-center text-2xl text-black pb-8">
+                Nossos Produtos
+            </h1>
+            <div class="flex flex-wrap justify-center">
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/toldosmania-web/galeria/toldos"
+                    >
+                        <figure>
+                            <img
+                                src="/toldosmania-web/produtos/toldo.jpg"
+                                alt="Toldos"
+                                class="h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Toldos
+                        </div>
+                    </a>
+                </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/toldosmania-web/galeria/lona"
+                    >
+                        <figure>
+                            <img
+                                src="/toldosmania-web/produtos/lona.jpg"
+                                alt="Toldos"
+                                class="h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Lonas
+                        </div>
+                    </a>
+                </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/toldosmania-web/galeria/tela"
+                    >
+                        <figure>
+                            <img
+                                src="/toldosmania-web/produtos/tela_sombreamento.jpg"
+                                alt="Toldos"
+                                class="h-64"
+                            />
+                        </figure>
+
+                        <div class="card-body text-2xl text-center py-3">
+                            Telas de Sombreamento
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <a
+                    class="btn btn-accent btn-outline btn-xl rounded-2xl"
+                    href="/toldosmania-web/galeria">Veja mais produtos</a
+                >
+            </div>
+        </section>
+        <section
+            class="bg-white text-base-100 p-3 py-10 flex flex-row flex-wrap justify-center items-center"
+            id="materiais"
+        >
+            <figure>
+                <img
+                    src="/toldosmania-web/hero_bg/tela_sample.jpg"
+                    alt="Toldos Mania - Exemplo de Toldo"
+                    class="rounded-2xl w-max lg:h-96"
+                />
+            </figure>
+            <div class="flex flex-col m-3 mx-6">
+                <h1 class="text-2xl text-center m-4">Quem somos nós?</h1>
+                <p class="text-md max-w-md">
+                    Fundada em 2005, a ToldosMania é uma empresa dedicada à
+                    fabricação e instalação de toldos e coberturas. <br /> Ao longo
+                    dos anos, consolidamos nossa presença no mercado através do desenvolvimento
+                    de produtos de design moderno e arrojado, sempre buscando atender
+                    às necessidades de nossos clientes. <br /> Nossa reputação é
+                    construída sobre o compromisso sólido que mantemos com nossos
+                    clientes e fornecedores, refletindo a confiança que depositam
+                    em nós. <br />Priorizamos a qualidade em cada etapa do
+                    processo de fabricação, assegurando a durabilidade e a
+                    satisfação de quem escolhe os produtos ToldosMania.
+                </p>
+                <a
+                    href="#contato"
+                    class="btn btn-info text-white mx-6 m-4 xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
+                    >Entre em Contato Conosco
+                    </a
+                >
+            </div>
+        </section>
+        <section class="bg-gray-100 text-base-100 p-3 py-10" id="materiais">
+            <h1 class="divider text-2xl text-bold pb-2">Materiais de Toldos</h1>
             <p class="text-center text-lg pb-8">
                 Materiais utilizados para a fabricação de nossos produtos
             </p>
@@ -183,107 +284,11 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
         </section>
-        <section class="bg-gray-100 text-base-100 p-3 py-10" id="produtos">
-            <h1 class="divider text-2xl text-bold pb-2">Galeria de Produtos</h1>
-            <p class="text-center text-lg pb-8">Pressione para ver mais</p>
-            <div class="flex flex-wrap justify-center">
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/toldos"
-                    >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/toldo.jpg"
-                                alt="Toldos"
-                                class="h-64"
-                            />
-                        </figure>
-
-                        <div class="card-body text-2xl text-center py-3">
-                            Toldos
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/lona"
-                    >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/lona.jpg"
-                                alt="Toldos"
-                                class="h-64"
-                            />
-                        </figure>
-
-                        <div class="card-body text-2xl text-center py-3">
-                            Lonas
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/tela"
-                    >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/tela_sombreamento.jpg"
-                                alt="Toldos"
-                                class="h-64"
-                            />
-                        </figure>
-
-                        <div class="card-body text-2xl text-center py-3">
-                            Telas de Sombreamento
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/tela"
-                    >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/vidro.jpg"
-                                alt="Vidros"
-                                class="h-64"
-                            />
-                        </figure>
-
-                        <div class="card-body text-2xl text-center py-3">
-                            Vidros
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/tela"
-                    >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/cortina_rolo.png"
-                                alt="Cortinas Rolô"
-                                class="h-64"
-                            />
-                        </figure>
-
-                        <div class="card-body text-2xl text-center py-3">
-                            Cortinas Rolô
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
         <section class="p-3 py-10 bg-white" id="contato">
             <h1 class="divider text-center text-2xl text-black pb-8">
                 Contato
             </h1>
-            <p class="text-center text-lg pb-8">
+            <p class="text-center text-lg pb-8 text-black">
                 Se interessou? Entre em contato conosco!
             </p>
             <div class="flex flex-row flex-wrap justify-center">
@@ -303,12 +308,10 @@ import Layout from "../layouts/Layout.astro";
                         class="btn btn-accent border-b-4 text-white m-3 text-xl"
                         href="https://wa.me/551196201127">(11) 96420-1127</a
                     >
-
                     <a
                         class="btn btn-info border-b-4 border-b-blue-300 text-white m-3 text-xl"
                         href="tel:26856588">(11) 2685-6588</a
                     >
-
                     <a
                         class="btn btn-info border-b-4 border-b-blue-300 text-white m-3 text-sm"
                         href="mailto:vendas@toldosmania.com.br"
@@ -321,7 +324,6 @@ import Layout from "../layouts/Layout.astro";
                         R. Profº Vasconcelos Sarmento, 170 - Vila Ré /Penha -
                         São Paulo
                     </a>
-
                     <div class="flex flex-row justify-center items-center">
                         <img
                             src="/toldosmania-web/facebook_icon.png"
@@ -333,7 +335,7 @@ import Layout from "../layouts/Layout.astro";
                             alt="facebook logo"
                             class="h-16 w-16"
                         />
-                        <a href="wa.me"
+                        <a href="https://wa.me/551196201127"
                             ><img
                                 src="/toldosmania-web/wpp_icon.png"
                                 alt="whatsapp logo"
@@ -358,39 +360,5 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </section>
     </main>
-    <footer class="footer p-10 bg-blue-500 text-white">
-        <div>
-            <img
-                src="/toldosmania-web/logo.jpg"
-                alt="Logo ToldosMania"
-                class="object-scale-down h-24 w-64 rounded-xl border-4 bg-white border-white"
-            />
-            <p>
-                ToldosMania<br />Satisfazendo nossos clientes e fornecedores
-                desde 2005
-            </p>
-        </div>
-        <div>
-            <span class="footer-title">Services</span>
-            <a class="link link-hover">Branding</a>
-            <a class="link link-hover">Design</a>
-            <a class="link link-hover">Marketing</a>
-            <a class="link link-hover">Advertisement</a>
-        </div>
-        <div>
-            <span class="footer-title">Company</span>
-            <a class="link link-hover">About us</a>
-            <a class="link link-hover">Contact</a>
-            <a class="link link-hover">Jobs</a>
-            <a class="link link-hover">Press kit</a>
-        </div>
-        <div>
-            <span class="footer-title">Legal</span>
-            <a class="link link-hover">Terms of use</a>
-            <a class="link link-hover">Privacy policy</a>
-            <a class="link link-hover">Cookie policy</a>
-        </div>
-    </footer>
-
-    <style></style>
+    <FooterMain />
 </Layout>
