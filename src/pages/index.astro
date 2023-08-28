@@ -1,70 +1,26 @@
 ---
 import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
-import FooterMain from "../components/FooterMain.astro";
+import Footer from "../components/FooterMain.astro";
+import Navbar from "../components/Navbar.astro";
+
+const contato = {
+    facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
+    instagram: "https://www.instagram.com/toldosmania/?ref=badge",
+    phone: "tel:26856588",
+    whatsapp: "https://wa.me/551196201127",
+    email: "mailto:vendas@toldosmania.com.br",
+    maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
+};
+
 ---
 
 <Layout title="ToldosMania">
-    <div class="navbar bg-blue-500 text-white p-4">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost lg:hidden">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        ><path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16"></path></svg
-                    >
-                </label>
-                <ul
-                    tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                    <li><a href="/toldosmania-web/">Início</a></li>
-                    <li><a href="/toldosmania-web/#materiais">Materiais</a></li>
-                    <li><a href="/toldosmania-web/#produtos">Produtos</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-            <a class="btn btn-ghost normal-case text-xl" href="/"
-                ><img
-                    src="/toldosmania-web/logo.jpg"
-                    alt="Logo ToldosMania"
-                    class="object-scale-down h-12 w-32 rounded-xl border-4 bg-white border-white"
-                /></a
-            >
-            <ul class="menu menu-horizontal px-1 xl:text-lg">
-                <li><a href="/toldosmania-web/">Início</a></li>
-                <li><a href="/toldosmania-web/#materiais">Materiais</a></li>
-                <li><a href="/toldosmania-web/#produtos">Produtos</a></li>
-            </ul>
-            <a
-                href="/#contato"
-                class="btn btn-info text-white sm:btn-md border-b-4 hover:bg-white hover:text-gray-800 hover:border-blue-200"
-                >Contato</a
-            >
-        </div>
-        <div class="navbar-end">
-            <a class="btn btn-ghost normal-case text-xl lg:hidden" href="/"
-                ><img
-                    src="/toldosmania-web/logo.jpg"
-                    alt="Logo ToldosMania"
-                    class="object-scale-down h-12 w-32 rounded-xl border-4 bg-white border-white"
-                /></a
-            >
-        </div>
-    </div>
+    <Navbar />
     <main class="scroll-smooth">
         <div
             class="hero"
-            style="min-height: 80vh; background-image: url(/toldosmania-web/hero_bg/toldo_sample.webp);"
+            style="min-height: 70vh; background-image: url(/toldosmania-web/hero_bg/toldo_sample.webp);"
             id="ToldosManiaMainHero"
         >
             <div class="hero-overlay bg-opacity-70"></div>
@@ -111,10 +67,9 @@ import FooterMain from "../components/FooterMain.astro";
                             <img
                                 src="/toldosmania-web/produtos/toldo.jpg"
                                 alt="Toldos"
-                                class="h-64"
+                                class="w-96 h-64"
                             />
                         </figure>
-
                         <div class="card-body text-2xl text-center py-3">
                             Toldos
                         </div>
@@ -129,10 +84,9 @@ import FooterMain from "../components/FooterMain.astro";
                             <img
                                 src="/toldosmania-web/produtos/lona.jpg"
                                 alt="Toldos"
-                                class="h-64"
+                                class="w-96 h-64"
                             />
                         </figure>
-
                         <div class="card-body text-2xl text-center py-3">
                             Lonas
                         </div>
@@ -146,13 +100,29 @@ import FooterMain from "../components/FooterMain.astro";
                         <figure>
                             <img
                                 src="/toldosmania-web/produtos/tela_sombreamento.jpg"
-                                alt="Toldos"
-                                class="h-64"
+                                alt="Telas de Sombreamento"
+                                class="w-96 h-64"
                             />
                         </figure>
-
                         <div class="card-body text-2xl text-center py-3">
                             Telas de Sombreamento
+                        </div>
+                    </a>
+                </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/toldosmania-web/galeria/tela"
+                    >
+                        <figure>
+                            <img
+                                src="/toldosmania-web/produtos/vidros.jpeg"
+                                alt="Vidros"
+                                class="w-96 h-64"
+                            />
+                        </figure>
+                        <div class="card-body text-2xl text-center py-3">
+                            Vidros
                         </div>
                     </a>
                 </div>
@@ -193,8 +163,7 @@ import FooterMain from "../components/FooterMain.astro";
                     href="#contato"
                     class="btn btn-info text-white mx-6 m-4 xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
                     >Entre em Contato Conosco
-                    </a
-                >
+                </a>
             </div>
         </section>
         <section class="bg-gray-100 text-base-100 p-3 py-10" id="materiais">
@@ -211,7 +180,6 @@ import FooterMain from "../components/FooterMain.astro";
                             class="h-56"
                         />
                     </figure>
-
                     <div class="card-body">
                         <h2 class="card-title">Lona</h2>
                         <p>
@@ -232,7 +200,6 @@ import FooterMain from "../components/FooterMain.astro";
                             class="h-56"
                         />
                     </figure>
-
                     <div class="card-body">
                         <h2 class="card-title">Policarbonato</h2>
                         <p>
@@ -254,7 +221,6 @@ import FooterMain from "../components/FooterMain.astro";
                             class="h-56"
                         />
                     </figure>
-
                     <div class="card-body">
                         <h2 class="card-title">Tela de Sombreamento</h2>
                         <p>
@@ -289,68 +255,88 @@ import FooterMain from "../components/FooterMain.astro";
                 Contato
             </h1>
             <p class="text-center text-lg pb-8 text-black">
-                Se interessou? Entre em contato conosco!
+                Se interessou? Entre em contato!
             </p>
             <div class="flex flex-row flex-wrap justify-center">
                 <div
-                    class="flex flex-col bg-white text-black border shadow-md p-5 m-3"
+                    class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
                 >
-                    <h1 class="sm:text-xl xl:text-2xl text-center mb-3">
-                        Atendemos toda Grande São Paulo<br /> Região e Litoral de
-                        segunda à sexta, das 8:00 às 18:00h
-                    </h1>
-                    <p class="text-center">
-                        Fale com nossos vendedores, solicite seu orçamento sem
-                        compromisso e verifique as condições de pagamento. <br
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2404.632044759774!2d-46.502187580483984!3d-23.522744026608216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce60bdddb7e8e9%3A0xf8d0ecc98ded44fd!2sR.%20Prof.%20Vasconcelos%20Sarmento%2C%20170%20-%20Vila%20R%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003662-040!5e0!3m2!1sen!2sbr!4v1693179314020!5m2!1sen!2sbr"
+                        width="600"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div
+                    class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
+                >
+                    <a
+                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+                        href={contato.whatsapp}
+                    >
+                        <Icon
+                            pack="mdi"
+                            name="whatsapp"
+                            class="w-10 h-10 text-blue-500"
                         />
-                    </p>
-                    <a
-                        class="btn btn-accent border-b-4 text-white m-3 text-xl"
-                        href="https://wa.me/551196201127">(11) 96420-1127</a
-                    >
-                    <a
-                        class="btn btn-info border-b-4 border-b-blue-300 text-white m-3 text-xl"
-                        href="tel:26856588">(11) 2685-6588</a
-                    >
-                    <a
-                        class="btn btn-info border-b-4 border-b-blue-300 text-white m-3 text-sm"
-                        href="mailto:vendas@toldosmania.com.br"
-                        >vendas@toldosmania.com.br</a
-                    >
-                    <a
-                        href="https://goo.gl/maps/su5as6pW1eMrF8JH6"
-                        class="btn btn-info border-b-4 border-b-blue-300 text-white m-3"
-                    >
-                        R. Profº Vasconcelos Sarmento, 170 - Vila Ré /Penha -
-                        São Paulo
+                        1196201127
                     </a>
-                    <div class="flex flex-row justify-center items-center">
-                        <img
-                            src="/toldosmania-web/facebook_icon.png"
-                            alt="whatsapp logo"
-                            class="h-16 w-16"
+                    <a
+                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+                        href={contato.phone}
+                    >
+                        <Icon
+                            pack="mdi"
+                            name="phone"
+                            class="w-10 h-10 text-blue-500"
                         />
-                        <img
-                            src="/toldosmania-web/ig_icon.png"
-                            alt="facebook logo"
-                            class="h-16 w-16"
+                        26856588
+                    </a>
+                    <a
+                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+                        href={contato.email}
+                    >
+                        <Icon
+                            pack="mdi"
+                            name="mail"
+                            class="w-10 h-10 text-blue-500"
                         />
-                        <a href="https://wa.me/551196201127"
-                            ><img
-                                src="/toldosmania-web/wpp_icon.png"
-                                alt="whatsapp logo"
-                                class="h-16 w-16"
-                            /></a
-                        >
-                    </div>
+                        vendas@toldosmania.com
+                    </a>
+                    <a
+                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+                        href={contato.instagram}
+                    >
+                        <Icon
+                            pack="mdi"
+                            name="instagram"
+                            class="w-10 h-10 text-blue-500"
+                        />
+                        @toldosmania
+                    </a>
+                    <a
+                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+                        href={contato.facebook}
+                    >
+                        <Icon
+                            pack="mdi"
+                            name="facebook"
+                            class="w-10 h-10 text-blue-500"
+                        />
+                        Facebook: @toldosmania
+                    </a>
                 </div>
                 <div
-                    class="flex flex-col bg-white text-black border shadow-md p-5 m-3"
+                    class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
                 >
                     <img
                         src="/toldosmania-web/cartoes.png"
                         alt=""
-                        class="h-72 w-72 max-h-fit"
+                        class="h-72 w-72 items-center"
                     />
                     <h1 class="text-center text-2xl text-blue-700">
                         Também aceitamos Pix!
@@ -360,5 +346,5 @@ import FooterMain from "../components/FooterMain.astro";
             </div>
         </section>
     </main>
-    <FooterMain />
+    <Footer />
 </Layout>
