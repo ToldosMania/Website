@@ -2,7 +2,7 @@
 import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/FooterMain.astro";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar";
 
 const contato = {
     facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
@@ -12,16 +12,14 @@ const contato = {
     email: "mailto:vendas@toldosmania.com.br",
     maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
 };
-
 ---
 
 <Layout title="ToldosMania">
-    <Navbar />
+    <Navbar client:only />
     <main class="scroll-smooth">
         <div
             class="hero"
-            style="min-height: 70vh; background-image: url(/toldosmania-web/hero_bg/toldo_sample.webp);"
-            id="ToldosManiaMainHero"
+            style="min-height: 80vh; background-image: url(/toldosmania-web/hero_bg/toldo_sample.webp);"
         >
             <div class="hero-overlay bg-opacity-70"></div>
             <div class="hero-content text-center text-white">
@@ -78,24 +76,24 @@ const contato = {
                 <div class="flex lg:flex-row md:flex-col justify-center m-3">
                     <a
                         class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/lona"
+                        href="/toldosmania-web/galeria/coberturas"
                     >
                         <figure>
                             <img
                                 src="/toldosmania-web/produtos/lona.jpg"
-                                alt="Toldos"
+                                alt="Cobertura de Lona"
                                 class="w-96 h-64"
                             />
                         </figure>
                         <div class="card-body text-2xl text-center py-3">
-                            Lonas
+                            Coberturas
                         </div>
                     </a>
                 </div>
                 <div class="flex lg:flex-row md:flex-col justify-center m-3">
                     <a
                         class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/tela"
+                        href="/toldosmania-web/galeria/telas"
                     >
                         <figure>
                             <img
@@ -112,7 +110,7 @@ const contato = {
                 <div class="flex lg:flex-row md:flex-col justify-center m-3">
                     <a
                         class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/tela"
+                        href="/toldosmania-web/galeria/vidros"
                     >
                         <figure>
                             <img
@@ -126,11 +124,28 @@ const contato = {
                         </div>
                     </a>
                 </div>
+                <div class="flex lg:flex-row md:flex-col justify-center m-3">
+                    <a
+                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+                        href="/toldosmania-web/galeria/cortinas"
+                    >
+                        <figure>
+                            <img
+                                src="/toldosmania-web/produtos/cortina_rolo.png"
+                                alt="Cortinas Rolô"
+                                class="w-96 h-64"
+                            />
+                        </figure>
+                        <div class="card-body text-2xl text-center py-3">
+                            Cortinas Rolô
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="flex items-center justify-center">
                 <a
                     class="btn btn-accent btn-outline btn-xl rounded-2xl"
-                    href="/toldosmania-web/galeria">Veja mais produtos</a
+                    href="/toldosmania-web/galeria">Veja nossos produtos</a
                 >
             </div>
         </section>
@@ -270,7 +285,6 @@ const contato = {
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-
                 <div
                     class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
                 >
