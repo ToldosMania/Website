@@ -49,7 +49,7 @@ export default function Navbar() {
                         <li><a href="/toldosmania-web/galeria">Produtos</a></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl hidden lg:block" href="/toldosmania-web"
+                <a class="btn btn-ghost normal-case text-xl hidden lg:block" href="/toldosmania-web/"
                 ><img
                         src="/toldosmania-web/logo.jpg"
                         alt="Logo ToldosMania"
@@ -60,7 +60,20 @@ export default function Navbar() {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 xl:text-lg">
                     <li><a href="/toldosmania-web/">Início</a></li>
-                    <li><a href="/toldosmania-web/galeria">Produtos</a></li>
+                    <li>
+                        <details>
+                            <summary>
+                                Produtos
+                            </summary>
+                            <ul class="p-2 text-base-100 bg-white">
+                                <li><a href="/toldosmania-web/galeria/toldos">Toldos</a></li>
+                                <li><a href="/toldosmania-web/galeria/coberturas">Coberturas</a></li>
+                                <li><a href="/toldosmania-web/galeria/telas">Telas</a></li>
+                                <li><a href="/toldosmania-web/galeria/vidros">Vidros</a></li>
+                                <li><a href="/toldosmania-web/galeria/cortinas">Cortinas</a></li>
+                            </ul>
+                        </details>
+                    </li>
                 </ul>
             </div>
             <div class="navbar-end">

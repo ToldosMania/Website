@@ -23,16 +23,16 @@ export default function GalleryView(props: { product_type: string, gallery_items
     const [current_item, set_current_item] = useState({} as GalleryItem);
     return (
         <>
-            <div id={id_gallery_viewer} style="z-index: 9999;" class="bg-base-100 bg-opacity-75 w-full h-full inset-0 fixed hidden">
+            <div id={id_gallery_viewer} style="z-index: 9998;" class="bg-base-100 bg-opacity-75 w-full h-full inset-0 fixed hidden">
                 <div class="flex justify-end ">
-                    <div class="bg-white rounded-2xl flex flex-row flex-wrap">
+                    <div class="bg-white rounded-2xl flex flex-row flex-wrap" style="z-index: 9999;">
                         <a onClick={() => {
                             document.getElementById(id_gallery_viewer)?.requestFullscreen();
                         }}>
-                            <img src={base_web + "/icon/mdi-fullscreen.svg"} alt="Tela Cheia" class="h-24 w-24 text-white" id={id_gallery_fullscreen} />
+                            <img src={base_web + "/icon/mdi-fullscreen.svg"} alt="Tela Cheia" class="h-12 w-12 lg:h-24 lg:w-24 text-white" id={id_gallery_fullscreen} />
                         </a>
                         <a onClick={() => close_gallery(id_gallery_viewer)}>
-                            <img src={base_web + "/icon/mdi-close-circle.svg"} alt="Fechar" class="h-24 w-24 text-white" />
+                            <img src={base_web + "/icon/mdi-close-circle.svg"} alt="Fechar" class="h-12 w-12 lg:h-24 lg:w-24 text-white" />
                         </a>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ export default function GalleryView(props: { product_type: string, gallery_items
                     }}
                     src={base_web + "/gallery/" + props.product_type + "/" + item.url}
                     alt={item.title}
-                    class="rounded-2xl w-1/3 h-1/3 lg:w-1/6 lg:h-1/6 transition-transform ease-in-out hover:scale-105 m-3" />
+                    class="rounded-2xl w-full h-full lg:w-1/6 lg:h-1/6 transition-transform ease-in-out hover:scale-105 m-3" />
             )}
         </>
     );
