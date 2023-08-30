@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/LayoutGaleria.astro";
+import GalleryView from "../../components/GalleryView";
+import coberturas_lona from "../../json/coberturas_lona.json";
+import coberturas_policarbonato from "../../json/coberturas_policarbonato.json";
+import coberturas_zincada from "../../json/coberturas_zincada.json";
+---
+
+<Layout
+    title="Galeria de Coberturas"
+    description="Veja todas as opções de coberturas. Pressione para ver mais"
+    sections={["lona","policarbonato","zincada"]}
+>
+    <section class="bg-white text-center text-base-100 px-12 py-10" id="lona">
+        <h1 class="text-2xl text-base-300 pb-10 divider">Lona</h1>
+        <div class="flex flex-row flex-wrap items-center justify-center">
+            <GalleryView
+                product_type="coberturas_lona"
+                gallery_items={coberturas_lona}
+                client:load
+            />
+        </div>
+    </section>
+
+    <section class="bg-white text-center text-base-100 px-12 py-10" id="policarbonato">
+        <h1 class="text-2xl text-base-300 divider">Policarbonato</h1>
+        <div class="flex flex-row flex-wrap items-center justify-center">
+            <GalleryView
+                product_type="coberturas_policarbonato"
+                gallery_items={coberturas_policarbonato}
+                client:load
+            />
+        </div>
+    </section>
+
+    <section class="bg-white text-center text-base-100 px-12 py-10" id="zincada">
+        <h1 class="text-2xl text-base-300 divider">Zincadas</h1>
+        <div class="flex flex-row flex-wrap items-center justify-center">
+            <GalleryView
+                product_type="coberturas_zincada"
+                gallery_items={coberturas_zincada}
+                client:load
+            />
+        </div>
+    </section>
+</Layout>
