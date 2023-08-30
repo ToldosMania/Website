@@ -1,4 +1,5 @@
 import { useState } from "preact/hooks";
+import { v4 as uuidv4 } from 'uuid';
 
 const close_gallery = (id: string) => {
     document.getElementById(id)!.classList.add("hidden");
@@ -16,7 +17,7 @@ type GalleryItem = {
 
 export default function GalleryView(props: { product_type: string, gallery_items: GalleryItem[] }) {
     const base_web = "/toldosmania-web";
-    const id_gallery_viewer = "unique_gallery_viewer";
+    const id_gallery_viewer = "gallery_viewer_" + uuidv4();
     const id_gallery_fullscreen = "gallery_viewer_fullscreen";
 
     const [selected_image, set_selected_image] = useState("");
