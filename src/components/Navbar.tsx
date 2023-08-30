@@ -70,7 +70,7 @@ export default function Navbar() {
                             <summary>
                                 Produtos
                             </summary>
-                            <ul class="p-2 text-base-100 bg-white">
+                            <ul class="p-2 text-gray-800 bg-white">
                                 <li><a href="/toldosmania-web/galeria/toldos">Toldos</a></li>
                                 <li><a href="/toldosmania-web/galeria/coberturas">Coberturas</a></li>
                                 <li><a href="/toldosmania-web/galeria/telas">Telas</a></li>
