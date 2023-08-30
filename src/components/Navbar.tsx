@@ -46,7 +46,12 @@ export default function Navbar() {
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                     >
                         <li><a href="/toldosmania-web/">Início</a></li>
-                        <li><a href="/toldosmania-web/galeria">Produtos</a></li>
+                        <li><a href="/toldosmania-web/galeria/toldos">Toldos</a></li>
+                        <li><a href="/toldosmania-web/galeria/coberturas">Coberturas</a></li>
+                        <li><a href="/toldosmania-web/galeria/telas">Telas</a></li>
+                        <li><a href="/toldosmania-web/galeria/vidros">Vidros</a></li>
+                        <li><a href="/toldosmania-web/galeria/cortinas">Cortinas</a></li>
+                        <li><a href="/toldosmania-web/#contato">Contato</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-ghost normal-case text-xl hidden lg:block" href="/toldosmania-web/"
