@@ -65,28 +65,18 @@ export default function Navbar() {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 xl:text-lg">
                     <li><a href="/toldosmania-web/">Início</a></li>
-                    <li>
-                        <details>
-                            <summary>
-                                Produtos
-                            </summary>
-                            <ul class="p-2 text-gray-800 bg-white">
-                                <li><a href="/toldosmania-web/galeria/toldos">Toldos</a></li>
-                                <li><a href="/toldosmania-web/galeria/coberturas">Coberturas</a></li>
-                                <li><a href="/toldosmania-web/galeria/telas">Telas</a></li>
-                                <li><a href="/toldosmania-web/galeria/vidros">Vidros</a></li>
-                                <li><a href="/toldosmania-web/galeria/cortinas">Cortinas</a></li>
-                            </ul>
-                        </details>
-                    </li>
+                    <li><a href="/toldosmania-web/galeria/toldos">Toldos</a></li>
+                    <li><a href="/toldosmania-web/galeria/coberturas">Coberturas</a></li>
+                    <li><a href="/toldosmania-web/galeria/telas">Telas</a></li>
+                    <li><a href="/toldosmania-web/galeria/vidros">Vidros</a></li>
+                    <li><a href="/toldosmania-web/galeria/cortinas">Cortinas</a></li>
                 </ul>
             </div>
             <div class="navbar-end">
                 <a
                     href="/toldosmania-web/#contato"
                     class="btn btn-info text-white sm:btn-md border-b-4 hover:bg-white hover:text-gray-800 hover:border-blue-200 hidden lg:flex"
-                >Contato</a
-                >
+                >Contato</a>
                 <a class="btn btn-ghost normal-case text-xl lg:hidden" href="/toldosmania-web/"
                 ><img
                         src="/toldosmania-web/logo.jpg"

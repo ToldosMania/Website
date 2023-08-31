@@ -3,22 +3,14 @@ import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
-
-const contato = {
-    facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
-    instagram: "https://www.instagram.com/toldosmania/?ref=badge",
-    phone: "tel:26856588",
-    whatsapp: "https://wa.me/551196201127",
-    email: "mailto:vendas@toldosmania.com.br",
-    maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
-};
+import SectionContato from "../components/SectionContato.astro";
 ---
 
 <Layout title="ToldosMania">
     <Navbar client:only />
     <main class="scroll-smooth">
         <div
-            class="hero"
+            class="hero pt-10"
             style="min-height: 80vh; background-image: url(/toldosmania-web/hero_bg/toldo_sample.webp);"
         >
             <div class="hero-overlay bg-opacity-70"></div>
@@ -144,35 +136,41 @@ const contato = {
             </div>
         </section>
         <section
-            class="bg-white text-gray-800 p-3 py-10 flex flex-row flex-wrap justify-center items-center"
+            class="bg-white text-gray-800 p-3 py-10 flex flex-col flex-wrap justify-center items-center"
             id="materiais"
         >
-            <figure>
-                <img
-                    src="/toldosmania-web/hero_bg/tela_sample.jpg"
-                    alt="Toldos Mania - Exemplo de Toldo"
-                    class="rounded-2xl w-max lg:h-96"
-                />
-            </figure>
-            <div class="flex flex-col m-3 mx-6">
-                <h1 class="text-2xl text-center m-4">Quem somos nós?</h1>
-                <p class="text-md max-w-md">
-                    Fundada em 2005, a ToldosMania é uma empresa dedicada à
-                    fabricação e instalação de toldos e coberturas. <br /><br/> Ao longo
-                    dos anos, consolidamos nossa presença no mercado através do desenvolvimento
-                    de produtos de design moderno e arrojado, sempre buscando atender
-                    às necessidades de nossos clientes. <br /><br/> Nossa reputação é
-                    construída sobre o compromisso sólido que mantemos com nossos
-                    clientes e fornecedores, refletindo a confiança que depositam
-                    em nós. <br /><br/>Priorizamos a qualidade em cada etapa do
-                    processo de fabricação, assegurando a durabilidade e a
-                    satisfação de quem escolhe os produtos ToldosMania.
-                </p>
-                <a
-                    href="#contato"
-                    class="btn btn-info text-white mx-6 m-4 xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
-                    >Entre em Contato Conosco
-                </a>
+            <h1 class="divider text-2xl text-center m-4 mb-16">
+                Quem somos nós?
+            </h1>
+            <div class="flex flex-row flex-wrap">
+                <figure>
+                    <img
+                        src="/toldosmania-web/hero_bg/tela_sample.jpg"
+                        alt="Toldos Mania - Exemplo de Toldo"
+                        class="rounded-2xl w-max lg:h-96"
+                    />
+                </figure>
+                <div class="flex flex-col m-3 mx-6">
+                    <p class="max-w-md">
+                        Fundada em 2005, a ToldosMania é uma empresa dedicada à
+                        fabricação e instalação de toldos e coberturas. Ao longo
+                        dos anos, estabelecemos nossa presença no mercado por
+                        meio do desenvolvimento de produtos de design
+                        contemporâneo, priorizando a satisfação das necessidades
+                        de nossos clientes. Nossa reputação é construída com
+                        base em nosso compromisso sólido com clientes e
+                        fornecedores, refletindo a confiança que depositam em
+                        nossa empresa. Priorizamos a excelência em todas as
+                        etapas do processo de fabricação, garantindo a
+                        durabilidade e a plena satisfação daqueles que escolhem
+                        os produtos da ToldosMania.
+                    </p>
+                    <a
+                        href="#contato"
+                        class="btn btn-info text-white mx-6 m-4 xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
+                        >Entre em Contato
+                    </a>
+                </div>
             </div>
         </section>
         <section class="bg-gray-100 text-gray-800 p-3 py-10" id="materiais">
@@ -190,7 +188,7 @@ const contato = {
                         />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Lona</h2>
+                        <h2 class="card-title text-center">Lona</h2>
                         <p>
                             O produto é aditivado para resistir aos raios UV
                             dando maior durabilidade, e garantindo cores vivas
@@ -266,89 +264,7 @@ const contato = {
             <p class="text-center text-lg pb-8 text-black">
                 Se interessou? Entre em contato!
             </p>
-            <div class="flex flex-row flex-wrap justify-center">
-                <div
-                    class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
-                >
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2404.632044759774!2d-46.502187580483984!3d-23.522744026608216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce60bdddb7e8e9%3A0xf8d0ecc98ded44fd!2sR.%20Prof.%20Vasconcelos%20Sarmento%2C%20170%20-%20Vila%20R%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003662-040!5e0!3m2!1sen!2sbr!4v1693179314020!5m2!1sen!2sbr"
-                        class="w-full h-full border-none lg:w-96 lg:h-96"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div
-                    class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
-                >
-                    <a
-                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-                        href={contato.whatsapp}
-                    >
-                        <Icon
-                            pack="mdi"
-                            name="whatsapp"
-                            class="w-10 h-10 text-blue-500"
-                        />
-                        1196201127
-                    </a>
-                    <a
-                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-                        href={contato.phone}
-                    >
-                        <Icon
-                            pack="mdi"
-                            name="phone"
-                            class="w-10 h-10 text-blue-500"
-                        />
-                        26856588
-                    </a>
-                    <a
-                        class="btn btn-info btn-outline text-xs lg:text-lg w-full my-3 inline-flex justify-start"
-                        href={contato.email}
-                    >
-                        <Icon
-                            pack="mdi"
-                            name="mail"
-                            class="w-10 h-10 text-blue-500"
-                        />
-                        vendas@toldosmania.com.br
-                    </a>
-                    <a
-                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-                        href={contato.instagram}
-                    >
-                        <Icon
-                            pack="mdi"
-                            name="instagram"
-                            class="w-10 h-10 text-blue-500"
-                        />
-                        @toldosmania
-                    </a>
-                    <a
-                        class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-                        href={contato.facebook}
-                    >
-                        <Icon
-                            pack="mdi"
-                            name="facebook"
-                            class="w-10 h-10 text-blue-500"
-                        />
-                        @toldosmania
-                    </a>
-                </div>
-                <div
-                    class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
-                >
-                    <img
-                        src="/toldosmania-web/cartoes.png"
-                        alt=""
-                        class="h-72 w-72 items-center"
-                    />
-                    <h1 class="text-center text-2xl text-blue-700">
-                        Também aceitamos Pix!
-                    </h1>
-                </div>
-            </div>
+            <SectionContato />
         </section>
     </main>
     <Footer />

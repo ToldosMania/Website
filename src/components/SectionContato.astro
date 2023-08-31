@@ -1,3 +1,76 @@
-<section class="py-3 bg-blue-800 text-white">
-    <h1 class="text-2xl">Hi!</h1>
-</section>
+---
+import Icon from "astro-icon";
+
+const contato = {
+    facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
+    instagram: "https://www.instagram.com/toldosmania/?ref=badge",
+    phone: "tel:26856588",
+    whatsapp: "https://wa.me/551196201127",
+    email: "mailto:vendas@toldosmania.com.br",
+    maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
+};
+---
+
+<div class="flex flex-row flex-wrap justify-center">
+    <div
+        class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
+    >
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2404.632044759774!2d-46.502187580483984!3d-23.522744026608216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce60bdddb7e8e9%3A0xf8d0ecc98ded44fd!2sR.%20Prof.%20Vasconcelos%20Sarmento%2C%20170%20-%20Vila%20R%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003662-040!5e0!3m2!1sen!2sbr!4v1693179314020!5m2!1sen!2sbr"
+            class="w-full h-full border-none lg:w-96 lg:h-96"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div
+        class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
+    >
+        <a
+            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+            href={contato.whatsapp}
+        >
+            <Icon pack="mdi" name="whatsapp" class="w-10 h-10 text-blue-500" />
+            1196201127
+        </a>
+        <a
+            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+            href={contato.phone}
+        >
+            <Icon pack="mdi" name="phone" class="w-10 h-10 text-blue-500" />
+            26856588
+        </a>
+        <a
+            class="btn btn-info btn-outline text-xs lg:text-lg w-full my-3 inline-flex justify-start"
+            href={contato.email}
+        >
+            <Icon pack="mdi" name="mail" class="w-10 h-10 text-blue-500" />
+            vendas@toldosmania.com.br
+        </a>
+        <a
+            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+            href={contato.instagram}
+        >
+            <Icon pack="mdi" name="instagram" class="w-10 h-10 text-blue-500" />
+            @toldosmania
+        </a>
+        <a
+            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
+            href={contato.facebook}
+        >
+            <Icon pack="mdi" name="facebook" class="w-10 h-10 text-blue-500" />
+            @toldosmania
+        </a>
+    </div>
+    <div
+        class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
+    >
+        <img
+            src="/toldosmania-web/cartoes.png"
+            alt=""
+            class="h-72 w-72 items-center"
+        />
+        <h1 class="text-center text-2xl text-blue-700">
+            Também aceitamos Pix!
+        </h1>
+    </div>
+</div>

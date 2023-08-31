@@ -1,6 +1,7 @@
 ---
 import FooterMain from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
+import SectionContato from "../components/SectionContato.astro";
 
 interface Props {
     title: string;
@@ -39,6 +40,15 @@ const { title, description, sections } = Astro.props;
             </div>
         </div>
         <slot />
+        <section class="p-3 py-10 bg-white" id="contato">
+            <h1 class="divider text-center text-2xl text-black pb-8">
+                Contato
+            </h1>
+            <p class="text-center text-lg pb-8 text-black">
+                Se interessou? Entre em contato!
+            </p>
+            <SectionContato/>
+        </section>
         <FooterMain />
     </body>
 </html>
