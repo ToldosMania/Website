@@ -10,7 +10,7 @@ const scrollHandler = (event: Event | null) => {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById(navbar_identifier)!.style.top = "0";
     } else {
-        document.getElementById(navbar_identifier)!.style.top = "-75px";
+        document.getElementById(navbar_identifier)!.style.top = "-75px"
     }
     prevScrollpos = currentScrollPos;
 };
@@ -24,7 +24,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div class="navbar bg-blue-500 text-white p-4 fixed z-50 transition-all" id={navbar_identifier}>
+        <div class="navbar bg-blue-500 text-white p-4 sticky top-10 z-50 transition-all" style="top: 0px" id={navbar_identifier}>
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -75,7 +75,7 @@ export default function Navbar() {
             <div class="navbar-end">
                 <a
                     href="/toldosmania-web/#contato"
-                    class="btn btn-info text-white sm:btn-md border-b-4 hover:bg-white hover:text-gray-800 hover:border-blue-200 hidden lg:flex"
+                    class="btn btn-info text-white sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400 hidden lg:flex"
                 >Contato</a>
                 <a class="btn btn-ghost normal-case text-xl lg:hidden" href="/toldosmania-web/"
                 ><img

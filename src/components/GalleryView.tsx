@@ -16,9 +16,9 @@ type GalleryItem = {
 };
 
 export default function GalleryView(props: { product_type: string, gallery_items: GalleryItem[] }) {
-    const base_web = "/toldosmania-web";
+    const website_base_url = "/toldosmania-web";
     const id_gallery_viewer = "gallery_viewer_" + uuidv4();
-    const id_gallery_fullscreen = "gallery_viewer_fullscreen";
+    const id_fullscreen_gallery_photo = "current_selected_photo";
 
     const [selected_image, set_selected_image] = useState("");
     const [current_item, set_current_item] = useState({} as GalleryItem);
@@ -30,16 +30,16 @@ export default function GalleryView(props: { product_type: string, gallery_items
                         <a onClick={() => {
                             document.getElementById(id_gallery_viewer)?.requestFullscreen();
                         }}>
-                            <img src={base_web + "/icon/mdi-fullscreen.svg"} alt="Tela Cheia" class="h-12 w-12 lg:h-16 lg:w-16 text-white" id={id_gallery_fullscreen} />
+                            <img src={website_base_url + "/icon/mdi-fullscreen.svg"} alt="Tela Cheia" class="h-12 w-12 lg:h-16 lg:w-16 text-white" id={id_fullscreen_gallery_photo} />
                         </a>
                         <a onClick={() => close_gallery(id_gallery_viewer)}>
-                            <img src={base_web + "/icon/mdi-close-circle.svg"} alt="Fechar" class="h-12 w-12 lg:h-16 lg:w-16 text-white" />
+                            <img src={website_base_url + "/icon/mdi-close-circle.svg"} alt="Fechar" class="h-12 w-12 lg:h-16 lg:w-16 text-white" />
                         </a>
                     </div>
                 </div>
                 <div class="flex flex-row justify-center items-center" style="height: 70vh;">
                     <div class="flex flex-col justify-center items-center bg-white max-w-md rounded-xl p-10">
-                        <img src={base_web + "/gallery/" + selected_image} alt={current_item.title} class="scale-110" />
+                        <img src={website_base_url + "/gallery/" + selected_image} alt={current_item.title} class="scale-110" />
                         <p class="text-xl lg:text-2xl py-3 mt-3">{current_item.title}</p>
                         <p class="text-md lg:text-lg text-left">{current_item.description}</p>
                     </div>
@@ -53,7 +53,7 @@ export default function GalleryView(props: { product_type: string, gallery_items
                         set_current_item(item);
                         show_gallery(id_gallery_viewer);
                     }}
-                    src={base_web + "/gallery/" + props.product_type + "/" + item.url}
+                    src={website_base_url + "/gallery/" + props.product_type + "/" + item.url}
                     alt={item.title}
                     decoding="async"
                     loading="lazy"

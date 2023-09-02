@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import FooterMain from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
 import SectionContato from "../components/SectionContato.astro";
@@ -20,41 +21,56 @@ const { title, description, sections } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
+        <ViewTransitions />
         <title>{title}</title>
     </head>
     <body>
         <Navbar client:only />
-        <div
-            class="hero"
-            style="min-height: 50vh; background-image: url(/toldosmania-web/hero_bg/tela_sample.jpg);"
-        >
-            <div class="hero-overlay bg-opacity-70 bg-base-100"></div>
-            <div class="hero-content">
-                <div class="max-w-xl text-white">
-                    <h1 class="text-xl lg:text-2xl font-bold">{title}</h1>
-                    <h3 class="text-sm lg:text-lg font-semibold">
-                        {description}
-                    </h3>
-                {sections?.map(sect => <a href={"#" + sect} class="btn btn-info rounded-2xl text-white my-3 mx-1 py-3">{sect}</a>)}
+        <main class="min-h-screen">
+            <div
+                class="hero min-h-screen"
+                style="min-height: 50vh; background-image: url(/toldosmania-web/hero_bg/tela_sample.jpg);"
+            >
+                <div class="hero-overlay bg-opacity-70 bg-base-100"></div>
+                <div class="hero-content">
+                    <div class="max-w-xl text-white">
+                        <h1
+                            class="mt-16 lg:mt-10 text-xl lg:text-2xl font-bold"
+                        >
+                            {title}
+                        </h1>
+                        <h3 class="text-sm lg:text-lg font-semibold">
+                            {description}
+                        </h3>
+                        {
+                            sections?.map((sect) => (
+                                <a
+                                    href={"#" + sect}
+                                    class="btn btn-info rounded-2xl text-white my-3 mx-1 py-3"
+                                >
+                                    {sect}
+                                </a>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-        <slot />
-        <section class="p-3 py-10 bg-white" id="contato">
-            <h1 class="divider text-center text-2xl text-black pb-8">
-                Contato
-            </h1>
-            <p class="text-center text-lg pb-8 text-black">
-                Se interessou? Entre em contato!
-            </p>
-            <SectionContato/>
-        </section>
-        <FooterMain />
-    </body>
-</html>
+            <slot />
+            <section class="p-3 py-10 bg-white" id="contato">
+                <h1 class="divider text-center text-2xl text-black pb-8">
+                    Contato
+                </h1>
+                <p class="text-center text-lg pb-8 text-black">
+                    Se interessou? Entre em contato!
+                </p>
+                <SectionContato />
+            </section>
+        </main>
 
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
-</style>
+        <FooterMain />
+    </body><style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</html>
