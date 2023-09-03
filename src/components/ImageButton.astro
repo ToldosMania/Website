@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    classlist: string;
+}
+
+const { alt, src, width, height, classlist } = Astro.props;
+---
+
+<div class="flex lg:flex-row md:flex-col justify-center m-3">
+    <div
+        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
+    >
+        <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            class={classlist}
+            quality="low"
+            format="webp"
+        />
+        <div class="card-body text-2xl text-center py-3"><slot /></div>
+    </div>
+</div>

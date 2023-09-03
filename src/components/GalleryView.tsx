@@ -16,7 +16,7 @@ type GalleryItem = {
 };
 
 export default function GalleryView(props: { product_type: string, gallery_items: GalleryItem[] }) {
-    const website_base_url = "/toldosmania-web";
+    const website_base_url = import.meta.env.BASE_URL;
     const id_gallery_viewer = "gallery_viewer_" + uuidv4();
     const id_fullscreen_gallery_photo = "current_selected_photo";
 

@@ -3,7 +3,11 @@ import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
-import SectionContato from "../components/SectionContato.astro";
+import ContatoRowLarge from "../components/SectionContato.astro";
+import ImageButton from "../components/ImageButton.astro";
+import { Image } from "astro:assets";
+
+const base_url = import.meta.env.BASE_URL;
 ---
 
 <Layout title="ToldosMania">
@@ -11,12 +15,14 @@ import SectionContato from "../components/SectionContato.astro";
     <main class="scroll-smooth">
         <div
             class="hero"
-            style="min-height: 80vh; background-image: url(/toldosmania-web/hero_bg/toldo_sample.webp);"
+            style={"min-height: 80vh; background-image: url(" + base_url + "hero_bg/toldo_sample.webp);"}
         >
             <div class="hero-overlay bg-opacity-70"></div>
             <div class="hero-content text-center text-white">
                 <div class="max-w-xl">
-                    <h1 class="mt-16 lg:mt-10 mb-5 text-2xl lg:text-4xl font-bold">
+                    <h1
+                        class="mt-16 lg:mt-10 mb-5 text-2xl lg:text-4xl font-bold"
+                    >
                         Somos especializados na fabricação e instalação de
                         toldos e coberturas com design moderno.
                     </h1>
@@ -43,113 +49,84 @@ import SectionContato from "../components/SectionContato.astro";
                 </div>
             </div>
         </div>
-        <section class="bg-gray-100 text-gray-800 p-3 py-10" id="produtos">
-            <h1 class="divider text-center text-2xl text-black m-4 mb-16">
+        <section class="bg-white text-gray-800 p-3 py-10" id="produtos">
+            <h1 class="divider text-center text-2xl text-black pb-8">
                 Nossos Produtos
             </h1>
             <div class="flex flex-wrap justify-center">
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/toldos"
+                <a href={base_url + "galeria/toldos"}>
+                    <ImageButton
+                        src={base_url + "/produtos/toldo.jpg"}
+                        alt="Toldos"
+                        width={384}
+                        height={256}
+                        classlist="w-96 h-64"
                     >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/toldo.jpg"
-                                alt="Toldos"
-                                class="w-96 h-64"
-                            />
-                        </figure>
-                        <div class="card-body text-2xl text-center py-3">
-                            Toldos
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/coberturas"
+                        Toldos
+                    </ImageButton>
+                </a>
+
+                <a href={base_url + "galeria/coberturas"}>
+                    <ImageButton
+                        src={base_url + "produtos/lona.jpg"}
+                        alt="Coberturas"
+                        width={384}
+                        height={256}
+                        classlist="w-96 h-64"
                     >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/lona.jpg"
-                                alt="Cobertura de Lona"
-                                class="w-96 h-64"
-                            />
-                        </figure>
-                        <div class="card-body text-2xl text-center py-3">
-                            Coberturas
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/telas"
+                        Coberturas
+                    </ImageButton>
+                </a>
+                <a href={base_url + "galeria/telas"}>
+                    <ImageButton
+                        src={base_url + "produtos/tela_sombreamento.jpg"}
+                        alt="Telas de Sombreamento"
+                        width={384}
+                        height={256}
+                        classlist="w-96 h-64"
                     >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/tela_sombreamento.jpg"
-                                alt="Telas de Sombreamento"
-                                class="w-96 h-64"
-                            />
-                        </figure>
-                        <div class="card-body text-2xl text-center py-3">
-                            Telas de Sombreamento
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/vidros"
+                        Telas de Sombreamento
+                    </ImageButton>
+                </a>
+                <a href={base_url + "galeria/vidros"}>
+                    <ImageButton
+                        src={base_url + "produtos/vidros.jpeg"}
+                        alt="Vidros"
+                        width={384}
+                        height={256}
+                        classlist="w-96 h-64"
                     >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/vidros.jpeg"
-                                alt="Vidros"
-                                class="w-96 h-64"
-                            />
-                        </figure>
-                        <div class="card-body text-2xl text-center py-3">
-                            Vidros
-                        </div>
-                    </a>
-                </div>
-                <div class="flex lg:flex-row md:flex-col justify-center m-3">
-                    <a
-                        class="card bg-blue-400 border-b-blue-500 border-b-4 text-white shadow-xl hover:bg-blue-500 transition-colors"
-                        href="/toldosmania-web/galeria/cortinas"
+                        Vidros
+                    </ImageButton>
+                </a>
+
+                <a href={base_url + "galeria/cortinas"}>
+                    <ImageButton
+                        src={base_url + "produtos/cortina_rolo.png"}
+                        alt="Cortinas Rolô"
+                        width={384}
+                        height={256}
+                        classlist="w-96 h-64"
                     >
-                        <figure>
-                            <img
-                                src="/toldosmania-web/produtos/cortina_rolo.png"
-                                alt="Cortinas Rolô"
-                                class="w-96 h-64"
-                            />
-                        </figure>
-                        <div class="card-body text-2xl text-center py-3">
-                            Cortinas Rolô
-                        </div>
-                    </a>
-                </div>
+                        Cortinas Rolô
+                    </ImageButton>
+                </a>
             </div>
         </section>
         <section
-            class="bg-white text-gray-800 p-3 py-10 flex flex-col flex-wrap justify-center items-center"
-            id="materiais"
+            class="bg-gray-100 text-gray-800 p-3 py-10 flex flex-col flex-wrap justify-center items-center"
         >
-            <h1 class="divider text-2xl text-center m-4 mb-16">
-                Quem somos nós?
-            </h1>
+            <h1 class="divider text-2xl text-center pb-10">Sobre nós</h1>
             <div class="flex flex-row flex-wrap">
-                <figure>
-                    <img
-                        src="/toldosmania-web/hero_bg/tela_sample.jpg"
-                        alt="Toldos Mania - Exemplo de Toldo"
-                        class="rounded-2xl w-max lg:h-96"
-                    />
-                </figure>
+                <Image
+                    src={base_url + "hero_bg/tela_sample.jpg"}
+                    alt="Toldos Mania - Exemplo de Toldo"
+                    width={256}
+                    height={256}
+                    class="rounded-2xl w-max h-64 lg:h-96"
+                    format="avif"
+                    quality="mid"
+                />
                 <div class="flex flex-col m-3 mx-6">
                     <p class="max-w-md">
                         Fundada em 2005, a ToldosMania é uma empresa dedicada à
@@ -173,20 +150,21 @@ import SectionContato from "../components/SectionContato.astro";
                 </div>
             </div>
         </section>
-        <section class="bg-gray-100 text-gray-800 p-3 py-10" id="materiais">
-            <h1 class="divider text-2xl text-bold pb-2">Materiais de Toldos</h1>
-            <p class="text-center text-lg pb-8">
-                Materiais utilizados para a fabricação de nossos produtos
-            </p>
+        <section class="bg-white text-gray-800 p-3 py-10" id="materiais">
+            <h1 class="divider text-2xl text-bold pb-2">
+                Materiais de Nossos Produtos
+            </h1>
             <div class="flex flex-wrap justify-center">
-                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
-                    <figure>
-                        <img
-                            src="/toldosmania-web/materiais/lona_sample1.png"
-                            alt="Material de Lona"
-                            class="h-56"
-                        />
-                    </figure>
+                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
+                    <Image
+                        src={base_url + "materiais/lona_sample1.png"}
+                        alt="Material de Lona"
+                        width={224}
+                        height={224}
+                        format="avif"
+                        quality="high"
+                        class="h-56"
+                    />
                     <div class="card-body">
                         <h2 class="card-title text-center">Lona</h2>
                         <p>
@@ -199,14 +177,16 @@ import SectionContato from "../components/SectionContato.astro";
                         </p>
                     </div>
                 </div>
-                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
-                    <figure>
-                        <img
-                            src="/toldosmania-web/materiais/policarbonato_sample1.png"
-                            alt="Material de Lona"
-                            class="h-56"
-                        />
-                    </figure>
+                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
+                    <Image
+                        src={base_url + "materiais/policarbonato_sample1.png"}
+                        alt="Material de Lona"
+                        width={224}
+                        height={224}
+                        format="avif"
+                        quality="high"
+                        class="h-56"
+                    />
                     <div class="card-body">
                         <h2 class="card-title">Policarbonato</h2>
                         <p>
@@ -220,14 +200,16 @@ import SectionContato from "../components/SectionContato.astro";
                         </p>
                     </div>
                 </div>
-                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
-                    <figure>
-                        <img
-                            src="/toldosmania-web/materiais/tela_sombreamento.jpg"
-                            alt="Material de Lona"
-                            class="h-56"
-                        />
-                    </figure>
+                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
+                    <Image
+                        src={base_url + "materiais/tela_sombreamento.jpg"}
+                        alt="Material de Lona"
+                        width={224}
+                        height={224}
+                        format="avif"
+                        quality="high"
+                        class="h-56"
+                    />
                     <div class="card-body">
                         <h2 class="card-title">Tela de Sombreamento</h2>
                         <p>
@@ -239,14 +221,16 @@ import SectionContato from "../components/SectionContato.astro";
                         </p>
                     </div>
                 </div>
-                <div class="card w-96 bg-gray-200 text-black shadow-xl m-5">
-                    <figure>
-                        <img
-                            src="/toldosmania-web/materiais/aço_galvanizado.jpg"
-                            alt="Material de Lona"
-                            class="h-56"
-                        />
-                    </figure>
+                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
+                    <Image
+                        src={base_url + "materiais/aço_galvanizado.jpg"}
+                        width={224}
+                        height={224}
+                        format="avif"
+                        quality="high"
+                        alt="Material de Lona"
+                        class="h-56"
+                    />
                     <div class="card-body">
                         <h2 class="card-title">Aço Galvanizado</h2>
                         <p>
@@ -257,14 +241,11 @@ import SectionContato from "../components/SectionContato.astro";
                 </div>
             </div>
         </section>
-        <section class="p-3 py-10 bg-white" id="contato">
+        <section class="p-3 py-10 bg-gray-100" id="contato">
             <h1 class="divider text-center text-2xl text-black pb-4">
                 Contato
             </h1>
-            <p class="text-center text-lg pb-8 text-black">
-                Se interessou? Entre em contato!
-            </p>
-            <SectionContato />
+            <ContatoRowLarge />
         </section>
     </main>
     <Footer />

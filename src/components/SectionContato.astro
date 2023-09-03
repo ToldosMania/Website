@@ -2,7 +2,8 @@
 import Icon from "astro-icon";
 import { Image } from "astro:assets";
 
-const current_page = Astro.url;
+const contato_button =
+    "btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start break-words";
 
 const contato = {
     facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
@@ -28,38 +29,23 @@ const contato = {
     <div
         class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
     >
-        <a
-            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-            href={contato.whatsapp}
-        >
+        <a class={contato_button} href={contato.whatsapp}>
             <Icon pack="mdi" name="whatsapp" class="w-10 h-10 text-blue-500" />
             1196201127
         </a>
-        <a
-            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-            href={contato.phone}
-        >
+        <a class={contato_button} href={contato.phone}>
             <Icon pack="mdi" name="phone" class="w-10 h-10 text-blue-500" />
             26856588
         </a>
-        <a
-            class="btn btn-info btn-outline text-xs lg:text-lg w-full my-3 inline-flex justify-start break-words"
-            href={contato.email}
-        >
+        <a class:list={[contato_button, "text-sm lg:text-lg"]} href={contato.email}>
             <Icon pack="mdi" name="mail" class="w-10 h-10 text-blue-500" />
             vendas@toldosmania.com.br
         </a>
-        <a
-            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-            href={contato.instagram}
-        >
+        <a class={contato_button} href={contato.instagram}>
             <Icon pack="mdi" name="instagram" class="w-10 h-10 text-blue-500" />
             @toldosmania
         </a>
-        <a
-            class="btn btn-info btn-outline text-lg w-full my-3 inline-flex justify-start"
-            href={contato.facebook}
-        >
+        <a class={contato_button} href={contato.facebook}>
             <Icon pack="mdi" name="facebook" class="w-10 h-10 text-blue-500" />
             @toldosmania
         </a>
@@ -68,7 +54,7 @@ const contato = {
         class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
     >
         <h1 class="text-center text-2xl text-blue-700">
-            Aceitamos seu cartão.<br/>
+            Aceitamos seu cartão.<br />
             Entre em contato!
         </h1>
         <Image
@@ -78,8 +64,6 @@ const contato = {
             height={288}
             class="h-72 w-72 items-center"
         />
-        <h1 class="text-center text-2xl text-blue-700">
-            Também aceitamos Pix
-        </h1>
+        <h1 class="text-center text-2xl text-blue-700">Também aceitamos Pix</h1>
     </div>
 </div>
