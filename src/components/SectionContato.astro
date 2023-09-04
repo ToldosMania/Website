@@ -2,6 +2,8 @@
 import Icon from "astro-icon";
 import { Image } from "astro:assets";
 
+const base_url = import.meta.env.BASE_URL;
+
 const contato_button =
     "btn btn-info btn-outline btn-block text-lg my-3 inline-flex justify-start break-words";
 
@@ -58,7 +60,7 @@ const contato = {
             Entre em contato!
         </h1>
         <Image
-            src="/cartoes.png"
+            src={`${base_url}/cartoes.png`}
             alt="Cartões aceitos pela empresa: Hipercard, Diners Club, Visa, e Mastercard."
             width={288}
             height={288}
