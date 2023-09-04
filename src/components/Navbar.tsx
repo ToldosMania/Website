@@ -9,7 +9,7 @@ const scrollHandler = (event: Event | null) => {
     if (prevScrollpos > currentScrollPos) {
         document.getElementById(navbar_identifier)!.style.top = "0";
     } else {
-        document.getElementById(navbar_identifier)!.style.top = "-75px"
+        document.getElementById(navbar_identifier)!.style.top = "-60px"
     }
     prevScrollpos = currentScrollPos;
 };
@@ -25,28 +25,24 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div class="navbar bg-white text-gray-50 p-2 sticky top-10 z-50 transition-all border-b-2 shadow-md" style="top: 0px" id={navbar_identifier}>
+        <div id={navbar_identifier} class="navbar bg-white text-gray-50 p-2 sticky top-10 z-50 transition-all border-b-2 shadow-md" style="top: 0px">
             <div class="navbar-start">
                 <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        ><path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16"></path></svg
-                        >
+                    <label tabindex="0" class="btn btn-ghost lg:hidden text-black">
+                        <img
+                            src={`${base_url}/icon/mdi-menu.svg`}
+                            alt="Menu"
+                            class="object-scale-down h-12 w-12 block lg:hidden"
+                            decoding="async"
+                            loading="lazy"
+                        />
                     </label>
                     <ul
                         tabindex="0"
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-white text-gray-800"
                     >
                         <li><a href={base_url}>Início</a></li>
+                        <li><a href={`${base_url}/orcamento`}>Orçamento</a></li>
                         <li><a href={`${base_url}/galeria/toldos`}>Toldos</a></li>
                         <li><a href={`${base_url}/galeria/coberturas`}>Coberturas</a></li>
                         <li><a href={`${base_url}/galeria/telas`}>Telas</a></li>
@@ -76,6 +72,10 @@ export default function Navbar() {
                 </ul>
             </div>
             <div class="navbar-end">
+                <a
+                    href={`${base_url}/orcamento`}
+                    class="btn btn-info sm:btn-md btn-ghost hidden lg:flex text-black"
+                >Orçamento</a>
                 <a
                     href={`${base_url}/#contato`}
                     class="btn btn-info text-white sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400 hidden lg:flex"
