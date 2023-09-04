@@ -1,5 +1,16 @@
 ---
 import { Image } from "astro:assets";
+import Icon from "astro-icon";
+
+const contato = {
+    facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
+    instagram: "https://www.instagram.com/toldosmania/?ref=badge",
+    phone: "tel:26856588",
+    whatsapp: "https://wa.me/551196201127",
+    email: "mailto:vendas@toldosmania.com.br",
+    maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
+};
+
 const base_url = import.meta.env.BASE_URL;
 ---
 
@@ -18,25 +29,32 @@ const base_url = import.meta.env.BASE_URL;
             ToldosMania<br />Satisfazendo nossos clientes e fornecedores desde
             2005
         </p>
+        <p>
+            CopyRight © ToldosMania - 2005/2023
+        </p>
     </div>
     <div>
-        <span class="footer-title">Services</span>
-        <a class="link link-hover">Branding</a>
-        <a class="link link-hover">Design</a>
-        <a class="link link-hover">Marketing</a>
-        <a class="link link-hover">Advertisement</a>
+        <span class="footer-title">Produtos</span>
+        <a class="link link-hover">Toldos</a>
+        <a class="link link-hover">Coberturas</a>
+        <a class="link link-hover">Telas</a>
+        <a class="link link-hover">Vidros</a>
+        <a class="link link-hover">Cortinas Rolô</a>
     </div>
     <div>
-        <span class="footer-title">Company</span>
-        <a class="link link-hover">About us</a>
-        <a class="link link-hover">Contact</a>
-        <a class="link link-hover">Jobs</a>
-        <a class="link link-hover">Press kit</a>
-    </div>
-    <div>
-        <span class="footer-title">Legal</span>
-        <a class="link link-hover">Terms of use</a>
-        <a class="link link-hover">Privacy policy</a>
-        <a class="link link-hover">Cookie policy</a>
+        <span class="footer-title">Contato</span>
+        <a href={contato.whatsapp} class="link link-hover inline-flex flex-row flex-wrap items-center">
+            <Icon pack="mdi" name="whatsapp" class="w-8 h-8 text-white" />
+            1196201127
+        </a>
+        <a href={contato.phone} class="link link-hover inline-flex flex-row flex-wrap items-center">
+            <Icon pack="mdi" name="phone" class="w-8 h-8 text-white" />
+            26856588</a>
+        <a href={contato.email} class="link link-hover inline-flex flex-row flex-wrap items-center break-words">
+            <Icon pack="mdi" name="email" class="w-8 h-8 text-white" />
+            vendas@toldosmania.com.br</a>
+        <a href={contato.maps} class="link link-hover inline-flex flex-row flex-wrap items-center break-words">
+            <Icon pack="mdi" name="map" class="w-8 h-8 text-white" />
+            R. Profº Vasconcelos Sarmento, 170 - Vila Ré /Penha - São Paulo</a>
     </div>
 </footer>

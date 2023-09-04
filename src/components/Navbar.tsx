@@ -25,7 +25,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <div class="navbar bg-blue-500 text-white p-4 sticky top-10 z-50 transition-all" style="top: 0px" id={navbar_identifier}>
+        <div class="navbar bg-white text-gray-50 p-2 sticky top-10 z-50 transition-all border-b-2 shadow-md" style="top: 0px" id={navbar_identifier}>
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -57,7 +57,7 @@ export default function Navbar() {
                 </div>
                 <a class="btn btn-ghost normal-case text-xl hidden lg:block" href={base_url}
                 ><img
-                        src={base_url + "logo.jpg"}
+                        src={base_url + "logo_slim.png"}
                         alt="Logo ToldosMania"
                         loading="lazy"
                         decoding="async"
@@ -66,7 +66,7 @@ export default function Navbar() {
                 >
             </div>
             <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 xl:text-lg">
+                <ul class="menu menu-horizontal px-1 xl:text-lg text-gray-800">
                     <li><a href={base_url}>Início</a></li>
                     <li><a href={base_url + "galeria/toldos"}>Toldos</a></li>
                     <li><a href={base_url + "galeria/coberturas"}>Coberturas</a></li>
