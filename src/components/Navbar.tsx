@@ -43,6 +43,7 @@ export default function Navbar() {
                     >
                         <li><a href={base_url}>Início</a></li>
                         <li><a href={`${base_url}/orcamento`}>Orçamento</a></li>
+                        <li><a href={`${base_url}/blog`}>Blog</a></li>
                         <li><a href={`${base_url}/galeria/toldos`}>Toldos</a></li>
                         <li><a href={`${base_url}/galeria/coberturas`}>Coberturas</a></li>
                         <li><a href={`${base_url}/galeria/telas`}>Telas</a></li>
@@ -64,6 +65,7 @@ export default function Navbar() {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 xl:text-lg text-gray-800">
                     <li><a href={base_url}>Início</a></li>
+                    <li><a href={`${base_url}/blog`}>Blog</a></li>
                     <li><a href={`${base_url}/galeria/toldos`}>Toldos</a></li>
                     <li><a href={`${base_url}/galeria/coberturas`}>Coberturas</a></li>
                     <li><a href={`${base_url}/galeria/telas`}>Telas</a></li>

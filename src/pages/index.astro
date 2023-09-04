@@ -17,13 +17,13 @@ const base_url = import.meta.env.BASE_URL;
             class="hero"
             style={`min-height: 80vh; background-image: url(${base_url}/hero_bg/toldo_sample.webp);`}
         >
-            <div class="hero-overlay bg-opacity-70"></div>
+            <div class="hero-overlay bg-opacity-70 backdrop-blur-sm"></div>
             <div class="hero-content text-center text-white">
                 <div class="max-w-xl">
                     <h1
                         class="mt-16 lg:mt-10 mb-5 text-2xl lg:text-4xl font-bold"
                     >
-                        Somos especializados na fabricação e instalação de
+                        Especializados na fabricação e instalação de
                         toldos e coberturas com design moderno.
                     </h1>
                     <p class="mb-5 text-md lg:text-lg">
@@ -50,9 +50,6 @@ const base_url = import.meta.env.BASE_URL;
             </div>
         </div>
         <section class="bg-white text-gray-800 p-3 py-10" id="produtos">
-            <h1 class="divider text-center text-2xl text-black pb-8">
-                Nossos Produtos
-            </h1>
             <div class="flex flex-wrap justify-center">
                 <a href={`${base_url}/galeria/toldos`}>
                     <ImageButton
@@ -116,7 +113,7 @@ const base_url = import.meta.env.BASE_URL;
         <section
             class="bg-gray-100 text-gray-800 p-3 py-10 flex flex-col flex-wrap justify-center items-center"
         >
-            <h1 class="divider text-2xl text-center pb-10">Sobre nós</h1>
+            <h1 class="divider text-2xl text-center pb-10 break-words">Nossa História</h1>
             <div class="flex flex-row flex-wrap">
                 <Image
                     src={`${base_url}/hero_bg/tela_sample.jpg`}
@@ -151,8 +148,8 @@ const base_url = import.meta.env.BASE_URL;
             </div>
         </section>
         <section class="bg-white text-gray-800 p-3 py-10" id="materiais">
-            <h1 class="divider text-2xl text-bold pb-2">
-                Materiais de Nossos Produtos
+            <h1 class="divider text-2xl text-bold pb-2 break-all">
+                Nossos Materiais
             </h1>
             <div class="flex flex-wrap justify-center">
                 <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
@@ -273,7 +270,7 @@ const base_url = import.meta.env.BASE_URL;
         </section>
         <section class="p-3 py-10 bg-gray-100" id="contato">
             <h1 class="divider text-center text-2xl text-black pb-4">
-                Contato
+                Entre em Contato
             </h1>
             <ContatoRowLarge />
         </section>

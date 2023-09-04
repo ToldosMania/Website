@@ -2,17 +2,10 @@
 import { ViewTransitions } from "astro:transitions";
 import FooterMain from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
-import SectionContato from "../components/SectionContato.astro";
-
-interface Props {
-    title: string;
-    description: string;
-    sections: string[] | null;
-}
 
 const base_url = import.meta.env.BASE_URL;
 
-const { title, description, sections } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -24,14 +17,14 @@ const { title, description, sections } = Astro.props;
         <link rel="icon" type="image/svg+xml" href={`${base_url}/favicon.svg`} />
         <meta name="generator" content={Astro.generator} />
         <ViewTransitions />
-        <title>{title}</title>
+        <title>{frontmatter.title}</title>
     </head>
     <body>
         <Navbar client:only />
         <main class="min-h-screen">
             <div
                 class="hero min-h-screen"
-                style={`min-height: 30vh; background-image: url(${base_url}/hero_bg/tela_sample.jpg);`}
+                style={`min-height: 30vh; background-image: url(${base_url}/hero_bg/vidro_sample.jpg);`}
             >
                 <div class="hero-overlay bg-opacity-70 bg-base-100"></div>
                 <div class="hero-content">
@@ -39,36 +32,23 @@ const { title, description, sections } = Astro.props;
                         <h1
                             class="mt-16 lg:mt-10 text-xl lg:text-2xl font-bold"
                         >
-                            {title}
+                            {frontmatter.title}
                         </h1>
                         <h3 class="text-sm lg:text-lg font-semibold">
-                            {description}
+                            {frontmatter.description}
                         </h3>
-                        {
-                            sections?.map((sect) => (
-                                <a
-                                    href={"#" + sect}
-                                    class="btn btn-info rounded-2xl text-white my-3 mx-1 py-3"
-                                >
-                                    {sect}
-                                </a>
-                            ))
-                        }
+                        <h4 class="text-sm lg:text-lg font-semibold">
+                            Publicado em {frontmatter.pubDate.slice(0,10)}
+                        </h4>
                     </div>
                 </div>
             </div>
-            <slot />
-            <section class="p-3 py-10 bg-gray-100" id="contato">
-                <h1 class="divider text-center text-2xl text-black pb-2">
-                    Contato
-                </h1>
-                <p class="text-center text-lg pb-8 text-black">
-                    Se interessou? Entre em contato!
-                </p>
-                <SectionContato />
+            <section id="blogpost" class="min-h-screen bg-white text-black flex flex-row justify-center p-3 pt-10">
+                <div class="text-black text-md lg:text-lg max-w-screen-md">
+                    <slot />
+                </div>
             </section>
         </main>
-
         <FooterMain />
         <style>
             html {
