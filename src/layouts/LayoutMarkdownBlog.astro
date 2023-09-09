@@ -2,9 +2,9 @@
 import { ViewTransitions } from "astro:transitions";
 import FooterMain from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
+import BolhaWhatsapp from '../components/BolhaWhatsapp.astro';
 
 const base_url = import.meta.env.BASE_URL;
-
 const { frontmatter } = Astro.props;
 ---
 
@@ -21,6 +21,7 @@ const { frontmatter } = Astro.props;
     </head>
     <body>
         <Navbar client:only />
+        <BolhaWhatsapp/>
         <main class="min-h-screen">
             <div
                 class="hero min-h-screen"
