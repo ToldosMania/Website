@@ -31,7 +31,6 @@ export default function FormularioCSR() {
     const [current_product, set_product] = useState("");
 
     useEffect(() => {
-        // Handle the selection change and set the appropriate content
         switch (current_product) {
             case "toldos":
                 set_product_element(ToldosSection());
