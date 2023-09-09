@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 const allPosts = await Astro.glob('./blog/*.md');
 ---
 
-<Layout title="Blog Toldos Mania" description="Aqui você pode ver informações sobre tudo relacionado a Toldos, e nossos produtos.">
+<Layout title="Dicas Toldos Mania" description="Aqui você pode ver informações sobre tudo relacionado a nossos produtos.">
     <div class="min-w-screen">
         <ul class="bg-white min-h-screen flex flex-row flex-wrap text-black justify-center pt-10">
         {allPosts.map((post) => 
