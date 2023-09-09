@@ -66,8 +66,27 @@ export default function Navbar() {
                 <ul class="menu menu-horizontal px-1 xl:text-lg text-gray-800">
                     <li><a href={base_url}>Início</a></li>
                     <li><a href={`${base_url}/dicas`}>Dicas</a></li>
-                    <li><a href={`${base_url}/galeria/toldos`}>Toldos</a></li>
-                    <li><a href={`${base_url}/galeria/coberturas`}>Coberturas</a></li>
+                    <li>
+                        <details>
+                            <summary>
+                               Toldos
+                            </summary>
+                            <ul class="p-2 bg-white text-black">
+                                <li><a href={`${base_url}/galeria/toldos#lona`}>Lona</a></li>
+                                <li><a href={`${base_url}/galeria/toldos#policarbonato`}>Policarbonato</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li><details>
+                            <summary>
+                               Coberturas
+                            </summary>
+                            <ul class="p-2 bg-white text-black">
+                                <li><a href={`${base_url}/galeria/coberturas#lona`}>Lona</a></li>
+                                <li><a href={`${base_url}/galeria/coberturas#policarbonato`}>Policarbonato</a></li>
+                                <li><a href={`${base_url}/galeria/coberturas#zincada`}>Zincada</a></li>
+                            </ul>
+                        </details></li>
                     <li><a href={`${base_url}/galeria/telas`}>Telas</a></li>
                     <li><a href={`${base_url}/galeria/vidros`}>Vidros</a></li>
                     <li><a href={`${base_url}/galeria/cortinas`}>Cortinas</a></li>
