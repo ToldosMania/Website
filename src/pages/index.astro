@@ -6,8 +6,8 @@ import Navbar from "../components/Navbar";
 import ContatoRowLarge from "../components/SectionContato.astro";
 import ImageButton from "../components/ImageButton.astro";
 import { Image } from "astro:assets";
+import { BASE_URL } from "../toldosmania_info.ts" 
 
-const base_url = import.meta.env.BASE_URL;
 ---
 
 <Layout title="ToldosMania">
@@ -15,7 +15,7 @@ const base_url = import.meta.env.BASE_URL;
     <main class="scroll-smooth">
         <div
             class="hero"
-            style={`min-height: 80vh; background-image: url(${base_url}/hero_bg/toldo_sample.webp);`}
+            style={`min-height: 80vh; background-image: url(${BASE_URL}/hero_bg/toldo_sample.webp);`}
         >
             <div class="hero-overlay bg-opacity-70 backdrop-blur-sm"></div>
             <div class="hero-content text-center text-white">
@@ -51,9 +51,9 @@ const base_url = import.meta.env.BASE_URL;
         </div>
         <section class="bg-white text-gray-800 p-3 py-10" id="produtos">
             <div class="flex flex-wrap justify-center">
-                <a href={`${base_url}/galeria/toldos`}>
+                <a href={`${BASE_URL}/galeria/toldos`}>
                     <ImageButton
-                        src={`${base_url}/produtos/toldo.jpg`}
+                        src={`${BASE_URL}/produtos/toldo.jpg`}
                         alt="Toldos"
                         width={384}
                         height={256}
@@ -63,9 +63,9 @@ const base_url = import.meta.env.BASE_URL;
                     </ImageButton>
                 </a>
 
-                <a href={`${base_url}/galeria/coberturas`}>
+                <a href={`${BASE_URL}/galeria/coberturas`}>
                     <ImageButton
-                        src={`${base_url}/produtos/lona.jpg`}
+                        src={`${BASE_URL}/produtos/lona.jpg`}
                         alt="Coberturas"
                         width={384}
                         height={256}
@@ -74,9 +74,9 @@ const base_url = import.meta.env.BASE_URL;
                         Coberturas
                     </ImageButton>
                 </a>
-                <a href={`${base_url}/galeria/telas`}>
+                <a href={`${BASE_URL}/galeria/telas`}>
                     <ImageButton
-                        src={`${base_url}/produtos/tela_sombreamento.jpg`}
+                        src={`${BASE_URL}/produtos/tela_sombreamento.jpg`}
                         alt="Telas de Sombreamento"
                         width={384}
                         height={256}
@@ -85,9 +85,9 @@ const base_url = import.meta.env.BASE_URL;
                         Telas de Sombreamento
                     </ImageButton>
                 </a>
-                <a href={`${base_url}/galeria/vidros`}>
+                <a href={`${BASE_URL}/galeria/vidros`}>
                     <ImageButton
-                        src={`${base_url}/produtos/vidros.jpeg`}
+                        src={`${BASE_URL}/produtos/vidros.jpeg`}
                         alt="Vidros"
                         width={384}
                         height={256}
@@ -97,9 +97,9 @@ const base_url = import.meta.env.BASE_URL;
                     </ImageButton>
                 </a>
 
-                <a href={`${base_url}/galeria/cortinas`}>
+                <a href={`${BASE_URL}/galeria/cortinas`}>
                     <ImageButton
-                        src={`${base_url}/produtos/cortina_rolo.png`}
+                        src={`${BASE_URL}/produtos/cortina_rolo.png`}
                         alt="Cortinas Rolô"
                         width={384}
                         height={256}
@@ -116,7 +116,7 @@ const base_url = import.meta.env.BASE_URL;
             <h1 class="divider text-2xl text-center pb-10 break-words">Nossa História</h1>
             <div class="flex flex-row flex-wrap">
                 <Image
-                    src={`${base_url}/hero_bg/tela_sample.jpg`}
+                    src={`${BASE_URL}/hero_bg/tela_sample.jpg`}
                     alt="Toldos Mania - Exemplo de Toldo"
                     width={256}
                     height={256}
@@ -155,7 +155,7 @@ const base_url = import.meta.env.BASE_URL;
                 <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
                     <figure>
                         <Image
-                            src={`${base_url}/materiais/lona_sample1.png`}
+                            src={`${BASE_URL}/materiais/lona_sample1.png`}
                             alt="Material de Lona"
                             width={224}
                             height={224}
@@ -180,7 +180,7 @@ const base_url = import.meta.env.BASE_URL;
                 <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
                     <figure>
                         <Image
-                            src={`${base_url}/materiais/policarbonato_sample1.png`}
+                            src={`${BASE_URL}/materiais/policarbonato_sample1.png`}
                             alt="Material de Lona"
                             width={224}
                             height={224}
@@ -206,7 +206,7 @@ const base_url = import.meta.env.BASE_URL;
                 <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
                     <figure>
                         <Image
-                            src={`${base_url}/materiais/tela_sombreamento.jpg`}
+                            src={`${BASE_URL}/materiais/tela_sombreamento.jpg`}
                             alt="Material de Lona"
                             width={224}
                             height={224}
@@ -230,7 +230,7 @@ const base_url = import.meta.env.BASE_URL;
                 <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
                     <figure>
                         <Image
-                            src={`${base_url}/materiais/aço_galvanizado.jpg`}
+                            src={`${BASE_URL}/materiais/aço_galvanizado.jpg`}
                             width={224}
                             height={224}
                             format="avif"
@@ -250,7 +250,7 @@ const base_url = import.meta.env.BASE_URL;
                 <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
                     <figure>
                         <Image
-                            src={`${base_url}/materiais/zincado.jpeg`}
+                            src={`${BASE_URL}/materiais/zincado.jpeg`}
                             width={224}
                             height={224}
                             format="avif"

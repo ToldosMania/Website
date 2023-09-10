@@ -2,9 +2,8 @@
 import { ViewTransitions } from "astro:transitions";
 import FooterMain from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
-import BolhaWhatsapp from '../components/BolhaWhatsapp.astro';
+import { BASE_URL } from "../toldosmania_info";
 
-const base_url = import.meta.env.BASE_URL;
 const { frontmatter } = Astro.props;
 ---
 
@@ -14,18 +13,17 @@ const { frontmatter } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href={`${base_url}/favicon.svg`} />
+        <link rel="icon" type="image/svg+xml" href={`${BASE_URL}/favicon.svg`} />
         <meta name="generator" content={Astro.generator} />
         <ViewTransitions />
         <title>{frontmatter.title}</title>
     </head>
     <body>
         <Navbar client:only />
-        <BolhaWhatsapp/>
         <main class="min-h-screen">
             <div
                 class="hero min-h-screen"
-                style={`min-height: 30vh; background-image: url(${base_url}/hero_bg/vidro_sample.jpg);`}
+                style={`min-height: 30vh; background-image: url(${BASE_URL}/hero_bg/vidro_sample.jpg);`}
             >
                 <div class="hero-overlay bg-opacity-70 bg-base-100"></div>
                 <div class="hero-content">

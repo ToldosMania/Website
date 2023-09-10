@@ -1,20 +1,11 @@
 ---
 import Icon from "astro-icon";
 import { Image } from "astro:assets";
-
-const base_url = import.meta.env.BASE_URL;
+import { BASE_URL, CONTATO } from "../toldosmania_info";
 
 const contato_button =
     "btn btn-info btn-outline btn-block text-lg my-3 inline-flex justify-start break-words";
 
-const contato = {
-    facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
-    instagram: "https://www.instagram.com/toldosmania/?ref=badge",
-    phone: "tel:26856588",
-    whatsapp: "https://wa.me/551196201127",
-    email: "mailto:vendas@toldosmania.com.br",
-    maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
-};
 ---
 
 <div class="flex flex-row flex-wrap justify-center">
@@ -31,23 +22,23 @@ const contato = {
     <div
         class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
     >
-        <a class={contato_button} href={contato.whatsapp}>
+        <a class={contato_button} href={CONTATO.whatsapp}>
             <Icon pack="mdi" name="whatsapp" class="w-10 h-10 text-sky-400" />
             1196201127
         </a>
-        <a class={contato_button} href={contato.phone}>
+        <a class={contato_button} href={CONTATO.phone}>
             <Icon pack="mdi" name="phone" class="w-10 h-10 text-sky-400" />
             26856588
         </a>
-        <a class:list={[contato_button, "text-xs lg:text-lg break-words"]} href={contato.email}>
+        <a class:list={[contato_button, "text-xs lg:text-lg break-words"]} href={CONTATO.email}>
             <Icon pack="mdi" name="mail" class="w-10 h-10 text-sky-400" />
             vendas@toldosmania.com.br
         </a>
-        <a class={contato_button} href={contato.instagram}>
+        <a class={contato_button} href={CONTATO.instagram}>
             <Icon pack="mdi" name="instagram" class="w-10 h-10 text-sky-400" />
             @toldosmania
         </a>
-        <a class={contato_button} href={contato.facebook}>
+        <a class={contato_button} href={CONTATO.facebook}>
             <Icon pack="mdi" name="facebook" class="w-10 h-10 text-sky-400" />
             @toldosmania
         </a>
@@ -60,7 +51,7 @@ const contato = {
             Entre em contato!
         </h1>
         <Image
-            src={`${base_url}/cartoes.png`}
+            src={`${BASE_URL}/cartoes.png`}
             alt="Cartões aceitos pela empresa: Hipercard, Diners Club, Visa, e Mastercard."
             width={288}
             height={288}
