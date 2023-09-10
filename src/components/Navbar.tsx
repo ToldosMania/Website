@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks';
-import { BASE_URL } from '../toldosmania_info';
+import { BASE_URL, CONTATO } from '../toldosmania_info';
 
 let prevScrollpos = window.scrollY;
 const navbar_identifier = "navbar_init_main";
@@ -97,7 +97,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="btn btn-ghost" href={`${BASE_URL}/`}>
+                <a class="btn btn-ghost" href={CONTATO.whatsapp}>
                     <div class="flex flex-row text-black text-md font-semibold">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export default function Navbar() {
                         (11) 96201127
                     </div>
                 </a>
-                <a class="btn btn-ghost" href={`${BASE_URL}/`}>
+                <a class="btn btn-ghost" href={CONTATO.phone}>
                     <div class="flex flex-row text-black text-md mx-2 font-semibold">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
