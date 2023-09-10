@@ -8,6 +8,6 @@ image:
 pubDate: 2023-4-9 
 ---
 
-• Na limpeza da lona usar apenas água e sabão neutro ou detergente neutro de boa qualidade. Nunca utilizar produtos químicos agressivos corrosivos, solventes, escova de aço ou objetos perfurantes. Isto causa a eliminação da proteção superficial e danifica o produto.
+- Na limpeza da lona usar apenas água e sabão neutro ou detergente neutro de boa qualidade. Nunca utilizar produtos químicos agressivos corrosivos, solventes, escova de aço ou objetos perfurantes. Isto causa a eliminação da proteção superficial e danifica o produto.
 
-• Por final enxaguar bem com água corrente. Não lavar quando o sol estiver batendo diretamente na cobertura ou toldo.
+- Por final enxaguar bem com água corrente. Não lavar quando o sol estiver batendo diretamente na cobertura ou toldo.
