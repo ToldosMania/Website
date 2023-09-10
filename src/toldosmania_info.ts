@@ -8,4 +8,11 @@ const CONTATO = {
     maps: "https://goo.gl/maps/su5as6pW1eMrF8JH6",
 };
 
+type GalleryItem = {
+    title: string,
+    url: string,
+    description: string
+};
+
 export { BASE_URL, CONTATO };
+export type { GalleryItem };

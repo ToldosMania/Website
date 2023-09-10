@@ -42,13 +42,13 @@ export default function Navbar() {
                     >
                         <li><a href={BASE_URL}>Início</a></li>
                         <li><a href={`${BASE_URL}/dicas`}>Dicas</a></li>
+                        <li><a href={`${BASE_URL}/orcamento`}>Orçamento</a></li>
+                        <li><a href={`${BASE_URL}/#contato`}>Contato</a></li>
                         <li><a href={`${BASE_URL}/galeria/toldos`}>Toldos</a></li>
                         <li><a href={`${BASE_URL}/galeria/coberturas`}>Coberturas</a></li>
                         <li><a href={`${BASE_URL}/galeria/telas`}>Telas</a></li>
                         <li><a href={`${BASE_URL}/galeria/vidros`}>Vidros</a></li>
                         <li><a href={`${BASE_URL}/galeria/cortinas`}>Cortinas</a></li>
-                        <li><a href={`${BASE_URL}/orcamento`}>Orçamento</a></li>
-                        <li><a href={`${BASE_URL}/#contato`}>Contato</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-ghost normal-case text-xl hidden lg:block" href={BASE_URL}
@@ -65,6 +65,11 @@ export default function Navbar() {
                 <ul class="menu menu-horizontal px-1 xl:text-lg text-gray-800">
                     <li><a href={BASE_URL}>Início</a></li>
                     <li><a href={`${BASE_URL}/dicas`}>Dicas</a></li>
+                    <li>
+                        <a
+                            href={`${BASE_URL}/orcamento`}
+                        >Orçamento</a>
+                    </li>
                     <li>
                         <details>
                             <summary>
@@ -86,14 +91,19 @@ export default function Navbar() {
                             <li><a href={`${BASE_URL}/galeria/coberturas#zincada`}>Zincada</a></li>
                         </ul>
                     </details></li>
+                    <li><details>
+                        <summary>
+                            Vidros
+                        </summary>
+                        <ul class="p-2 bg-white text-black">
+                            <li><a href={`${BASE_URL}/galeria/vidros#box`}>Box</a></li>
+                            <li><a href={`${BASE_URL}/galeria/vidros#portas`}>Portas</a></li>
+                            <li><a href={`${BASE_URL}/galeria/vidros#janela_2_folhas`}>Janelas</a></li>
+                        </ul>
+                    </details></li>
+
                     <li><a href={`${BASE_URL}/galeria/telas`}>Telas</a></li>
-                    <li><a href={`${BASE_URL}/galeria/vidros`}>Vidros</a></li>
                     <li><a href={`${BASE_URL}/galeria/cortinas`}>Cortinas</a></li>
-                    <li>
-                        <a
-                            href={`${BASE_URL}/orcamento`}
-                        >Orçamento</a>
-                    </li>
                 </ul>
             </div>
             <div class="navbar-end">

@@ -1,22 +1,39 @@
 ---
 import Layout from "../../layouts/LayoutGaleria.astro";
-import GalleryView from "../../components/GalleryView";
-import oito_mm from "../../json/vidros.json";
+import GallerySection from "../../components/GallerySection.astro";
+import box from "../../json/vidros.json";
+import portas from "../../json/vidros.json";
+import jan_2_folhas from "../../json/vidros.json";
+import jan_4_folhas from "../../json/vidros.json";
 ---
 
 <Layout
     title="Galeria de Vidros"
     description="Veja todas as opções de vidros. Pressione para ver mais"
-    sections={["8mm"]}
+    sections={["box", "portas", "janela_2_folhas", "janela_4_folhas"]}
 >
-    <section class="bg-white text-center text-black px-12 py-10" id="policarbonato">
-        <h1 class="text-2xl text-base-300 divider">8mm</h1>
-        <div class="flex flex-row flex-wrap items-center justify-center">
-            <GalleryView
-                product_type="vidros_8mm"
-                gallery_items={oito_mm}
-                client:load
-            />
-        </div>
-    </section>
+    <GallerySection
+        id="box"
+        title="Box"
+        product_type="vidros_box"
+        gallery_items={box}
+    />
+    <GallerySection
+        id="portas"
+        title="Portas"
+        product_type="vidros_portas"
+        gallery_items={portas}
+    />
+    <GallerySection
+        id="janela_2_folhas"
+        title="Janelas de 2 folhas"
+        product_type="vidros_janela_2_folhas"
+        gallery_items={jan_2_folhas}
+    />
+    <GallerySection
+        id="janela_4_folhas"
+        title="Janelas de 4 folhas"
+        product_type="vidros_janela_4_folhas"
+        gallery_items={jan_4_folhas}
+    />
 </Layout>

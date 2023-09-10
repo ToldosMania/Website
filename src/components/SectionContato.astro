@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { BASE_URL, CONTATO } from "../toldosmania_info";
 
 const contato_button =
-    "btn btn-info btn-outline btn-block text-lg my-3 inline-flex justify-start break-words";
+    "btn btn-primary btn-outline btn-block text-lg my-3 inline-flex justify-start break-words";
 
 ---
 
@@ -23,30 +23,30 @@ const contato_button =
         class="flex flex-col bg-white text-black border shadow-md p-5 my-3 rounded-xl"
     >
         <a class={contato_button} href={CONTATO.whatsapp}>
-            <Icon pack="mdi" name="whatsapp" class="w-10 h-10 text-sky-400" />
+            <Icon pack="mdi" name="whatsapp" class="w-10 h-10 text-primary" />
             1196201127
         </a>
         <a class={contato_button} href={CONTATO.phone}>
-            <Icon pack="mdi" name="phone" class="w-10 h-10 text-sky-400" />
+            <Icon pack="mdi" name="phone" class="w-10 h-10 text-primary" />
             26856588
         </a>
         <a class:list={[contato_button, "text-xs lg:text-lg break-words"]} href={CONTATO.email}>
-            <Icon pack="mdi" name="mail" class="w-10 h-10 text-sky-400" />
+            <Icon pack="mdi" name="mail" class="w-10 h-10 text-primary" />
             vendas@toldosmania.com.br
         </a>
         <a class={contato_button} href={CONTATO.instagram}>
-            <Icon pack="mdi" name="instagram" class="w-10 h-10 text-sky-400" />
+            <Icon pack="mdi" name="instagram" class="w-10 h-10 text-primary" />
             @toldosmania
         </a>
         <a class={contato_button} href={CONTATO.facebook}>
-            <Icon pack="mdi" name="facebook" class="w-10 h-10 text-sky-400" />
+            <Icon pack="mdi" name="facebook" class="w-10 h-10 text-primary" />
             @toldosmania
         </a>
     </div>
     <div
-        class="flex flex-col bg-white items-left text-black border shadow-md p-5 my-3 rounded-xl"
+        class="flex flex-col bg-primary-content items-left text-black border shadow-md p-5 my-3 rounded-xl"
     >
-        <h1 class="text-center text-2xl text-sky-400">
+        <h1 class="text-center text-2xl text-primary-focus">
             Aceitamos seu cartão.<br />
             Entre em contato!
         </h1>
@@ -57,6 +57,6 @@ const contato_button =
             height={288}
             class="h-72 w-72 items-center"
         />
-        <h1 class="text-center text-2xl text-sky-400">Também aceitamos Pix</h1>
+        <h1 class="text-center text-2xl text-primary-focus">Também aceitamos Pix</h1>
     </div>
 </div>

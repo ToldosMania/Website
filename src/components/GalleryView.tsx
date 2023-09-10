@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from 'nanoid';
+import type { GalleryItem } from "../toldosmania_info";
 import { BASE_URL } from "../toldosmania_info";
 
 const close_gallery = (id: string) => {
@@ -10,14 +11,8 @@ const show_gallery = (id: string) => {
     document.getElementById(id)?.classList.remove("hidden");
 }
 
-type GalleryItem = {
-    title: string,
-    url: string,
-    description: string
-};
-
 export default function GalleryView(props: { product_type: string, gallery_items: GalleryItem[] }) {
-    const id_gallery_viewer = "gallery_viewer_" + uuidv4();
+    const id_gallery_viewer = `gallery_viewer_${nanoid()}`;
     const id_fullscreen_gallery_photo = "current_selected_photo";
 
     const [selected_image, set_selected_image] = useState("");
