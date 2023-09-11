@@ -55,6 +55,12 @@ const { title, description, sections } = Astro.props;
         </div>
       </div>
       <slot />
+      <template id="zoom-template">
+        <div class="absolute inset-0">
+          <section class="facebook-main" data-zoom-container></section>
+          <aside class="bg-red-50 text-2xl">CUM</aside>
+        </div>
+      </template>
       <section class="bg-base-200 p-3 py-10" id="contato">
         <h1 class="divider pb-2 text-center text-2xl text-black">Contato</h1>
         <p class="pb-8 text-center text-lg text-black">
@@ -63,8 +69,16 @@ const { title, description, sections } = Astro.props;
         <SectionContato />
       </section>
     </main>
-
     <FooterMain />
+
+    <script>
+      import mediumZoom from "medium-zoom";
+
+      mediumZoom(".zoomable-item", {
+        template: "#zoom-template",
+      });
+    </script>
+
     <style>
       html {
         scroll-behavior: smooth;
