@@ -1,11 +1,9 @@
-FROM node:lts-slim AS build
+FROM docker.io/oven/bun:latest
 VOLUME ["/app"]
 WORKDIR /deps
 COPY package*.json ./
-COPY pnpm*.yaml ./
-
-RUN corepack enable pnpm && \
-    pnpm install --frozen-lockfile
+COPY bun.lockb ./
+RUN bun install --frozen-lockfile
 
 WORKDIR /app
-CMD ["pnpm","run","dev","--host"]
+CMD ["bun","--bun","run","dev","--host"]
