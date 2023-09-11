@@ -3,277 +3,272 @@ import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
-import ContatoRowLarge from "../components/SectionContato.astro";
+import SectionContato from "../components/SectionContato.astro";
 import ImageButton from "../components/ImageButton.astro";
 import { Image } from "astro:assets";
-import { BASE_URL } from "../toldosmania_info.ts" 
-
+import { BASE_URL } from "../toldosmania_info.ts";
 ---
 
 <Layout title="ToldosMania">
-    <Navbar client:only />
-    <main class="scroll-smooth">
-        <div
-            class="hero"
-            style={`min-height: 80vh; background-image: url(${BASE_URL}/hero_bg/toldo_sample.webp);`}
-        >
-            <div class="hero-overlay bg-opacity-70 backdrop-blur-sm"></div>
-            <div class="hero-content text-center text-white">
-                <div class="max-w-xl">
-                    <h1
-                        class="mt-16 lg:mt-10 mb-5 text-2xl lg:text-4xl font-bold"
-                    >
-                        Especializados na fabricação e instalação de
-                        toldos e coberturas com design moderno.
-                    </h1>
-                    <p class="mb-5 text-md lg:text-lg">
-                        Compromissados em satisfazer nossos clientes e
-                        fornecedores, garantindo a qualidade e durabilidade de
-                        nossos produtos.
-                    </p>
-                    <a
-                        href="#produtos"
-                        class="btn btn-info xl:btn-lg m-3 sm:btn-md border-b-4 border-blue-200 bg-white hover:bg-gray-300 hover:border-gray-300 text-gray-800"
-                        >Veja Nossos Produtos</a
-                    >
-                    <a
-                        href="#contato"
-                        class="btn btn-info text-white m-3 xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
-                        >Contato
-                        <Icon
-                            pack="mdi"
-                            name="arrow-right"
-                            style="width: 30px; height: 30px"
-                        /></a
-                    >
-                </div>
-            </div>
+  <Navbar client:only />
+  <main class="scroll-smooth">
+    <div
+      class="hero"
+      style={`min-height: 80vh; background-image: url(${BASE_URL}/hero_bg/toldo_sample.webp);`}
+    >
+      <div class="hero-overlay bg-opacity-70 backdrop-blur-sm"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-xl">
+          <h1 class="mb-5 mt-16 text-2xl font-bold lg:mt-10 lg:text-4xl">
+            Especializados na fabricação e instalação de toldos e coberturas com
+            design moderno.
+          </h1>
+          <p class="text-md mb-5 lg:text-lg">
+            Compromissados em satisfazer nossos clientes e fornecedores,
+            garantindo a qualidade e durabilidade de nossos produtos.
+          </p>
+          <a
+            href="#produtos"
+            class="btn btn-secondary m-3 border-b-4 border-secondary-focus text-secondary-content sm:btn-md xl:btn-lg hover:border-secondary-focus"
+            >Veja Nossos Produtos</a
+          >
+          <a
+            href="#contato"
+            class="btn btn-primary m-3 border-b-4 border-primary-focus text-white sm:btn-md xl:btn-lg hover:border-primary-focus hover:bg-primary-focus"
+            >Contato
+            <Icon
+              pack="mdi"
+              name="arrow-right"
+              style="width: 30px; height: 30px"
+            /></a
+          >
         </div>
-        <section class="bg-white text-gray-800 p-3 py-10" id="produtos">
-            <div class="flex flex-wrap justify-center">
-                <a href={`${BASE_URL}/galeria/toldos`}>
-                    <ImageButton
-                        src={`${BASE_URL}/produtos/toldo.jpg`}
-                        alt="Toldos"
-                        width={384}
-                        height={256}
-                        classlist="w-96 h-64"
-                    >
-                        Toldos
-                    </ImageButton>
-                </a>
+      </div>
+    </div>
+    <section class="bg-base-100 p-3 py-10" id="produtos">
+      <div class="flex flex-wrap justify-center">
+        <a href={`${BASE_URL}/galeria/toldos`}>
+          <ImageButton
+            src={`${BASE_URL}/produtos/toldo.jpg`}
+            alt="Toldos"
+            width={384}
+            height={256}
+            classlist="w-96 h-64"
+          >
+            Toldos
+          </ImageButton>
+        </a>
 
-                <a href={`${BASE_URL}/galeria/coberturas`}>
-                    <ImageButton
-                        src={`${BASE_URL}/produtos/lona.jpg`}
-                        alt="Coberturas"
-                        width={384}
-                        height={256}
-                        classlist="w-96 h-64"
-                    >
-                        Coberturas
-                    </ImageButton>
-                </a>
-                <a href={`${BASE_URL}/galeria/telas`}>
-                    <ImageButton
-                        src={`${BASE_URL}/produtos/tela_sombreamento.jpg`}
-                        alt="Telas de Sombreamento"
-                        width={384}
-                        height={256}
-                        classlist="w-96 h-64"
-                    >
-                        Telas de Sombreamento
-                    </ImageButton>
-                </a>
-                <a href={`${BASE_URL}/galeria/vidros`}>
-                    <ImageButton
-                        src={`${BASE_URL}/produtos/vidros.jpeg`}
-                        alt="Vidros"
-                        width={384}
-                        height={256}
-                        classlist="w-96 h-64"
-                    >
-                        Vidros
-                    </ImageButton>
-                </a>
+        <a href={`${BASE_URL}/galeria/coberturas`}>
+          <ImageButton
+            src={`${BASE_URL}/produtos/lona.jpg`}
+            alt="Coberturas"
+            width={384}
+            height={256}
+            classlist="w-96 h-64"
+          >
+            Coberturas
+          </ImageButton>
+        </a>
+        <a href={`${BASE_URL}/galeria/telas`}>
+          <ImageButton
+            src={`${BASE_URL}/produtos/tela_sombreamento.jpg`}
+            alt="Telas de Sombreamento"
+            width={384}
+            height={256}
+            classlist="w-96 h-64"
+          >
+            Telas de Sombreamento
+          </ImageButton>
+        </a>
+        <a href={`${BASE_URL}/galeria/vidros`}>
+          <ImageButton
+            src={`${BASE_URL}/produtos/vidros.jpeg`}
+            alt="Vidros"
+            width={384}
+            height={256}
+            classlist="w-96 h-64"
+          >
+            Vidros
+          </ImageButton>
+        </a>
 
-                <a href={`${BASE_URL}/galeria/cortinas`}>
-                    <ImageButton
-                        src={`${BASE_URL}/produtos/cortina_rolo.png`}
-                        alt="Cortinas Rolô"
-                        width={384}
-                        height={256}
-                        classlist="w-96 h-64"
-                    >
-                        Cortinas Rolô
-                    </ImageButton>
-                </a>
-            </div>
-        </section>
-        <section
-            class="bg-gray-100 text-gray-800 p-3 py-10 flex flex-col flex-wrap justify-center items-center"
-        >
-            <h1 class="divider text-2xl text-center pb-10 break-words">Nossa História</h1>
-            <div class="flex flex-row flex-wrap">
-                <Image
-                    src={`${BASE_URL}/hero_bg/tela_sample.jpg`}
-                    alt="Toldos Mania - Exemplo de Toldo"
-                    width={256}
-                    height={256}
-                    class="rounded-2xl w-max h-64 lg:h-96"
-                    format="avif"
-                    quality="mid"
-                />
-                <div class="flex flex-col m-3 mx-6">
-                    <p class="max-w-md">
-                        Fundada em 2005, a ToldosMania é uma empresa dedicada à
-                        fabricação e instalação de toldos e coberturas. Ao longo
-                        dos anos, estabelecemos nossa presença no mercado por
-                        meio do desenvolvimento de produtos de design
-                        contemporâneo, priorizando a satisfação das necessidades
-                        de nossos clientes. Nossa reputação é construída com
-                        base em nosso compromisso sólido com clientes e
-                        fornecedores, refletindo a confiança que depositam em
-                        nossa empresa. Priorizamos a excelência em todas as
-                        etapas do processo de fabricação, garantindo a
-                        durabilidade e a plena satisfação daqueles que escolhem
-                        nossos produtos.
-                    </p>
-                    <a
-                        href="#contato"
-                        class="btn btn-info text-white mx-6 m-4 xl:btn-lg sm:btn-md border-b-4 border-blue-400 hover:bg-blue-400 hover:border-blue-400"
-                        >Entre em Contato
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section class="bg-white text-gray-800 p-3 py-10" id="materiais">
-            <h1 class="divider text-2xl text-bold pb-2 break-all">
-                Nossos Materiais
-            </h1>
-            <div class="flex flex-wrap justify-center">
-                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
-                    <figure>
-                        <Image
-                            src={`${BASE_URL}/materiais/lona_sample1.png`}
-                            alt="Material de Lona"
-                            width={224}
-                            height={224}
-                            format="avif"
-                            quality="high"
-                            class="h-56 w-1/2"
-                        />
-                    </figure>
+        <a href={`${BASE_URL}/galeria/cortinas`}>
+          <ImageButton
+            src={`${BASE_URL}/produtos/cortina_rolo.png`}
+            alt="Cortinas Rolô"
+            width={384}
+            height={256}
+            classlist="w-96 h-64"
+          >
+            Cortinas Rolô
+          </ImageButton>
+        </a>
+      </div>
+    </section>
+    <section
+      class="flex flex-col flex-wrap items-center justify-center bg-base-200 p-3 py-10 text-base-content"
+    >
+      <h1
+        class="divider break-words pb-10 text-center text-2xl text-base-content"
+      >
+        Nossa História
+      </h1>
+      <div class="flex flex-row flex-wrap">
+        <Image
+          src={`${BASE_URL}/hero_bg/tela_sample.jpg`}
+          alt="Toldos Mania - Exemplo de Toldo"
+          width={256}
+          height={256}
+          class="h-64 w-max rounded-2xl lg:h-96"
+          format="avif"
+          quality="mid"
+        />
+        <div class="m-3 mx-6 flex flex-col text-base-content">
+          <p class="max-w-md">
+            Fundada em 2005, a ToldosMania é uma empresa dedicada à fabricação e
+            instalação de toldos e coberturas. Ao longo dos anos, estabelecemos
+            nossa presença no mercado por meio do desenvolvimento de produtos de
+            design contemporâneo, priorizando a satisfação das necessidades de
+            nossos clientes. Nossa reputação é construída com base em nosso
+            compromisso sólido com clientes e fornecedores, refletindo a
+            confiança que depositam em nossa empresa. Priorizamos a excelência
+            em todas as etapas do processo de fabricação, garantindo a
+            durabilidade e a plena satisfação daqueles que escolhem nossos
+            produtos.
+          </p>
+          <a
+            href="#contato"
+            class="btn btn-primary m-4 mx-6 border-b-4 border-primary-focus text-primary-content sm:btn-md xl:btn-lg hover:border-primary-focus hover:bg-primary-focus"
+            >Entre em Contato
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="bg-base-100 p-3 py-10 text-base-content" id="materiais">
+      <h1 class="text-bold divider break-all pb-2 text-2xl">
+        Nossos Materiais
+      </h1>
+      <div class="flex flex-wrap justify-center">
+        <div class="card m-5 w-96 bg-base-200 shadow-xl">
+          <figure>
+            <Image
+              src={`${BASE_URL}/materiais/lona_sample1.png`}
+              alt="Material de Lona"
+              width={224}
+              height={224}
+              format="avif"
+              quality="high"
+              class="h-56 w-1/2"
+            />
+          </figure>
 
-                    <div class="card-body">
-                        <h2 class="card-title text-center">Lona</h2>
-                        <p>
-                            O produto é aditivado para resistir aos raios UV
-                            dando maior durabilidade, e garantindo cores vivas
-                            por mais tempo. Auto-extinguível: não propaga o fogo
-                            desde que eliminada sua fonte. Antioxidante: promove
-                            maior durabilidade e reduz o efeito de oxidação.
-                            Antifungo: reduz a ação dos fungos no toldo.
-                        </p>
-                    </div>
-                </div>
-                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
-                    <figure>
-                        <Image
-                            src={`${BASE_URL}/materiais/policarbonato_sample1.png`}
-                            alt="Material de Lona"
-                            width={224}
-                            height={224}
-                            format="avif"
-                            quality="high"
-                            class="h-56"
-                        />
-                    </figure>
+          <div class="card-body">
+            <h2 class="card-title text-center">Lona</h2>
+            <p>
+              O produto é aditivado para resistir aos raios UV dando maior
+              durabilidade, e garantindo cores vivas por mais tempo.
+              Auto-extinguível: não propaga o fogo desde que eliminada sua
+              fonte. Antioxidante: promove maior durabilidade e reduz o efeito
+              de oxidação. Antifungo: reduz a ação dos fungos no toldo.
+            </p>
+          </div>
+        </div>
+        <div class="card m-5 w-96 bg-base-200 shadow-xl">
+          <figure>
+            <Image
+              src={`${BASE_URL}/materiais/policarbonato_sample1.png`}
+              alt="Material de Lona"
+              width={224}
+              height={224}
+              format="avif"
+              quality="high"
+              class="h-56"
+            />
+          </figure>
 
-                    <div class="card-body">
-                        <h2 class="card-title">Policarbonato</h2>
-                        <p>
-                            Placa de policarbonato compacta 3mm ou alveolar 6mm
-                            recebe proteção UV na parte superior que será
-                            exposta ao sol, garantindo assim maior durabilidade
-                            e evitando o ressecamento, amarelecimento e
-                            descoloração da chapa. Placa compacta é maciça
-                            lembra o vidro liso à placa alveolar lembra o vidro
-                            canelado.
-                        </p>
-                    </div>
-                </div>
-                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
-                    <figure>
-                        <Image
-                            src={`${BASE_URL}/materiais/tela_sombreamento.jpg`}
-                            alt="Material de Lona"
-                            width={224}
-                            height={224}
-                            format="avif"
-                            quality="high"
-                            class="h-56"
-                        />
-                    </figure>
+          <div class="card-body">
+            <h2 class="card-title">Policarbonato</h2>
+            <p>
+              Placa de policarbonato compacta 3mm ou alveolar 6mm recebe
+              proteção UV na parte superior que será exposta ao sol, garantindo
+              assim maior durabilidade e evitando o ressecamento, amarelecimento
+              e descoloração da chapa. Placa compacta é maciça lembra o vidro
+              liso à placa alveolar lembra o vidro canelado.
+            </p>
+          </div>
+        </div>
+        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
+          <figure>
+            <Image
+              src={`${BASE_URL}/materiais/tela_sombreamento.jpg`}
+              alt="Material de Lona"
+              width={224}
+              height={224}
+              format="avif"
+              quality="high"
+              class="h-56"
+            />
+          </figure>
 
-                    <div class="card-body">
-                        <h2 class="card-title">Tela de Sombreamento</h2>
-                        <p>
-                            Confeccionada em polietileno de alta densidade e com
-                            aditivos especiais que proporcionam caracteríscas
-                            importantes as telas com proteção contra raios ultra
-                            violetas e redução da luminocidade solar. Produto
-                            passa água, não é impermeabilizado.
-                        </p>
-                    </div>
-                </div>
-                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
-                    <figure>
-                        <Image
-                            src={`${BASE_URL}/materiais/aço_galvanizado.jpg`}
-                            width={224}
-                            height={224}
-                            format="avif"
-                            quality="high"
-                            alt="Material de Lona"
-                            class="h-56"
-                        />
-                    </figure>
-                    <div class="card-body">
-                        <h2 class="card-title">Aço Galvanizado</h2>
-                        <p>
-                            Para confecção de nossas estruturas utilizamos tubos
-                            de aço galvanizado.
-                        </p>
-                    </div>
-                </div>
-                <div class="card w-96 bg-gray-100 text-black shadow-xl m-5">
-                    <figure>
-                        <Image
-                            src={`${BASE_URL}/materiais/zincado.jpeg`}
-                            width={224}
-                            height={224}
-                            format="avif"
-                            quality="high"
-                            alt="Material de Zinco"
-                            class="h-56"
-                        />
-                    </figure>
-                    <div class="card-body">
-                        <h2 class="card-title">Zincado</h2>
-                        <p>
-                            Para confecção de nossas estruturas utilizamos zinco (PLACEHOLDER).
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="p-3 py-10 bg-gray-100" id="contato">
-            <h1 class="divider text-center text-2xl text-black pb-4">
-                Entre em Contato
-            </h1>
-            <ContatoRowLarge />
-        </section>
-    </main>
-    <Footer />
+          <div class="card-body">
+            <h2 class="card-title">Tela de Sombreamento</h2>
+            <p>
+              Confeccionada em polietileno de alta densidade e com aditivos
+              especiais que proporcionam caracteríscas importantes as telas com
+              proteção contra raios ultra violetas e redução da luminocidade
+              solar. Produto passa água, não é impermeabilizado.
+            </p>
+          </div>
+        </div>
+        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
+          <figure>
+            <Image
+              src={`${BASE_URL}/materiais/aço_galvanizado.jpg`}
+              width={224}
+              height={224}
+              format="avif"
+              quality="high"
+              alt="Material de Lona"
+              class="h-56"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Aço Galvanizado</h2>
+            <p>
+              Para confecção de nossas estruturas utilizamos tubos de aço
+              galvanizado.
+            </p>
+          </div>
+        </div>
+        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
+          <figure>
+            <Image
+              src={`${BASE_URL}/materiais/zincado.jpeg`}
+              width={224}
+              height={224}
+              format="avif"
+              quality="high"
+              alt="Material de Zinco"
+              class="h-56"
+            />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">Zincado</h2>
+            <p>
+              Para confecção de nossas estruturas utilizamos zinco
+              (PLACEHOLDER).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-base-100 p-3 py-10" id="contato">
+      <h1 class="divider pb-4 text-center text-2xl text-base-content">
+        Entre em Contato
+      </h1>
+      <SectionContato />
+    </section>
+  </main>
+  <Footer />
 </Layout>

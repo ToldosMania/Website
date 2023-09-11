@@ -20,8 +20,8 @@ export default function GalleryView(props: { product_type: string, gallery_items
     return (
         <>
             <div id={id_gallery_viewer} style="z-index: 9998;" class="bg-gray-800 bg-opacity-75 w-full h-full inset-0 fixed hidden">
-                <div class="flex justify-end ">
-                    <div class="bg-white rounded-2xl flex flex-row flex-wrap" style="z-index: 9999;">
+                <div class="flex justify-end">
+                    <div class="bg-base-100 rounded-2xl flex flex-row flex-wrap" style="z-index: 9999;">
                         <a onClick={() => {
                             document.getElementById(id_gallery_viewer)?.requestFullscreen();
                         }}>
@@ -33,10 +33,10 @@ export default function GalleryView(props: { product_type: string, gallery_items
                     </div>
                 </div>
                 <div class="flex flex-row justify-center items-center" style="height: 70vh;">
-                    <div class="flex flex-col justify-center items-center bg-white max-w-md rounded-xl p-10">
+                    <div class="flex flex-col justify-center items-center bg-base-100 max-w-md rounded-xl p-10">
                         <img src={`${BASE_URL}/gallery/${selected_image}`} alt={current_item.title} class="scale-110" />
-                        <p class="text-xl lg:text-2xl py-3 mt-3">{current_item.title}</p>
-                        <p class="text-md lg:text-lg text-left">{current_item.description}</p>
+                        <p class="text-xl text-base-content lg:text-2xl py-3 mt-3">{current_item.title}</p>
+                        <p class="text-md text-base-content lg:text-lg text-left">{current_item.description}</p>
                     </div>
                 </div>
             </div>
@@ -50,6 +50,7 @@ export default function GalleryView(props: { product_type: string, gallery_items
                     }}
                     src={`${BASE_URL}/gallery/${props.product_type}/${item.url}`}
                     alt={item.title}
+                    for={id_gallery_viewer}
                     decoding="async"
                     loading="lazy"
                     class="rounded-2xl w-full h-full lg:w-1/6 lg:h-1/6 transition-transform ease-in-out hover:scale-105 m-3" />

@@ -1,35 +1,43 @@
 ---
-import Layout from '../layouts/LayoutSubpage.astro'
-import { Image } from 'astro:assets';
+import Layout from "../layouts/LayoutSubpage.astro";
+import { Image } from "astro:assets";
 
-const allPosts = await Astro.glob('./blog/*.md');
+const allPosts = await Astro.glob("./blog/*.md");
 ---
 
-<Layout title="Dicas Toldos Mania" description="Aqui você pode ver informações sobre tudo relacionado a nossos produtos.">
-    <div class="min-w-screen">
-        <ul class="bg-primary-content min-h-screen flex flex-row flex-wrap text-black justify-center pt-10">
-        {allPosts.map((post) => 
-            <li>
-                <div class="card bg-white text-black w-96 shadow-xl max-h-96 m-3">
-                    <figure>
-                        <a href={post.url}>
-                            <Image
-                                src={post.frontmatter.image.url}
-                                alt={post.frontmatter.image.alt}
-                                width={300}
-                                height={300}
-                                format="avif"
-                                quality="mid"
-                                class="object-cover max-h-32"
-                            />
-                        </a>                    
-                    </figure>
-                    <a href={post.url} class="card-body">
-                        <h2 class="card-title">{post.frontmatter.title}</h2>
-                        <p>{post.frontmatter.description}</p>
-                    </a>
-                </div>
-            </li>)}
-        </ul>
-    </div>
+<Layout
+  title="Dicas Toldos Mania"
+  description="Aqui você pode ver informações sobre tudo relacionado a nossos produtos."
+>
+  <div class="min-w-screen">
+    <ul
+      class="flex min-h-screen flex-row flex-wrap justify-center bg-base-100 pt-10 text-base-content"
+    >
+      {
+        allPosts.map((post) => (
+          <li>
+            <div class="card m-3 max-h-96 w-96 bg-base-200 text-base-content shadow-xl">
+              <figure>
+                <a href={post.url}>
+                  <Image
+                    src={post.frontmatter.image.url}
+                    alt={post.frontmatter.image.alt}
+                    width={300}
+                    height={300}
+                    format="avif"
+                    quality="mid"
+                    class="max-h-32 object-cover"
+                  />
+                </a>
+              </figure>
+              <a href={post.url} class="card-body">
+                <h2 class="card-title">{post.frontmatter.title}</h2>
+                <p>{post.frontmatter.description}</p>
+              </a>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </Layout>

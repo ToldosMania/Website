@@ -2,50 +2,65 @@
 import { Image } from "astro:assets";
 import Icon from "astro-icon";
 import { BASE_URL, CONTATO } from "../toldosmania_info";
-
 ---
 
-<footer class="footer p-10 bg-primary text-white">
-    <div>
-        <a href={BASE_URL}>
-            <Image
-                src={`${BASE_URL}/logo.jpg`}
-                width={256}
-                height={96}
-                alt="Logo ToldosMania"
-                class="object-scale-down h-24 w-64 rounded-xl border-4 bg-white border-white"
-            />
-        </a>
-        <p>
-            ToldosMania<br />Satisfazendo nossos clientes e fornecedores desde
-            2005
-        </p>
-        <p>
-            CopyRight © ToldosMania - 2005/2023
-        </p>
-    </div>
-    <div>
-        <span class="footer-title">Produtos</span>
-        <a class="link link-hover" href={`${BASE_URL}/galeria/toldos`}>Toldos</a>
-        <a class="link link-hover" href={`${BASE_URL}/galeria/coberturas`}>Coberturas</a>
-        <a class="link link-hover" href={`${BASE_URL}/galeria/telas`}>Telas</a>
-        <a class="link link-hover" href={`${BASE_URL}/galeria/vidros`}>Vidros</a>
-        <a class="link link-hover" href={`${BASE_URL}/galeria/cortinas`}>Cortinas Rolô</a>
-    </div>
-    <div>
-        <span class="footer-title">CONTATO</span>
-        <a href={CONTATO.whatsapp} class="link link-hover inline-flex flex-row flex-wrap items-center">
-            <Icon pack="mdi" name="whatsapp" class="w-8 h-8 text-white" />
-            1196201127
-        </a>
-        <a href={CONTATO.phone} class="link link-hover inline-flex flex-row flex-wrap items-center">
-            <Icon pack="mdi" name="phone" class="w-8 h-8 text-white" />
-            26856588</a>
-        <a href={CONTATO.email} class="link link-hover inline-flex flex-row flex-wrap items-center break-words">
-            <Icon pack="mdi" name="email" class="w-8 h-8 text-white" />
-            vendas@toldosmania.com.br</a>
-        <a href={CONTATO.maps} class="link link-hover inline-flex flex-row flex-wrap items-center break-words">
-            <Icon pack="mdi" name="map" class="w-8 h-8 text-white" />
-            R. Profº Vasconcelos Sarmento, 170 - Vila Ré /Penha - São Paulo</a>
-    </div>
+<footer class="footer bg-base-300 p-10 text-base-content">
+  <div>
+    <a href={BASE_URL}>
+      <Image
+        src={`${BASE_URL}/logo.jpg`}
+        width={256}
+        height={96}
+        alt="Logo ToldosMania"
+        class="h-24 w-64 rounded-xl border-4 border-white bg-white object-scale-down"
+      />
+    </a>
+    <p>
+      ToldosMania<br />Satisfazendo nossos clientes e fornecedores desde 2005
+    </p>
+    <p>CopyRight © ToldosMania - 2005/2023</p>
+  </div>
+  <div>
+    <span class="footer-title">Produtos</span>
+    <a class="link-hover link" href={`${BASE_URL}/galeria/toldos`}>Toldos</a>
+    <a class="link-hover link" href={`${BASE_URL}/galeria/coberturas`}
+      >Coberturas</a
+    >
+    <a class="link-hover link" href={`${BASE_URL}/galeria/telas`}>Telas</a>
+    <a class="link-hover link" href={`${BASE_URL}/galeria/vidros`}>Vidros</a>
+    <a class="link-hover link" href={`${BASE_URL}/galeria/cortinas`}
+      >Cortinas Rolô</a
+    >
+  </div>
+  <div>
+    <span class="footer-title">CONTATO</span>
+    <a
+      href={CONTATO.whatsapp}
+      class="link-hover link inline-flex flex-row flex-wrap items-center"
+    >
+      <Icon pack="mdi" name="whatsapp" class="h-8 w-8" />
+       1196201127
+    </a>
+    <a
+      href={CONTATO.phone}
+      class="link-hover link inline-flex flex-row flex-wrap items-center"
+    >
+      <Icon pack="mdi" name="phone" class="h-8 w-8" />
+       26856588</a
+    >
+    <a
+      href={CONTATO.email}
+      class="link-hover link inline-flex flex-row flex-wrap items-center break-words"
+    >
+      <Icon pack="mdi" name="email" class="h-8 w-8" />
+       vendas@toldosmania.com.br</a
+    >
+    <a
+      href={CONTATO.maps}
+      class="link-hover link inline-flex flex-row flex-wrap items-center break-words"
+    >
+      <Icon pack="mdi" name="map" class="h-8 w-8" />
+       R. Profº Vasconcelos Sarmento, 170</a
+    >
+  </div>
 </footer>

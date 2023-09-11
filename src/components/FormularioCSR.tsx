@@ -1,10 +1,10 @@
 import type { ComponentChildren } from "preact";
 import type { ChangeEvent } from "preact/compat";
 import { useEffect, useState } from "preact/hooks";
-import  * as forminfo from "../formulario_typing";
+import * as forminfo from "../formulario_typing";
 
-const VALID_PRODUTOS: string[] = ["toldos","coberturas","telas","vidros","cortina rolô"];
-const INPUT_FIELD_STYLE = "input input-bordered input-primary input-md bg-primary-content join-item";
+const VALID_PRODUTOS: string[] = ["toldos", "coberturas", "telas", "vidros", "cortina rolô"];
+const INPUT_FIELD_STYLE = "input input-bordered input-primary input-md bg-base-300 text-base-content join-item";
 
 let answers = {
     userinfo: {} as forminfo.UserInfo,
@@ -18,7 +18,7 @@ let answers = {
 const InputField = (props: { labelText: string, labelId: string, children: ComponentChildren }) => {
     return (
         <div class="flex flex-col m-3 w-full max-w-xl">
-            <label htmlFor={props.labelId}>{props.labelText}</label>
+            <label htmlFor={props.labelId} class="text-base-content">{props.labelText}</label>
             {props.children}
         </div>
     );
@@ -27,7 +27,7 @@ const InputField = (props: { labelText: string, labelId: string, children: Compo
 const RadioContainer = (props: { labelText: string, labelId: string, children: ComponentChildren }) => {
     return (
         <InputField labelText={props.labelText} labelId={props.labelId}>
-            <div class="border border-primary-focus bg-primary-content rounded-xl p-3">
+            <div class="border border-primary-focus bg-base-300 rounded-xl p-3">
                 {props.children}
             </div>
         </InputField>
@@ -38,7 +38,7 @@ const RadioForm = (props: { title: string, children: ComponentChildren }) => {
     return (
         <div class="form-control">
             <label class="label cursor-pointer">
-                <span class="label-text text-black">{props.title}</span>
+                <span class="label-text text-base-content">{props.title}</span>
                 {props.children}
             </label>
         </div>
@@ -67,7 +67,7 @@ export default function FormularioCSR() {
     }, [current_product]);
 
     return (
-        <div class="p-3 py-10 bg-primary-content text-black min-h-screen flex flex-wrap flex-col items-center">
+        <div class="p-3 py-10 bg-base-100 text-base-content min-h-screen flex flex-wrap flex-col items-center">
             <InputField labelText="Nome Completo" labelId="nome_completo">
                 <input
                     id="nome_completo"
@@ -104,7 +104,7 @@ export default function FormularioCSR() {
                 <label htmlFor="produto_selected">Produto</label>
                 <select
                     id="produto_selected"
-                    class="select select-primary w-full bg-primary-content font-normal uppercase"
+                    class="select select-primary w-full bg-base-300 text-base-content font-normal uppercase"
                     value={current_product}
                     onChange={(e: ChangeEvent<HTMLSelectElement>) => set_product(e.currentTarget.value)}
                 >
@@ -148,7 +148,7 @@ const ToldosSection = (<>
             <input
                 type="radio"
                 name="tipo_toldo"
-                class="radio checked:bg-blue-500"
+                class="radio checked:bg-primary-focus"
                 checked={answers.toldo.tipo === forminfo.TipoToldo.Fixo}
                 onChange={() => answers.toldo.tipo = forminfo.TipoToldo.Fixo}
             />
@@ -157,7 +157,7 @@ const ToldosSection = (<>
             <input
                 type="radio"
                 name="tipo_toldo"
-                class="radio checked:bg-blue-500"
+                class="radio checked:bg-primary-focus"
                 checked={answers.toldo.tipo === forminfo.TipoToldo.Enrolavel}
                 onChange={() => answers.toldo.tipo = forminfo.TipoToldo.Enrolavel}
             />
@@ -205,7 +205,7 @@ const ToldosSection = (<>
             />
         </RadioForm>
     </RadioContainer>
-    
+
     <InputField labelId="projecao_toldo" labelText="Projeção">
         <input
             id="projecao_toldo"

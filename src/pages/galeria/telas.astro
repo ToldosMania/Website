@@ -5,17 +5,13 @@ import telas from "../../json/telas.json";
 ---
 
 <Layout
-    title="Galeria de Telas de Sombreamento"
-    description="Veja todas as opções de telas. Pressione para ver mais"
-    sections={null}
+  title="Galeria de Telas de Sombreamento"
+  description="Veja todas as opções de telas. Pressione para ver mais"
+  sections={null}
 >
-    <section class="bg-white text-center text-black px-12 py-10">
-        <div class="flex flex-row flex-wrap items-center justify-center">
-            <GalleryView
-                product_type="telas"
-                gallery_items={telas}
-                client:load
-            />
-        </div>
-    </section>
+  <section class="bg-base-100 px-12 py-10 text-center text-base-content">
+    <div class="flex flex-row flex-wrap items-center justify-center">
+      <GalleryView product_type="telas" gallery_items={telas} client:load />
+    </div>
+  </section>
 </Layout>
