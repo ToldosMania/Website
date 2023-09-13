@@ -5,7 +5,7 @@ description: "Como você deve fazer a manutenção de produtos de Policarbonato"
 image:
   url: "/toldosmania-web/materiais/policarbonato_sample1.png"
   alt: "Policarbonato"
-pubDate: 2023-4-9 
+pubDate: 2023-4-9
 ---
 
 • Na limpeza do policarbonato usar apenas água e sabão neutro de boa qualidade. Não lavar quando o sol estiver batendo diretamente na cobertura ou toldo.

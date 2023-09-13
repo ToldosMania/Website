@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/LayoutMarkdownBlog.astro
-title: Limpeza da Lona Acrílica 
+title: Limpeza da Lona Acrílica
 description: "Como você deve fazer a manutenção e limpeza da Lona Acrilica"
 image:
   url: "/toldosmania-web/materiais/lona_sample.jpg"
   alt: "Lona Sintética"
-pubDate: 2023-4-9 
+pubDate: 2023-4-9
 ---
 
 Acrylic deve ser limpa regularmente a cada duas ou três semanas.
