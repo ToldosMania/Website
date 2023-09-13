@@ -3,8 +3,8 @@ import { BASE_URL } from "../toldosmania_info";
 import type { GalleryItem } from "../toldosmania_info";
 
 interface Props {
-  id: string;
-  title: string;
+  id: string | undefined;
+  title: string | undefined;
   product_type: string;
   gallery_items: GalleryItem[];
 }
@@ -13,13 +13,14 @@ const { id, title, product_type, gallery_items } = Astro.props;
 ---
 
 <section class="bg-base-100 px-12 py-10 text-center text-black" id={id}>
-  <h1 class="divider text-2xl text-base-content">{title}</h1>
+  {!!title && <h1 class="divider text-2xl text-base-content">{title}</h1>}
   <div class="flex flex-row flex-wrap items-center justify-center">
     {
       gallery_items.map((item) => (
         <img
           src={`${BASE_URL}/gallery/${product_type}/${item.url}`}
           alt={item.title}
+          data-description={item.description}
           decoding="async"
           loading="lazy"
           class="zoomable-item m-3 h-full w-full rounded-2xl transition-transform ease-in-out hover:scale-105 lg:h-1/6 lg:w-1/6"

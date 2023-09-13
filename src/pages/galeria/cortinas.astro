@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/LayoutGaleria.astro";
-import GalleryView from "../../components/GalleryView";
+import GallerySection from "../../components/GallerySection.astro";
 import cortinas from "../../json/cortinas.json";
 ---
 
@@ -9,13 +9,10 @@ import cortinas from "../../json/cortinas.json";
   description="Veja todas as opções de cortinas. Pressione para ver mais"
   sections={null}
 >
-  <section class="bg-base-100 px-12 py-10 text-center text-base-content">
-    <div class="flex flex-row flex-wrap items-center justify-center">
-      <GalleryView
-        product_type="cortinas"
-        gallery_items={cortinas}
-        client:load
-      />
-    </div>
-  </section>
+  <GallerySection
+    id={undefined}
+    title={undefined}
+    product_type="cortinas"
+    gallery_items={cortinas}
+  />
 </Layout>

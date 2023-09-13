@@ -56,9 +56,26 @@ const { title, description, sections } = Astro.props;
       </div>
       <slot />
       <template id="zoom-template">
-        <div class="absolute inset-0">
-          <section class="facebook-main" data-zoom-container></section>
-          <aside class="bg-red-50 text-2xl">CUM</aside>
+        <section data-zoom-container></section>
+        <div
+          class="fixed bottom-0 left-0 right-0 top-auto flex flex-col items-center "
+        >
+          <div
+            class="mb-6 rounded-xl border-4 border-base-200 bg-base-200 p-5 text-base-content shadow-xl max-w-screen-md max-h-56"
+          >
+            <div class="flex flex-col lg:flex-row">
+              <h1 class="grow text-xl lg:text-2xl" id="zoom-template-title">
+                Title Here
+              </h1>
+              <img src={`${BASE_URL}/icon/mdi-close-circle.svg`} alt="Close" class="hidden lg:block grow-0 h-8 w-8 zoom-template-close"/>
+            </div>
+
+            <p class="text-md lg:text-xl" id="zoom-template-description">
+              Description
+            </p>
+
+              <img src={`${BASE_URL}/icon/mdi-close-circle.svg`} alt="Close" class="lg:hidden h-8 w-8 zoom-template-close"/>
+          </div>
         </div>
       </template>
       <section class="bg-base-200 p-3 py-10" id="contato">
@@ -74,15 +91,32 @@ const { title, description, sections } = Astro.props;
     <script>
       import mediumZoom from "medium-zoom";
 
-      mediumZoom(".zoomable-item", {
+      const zoom = mediumZoom(".zoomable-item", {
         template: "#zoom-template",
       });
-    </script>
+      
+      const set_current_title = (text) => {
+        document.querySelector("h1#zoom-template-title").innerHTML = text;
+      };
 
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
+      const set_current_description = (text) => {
+        document.querySelector("p#zoom-template-description").innerHTML = text;
+      };
+      
+      document.querySelectorAll('img.zoomable-item').forEach((button) => {
+        button.addEventListener('click', () => {
+          setTimeout(() => {
+            set_current_description(button.dataset.description);
+            set_current_title(button.alt);
+          
+            document.querySelectorAll('img.zoom-template-close').forEach((button) => {
+              button.addEventListener('click', () => {
+                zoom.close();
+              });
+            });
+          }, 50);
+        });
+      });
+    </script>
   </body>
 </html>
