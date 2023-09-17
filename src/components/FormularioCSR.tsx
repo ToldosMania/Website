@@ -1,7 +1,8 @@
 import type { ComponentChildren } from "preact";
 import type { ChangeEvent } from "preact/compat";
 import { useEffect, useState } from "preact/hooks";
-import * as forminfo from "../formulario_typing";
+import * as forminfo from "../formulario/forminfo";
+import generate_raw_text from "../formulario/generator";
 
 const VALID_PRODUTOS: string[] = [
   "toldos",
@@ -13,14 +14,7 @@ const VALID_PRODUTOS: string[] = [
 const INPUT_FIELD_STYLE =
   "input input-bordered input-primary input-md bg-base-300 text-base-content join-item";
 
-let answers = {
-  userinfo: {} as forminfo.UserInfo,
-  toldo: {} as forminfo.ToldoInfo,
-  cobertura: {} as forminfo.CoberturaInfo,
-  vidro: {} as forminfo.VidroInfo,
-  tela: {} as forminfo.TelaInfo,
-  cortina: {} as forminfo.CortinaInfo,
-} as forminfo.UserAnswers;
+let answers: Map<string, Map<string, string>> = new Map();
 
 const InputField = (props: {
   labelText: string;
@@ -32,6 +26,13 @@ const InputField = (props: {
       <label htmlFor={props.labelId} class="text-base-content">
         {props.labelText}
       </label>
+        <input
+          id={props.labelId}
+          type="text"
+          class={INPUT_FIELD_STYLE}
+          onChange={e => element.get("userinfo").set("nome",e.currentTarget.value)}
+          onChange={e => answers.userinfo.nome = e.currentTarget.value}
+        />
       {props.children}
     </div>
   );
@@ -67,15 +68,22 @@ export default function FormularioCSR() {
   const [current_product, set_product] = useState("");
 
   useEffect(() => {
+    answers = new Map(); 
     switch (current_product) {
       case "toldos":
         set_product_element(ToldosSection);
         break;
       case "coberturas":
-        set_product_element(CoberturaSection());
+        set_product_element(CoberturaSection);
         break;
       case "vidros":
-        set_product_element(VidrosSection());
+        set_product_element(VidrosSection);
+        break;
+      case "telas":
+        set_product_element(TelaSection);
+        break;
+      case "cortinas":
+        set_product_element(CortinaSection);
         break;
       default:
         set_product_element(GenericSection);
@@ -86,7 +94,7 @@ export default function FormularioCSR() {
   return (
     <div class="flex min-h-screen flex-col flex-wrap items-center bg-base-100 p-3 py-10 text-base-content">
       <InputField labelText="Nome Completo" labelId="nome_completo">
-        <input id="nome_completo" type="text" class={INPUT_FIELD_STYLE} />
+
       </InputField>
       <InputField labelText="Email" labelId="email">
         <input
@@ -94,6 +102,8 @@ export default function FormularioCSR() {
           type="text"
           placeholder="exemplo@site.com.br"
           class={INPUT_FIELD_STYLE}
+          onChange={e => answers.userinfo.email = e.currentTarget.value}
+          autocomplete="on"
         />
       </InputField>
       <InputField labelText="Celular ou Telefone" labelId="celular">
@@ -102,6 +112,7 @@ export default function FormularioCSR() {
           type="text"
           placeholder="(11) 91234-5678"
           class={INPUT_FIELD_STYLE}
+          onChange={e => answers.userinfo.telefone = e.currentTarget.value}
         />
       </InputField>
       <InputField labelText="Endereço" labelId="endereco">
@@ -110,6 +121,7 @@ export default function FormularioCSR() {
           type="text"
           placeholder="Rua Exemplo nº1234. São Paulo, SP"
           class={INPUT_FIELD_STYLE}
+          onChange={e => answers.userinfo.endereco = e.currentTarget.value}
         />
       </InputField>
 
@@ -134,10 +146,15 @@ export default function FormularioCSR() {
       {product_element}
 
       <InputField labelText="Outros Dados" labelId="outros_dados">
-        <input id="outros_dados" type="text" class={INPUT_FIELD_STYLE} />
+        <input
+          id="outros_dados"
+          type="text"
+          class={INPUT_FIELD_STYLE}
+          onChange={e => answers.userinfo.outros_dados = e.currentTarget.value}
+        />
       </InputField>
 
-      <button class="btn btn-accent mt-3" onClick={() => console.log(answers)}>
+      <button class="btn btn-accent mt-3" onClick={() => console.log(generate_raw_text(answers))}>
         Enviar Por Whatsapp
       </button>
       <button class="btn btn-accent mt-3">Enviar Por Email</button>
@@ -146,13 +163,97 @@ export default function FormularioCSR() {
 }
 
 const GenericSection = <></>;
-const VidrosSection = () => {
-  return <></>;
-};
 
-const CoberturaSection = () => {
-  return <></>;
-};
+const CortinaSection = <InputField labelId="projecao_cortina" labelText="Projeção">
+  <input
+    id="projecao_tela"
+    type="text"
+    class={INPUT_FIELD_STYLE}
+    onChange={(e) => (answers.cortina.projecao = e.currentTarget.value)}
+  />
+</InputField>;
+
+const TelaSection = <InputField labelId="projecao_toldo" labelText="Projeção">
+  <input
+    id="projecao_tela"
+    type="text"
+    class={INPUT_FIELD_STYLE}
+    onChange={(e) => (answers.tela.projecao = e.currentTarget.value)}
+  />
+</InputField>;
+
+const VidrosSection =
+  (
+    <RadioContainer labelId="vidro_tipo" labelText="Tipo de Produto de Vidro">
+      <RadioForm title="Box">
+        <input
+          type="radio"
+          name="vidro_tipo"
+          class="radio checked:bg-primary-focus"
+          checked={answers.vidro.tipo === forminfo.TipoVidro.Box}
+          onChange={() => answers.vidro.tipo = forminfo.TipoVidro.Box}
+        />
+      </RadioForm>
+      <RadioForm title="Janela">
+        <input
+          type="radio"
+          name="vidro_tipo"
+          class="radio checked:bg-primary-focus"
+          checked={answers.vidro.tipo === forminfo.TipoVidro.Janela}
+          onChange={() => answers.vidro.tipo = forminfo.TipoVidro.Janela}
+        />
+      </RadioForm>
+      <RadioForm title="Porta">
+        <input
+          type="radio"
+          name="vidro_tipo"
+          class="radio checked:bg-primary-focus"
+          checked={answers.vidro.tipo === forminfo.TipoVidro.Porta}
+          onChange={() => answers.vidro.tipo = forminfo.TipoVidro.Porta}
+        />
+      </RadioForm>
+    </RadioContainer>
+  );
+
+const CoberturaSection = <>
+  <RadioContainer labelId="cobertura_material" labelText="Material da Cobertura">
+    <RadioForm title="Lona">
+      <input
+        type="radio"
+        name="cobertura_material"
+        class="radio checked:bg-primary-focus"
+        checked={answers.cobertura.material === forminfo.MaterialCobertura.Lona}
+        onChange={() => (answers.cobertura.material = forminfo.MaterialCobertura.Lona)}
+      />
+    </RadioForm>
+    <RadioForm title="Policarbonato">
+      <input
+        type="radio"
+        name="cobertura_material"
+        class="radio checked:bg-primary-focus"
+        checked={answers.cobertura.material === forminfo.MaterialCobertura.Policarbonato}
+        onChange={() => (answers.cobertura.material = forminfo.MaterialCobertura.Policarbonato)}
+      />
+    </RadioForm>
+    <RadioForm title="Zinco">
+      <input
+        type="radio"
+        name="cobertura_material"
+        class="radio checked:bg-primary-focus"
+        checked={answers.cobertura.material === forminfo.MaterialCobertura.Zinco}
+        onChange={() => (answers.cobertura.material = forminfo.MaterialCobertura.Zinco)}
+      />
+    </RadioForm>
+  </RadioContainer>
+  <InputField labelText="Projeção" labelId="cobertura_projecao">
+    <input
+      id="cobertura_projecao"
+      type="text"
+      class={INPUT_FIELD_STYLE}
+      onChange={(e) => (answers.cobertura.projecao = e.currentTarget.value)}
+    />
+  </InputField>
+</>;
 
 const ToldosSection = (
   <>
@@ -215,8 +316,8 @@ const ToldosSection = (
             forminfo.TipoAcionamentoToldo.Manual
           }
           onChange={() =>
-            (answers.toldo.tipo_acionamento =
-              forminfo.TipoAcionamentoToldo.Manual)
+          (answers.toldo.tipo_acionamento =
+            forminfo.TipoAcionamentoToldo.Manual)
           }
         />
       </RadioForm>
@@ -230,8 +331,8 @@ const ToldosSection = (
             forminfo.TipoAcionamentoToldo.Retratil
           }
           onChange={() =>
-            (answers.toldo.tipo_acionamento =
-              forminfo.TipoAcionamentoToldo.Retratil)
+          (answers.toldo.tipo_acionamento =
+            forminfo.TipoAcionamentoToldo.Retratil)
           }
         />
       </RadioForm>

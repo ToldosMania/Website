@@ -1,3 +1,10 @@
+export type ValidProduct =
+  ToldoInfo
+  | CoberturaInfo
+  | TelaInfo
+  | VidroInfo
+  | CortinaInfo;
+
 export enum MaterialToldo {
   Lona,
   Policarbonato,
@@ -49,12 +56,10 @@ export interface VidroInfo {
 }
 
 export interface TelaInfo {
-  material: MaterialCobertura;
   projecao: string | undefined;
 }
 
 export interface CortinaInfo {
-  material: MaterialCobertura;
   projecao: string | undefined;
 }
 
