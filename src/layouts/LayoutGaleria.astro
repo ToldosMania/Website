@@ -58,23 +58,31 @@ const { title, description, sections } = Astro.props;
       <template id="zoom-template">
         <section data-zoom-container></section>
         <div
-          class="fixed bottom-0 left-0 right-0 top-auto flex flex-col items-center "
+          class="fixed bottom-0 left-0 right-0 top-auto flex flex-col items-center"
         >
           <div
-            class="mb-6 rounded-xl border-4 border-base-200 bg-base-200 p-5 text-base-content shadow-xl max-w-screen-md max-h-56"
+            class="mb-6 max-h-56 max-w-screen-md rounded-xl border-4 border-base-200 bg-base-200 p-5 text-base-content shadow-xl"
           >
             <div class="flex flex-col lg:flex-row">
               <h1 class="grow text-xl lg:text-2xl" id="zoom-template-title">
                 Title Here
               </h1>
-              <img src={`${BASE_URL}/icon/mdi-close-circle.svg`} alt="Close" class="hidden lg:block grow-0 h-8 w-8 zoom-template-close"/>
+              <img
+                src={`${BASE_URL}/icon/mdi-close-circle.svg`}
+                alt="Close"
+                class="zoom-template-close hidden h-8 w-8 grow-0 lg:block"
+              />
             </div>
 
             <p class="text-md lg:text-xl" id="zoom-template-description">
               Description
             </p>
 
-              <img src={`${BASE_URL}/icon/mdi-close-circle.svg`} alt="Close" class="lg:hidden h-8 w-8 zoom-template-close"/>
+            <img
+              src={`${BASE_URL}/icon/mdi-close-circle.svg`}
+              alt="Close"
+              class="zoom-template-close h-8 w-8 lg:hidden"
+            />
           </div>
         </div>
       </template>
@@ -94,7 +102,7 @@ const { title, description, sections } = Astro.props;
       const zoom = mediumZoom(".zoomable-item", {
         template: "#zoom-template",
       });
-      
+
       const set_current_title = (text) => {
         document.querySelector("h1#zoom-template-title").innerHTML = text;
       };
@@ -102,21 +110,28 @@ const { title, description, sections } = Astro.props;
       const set_current_description = (text) => {
         document.querySelector("p#zoom-template-description").innerHTML = text;
       };
-      
-      document.querySelectorAll('img.zoomable-item').forEach((button) => {
-        button.addEventListener('click', () => {
+
+      document.querySelectorAll("img.zoomable-item").forEach((button) => {
+        button.addEventListener("click", () => {
           setTimeout(() => {
             set_current_description(button.dataset.description);
             set_current_title(button.alt);
-          
-            document.querySelectorAll('img.zoom-template-close').forEach((button) => {
-              button.addEventListener('click', () => {
-                zoom.close();
+
+            document
+              .querySelectorAll("img.zoom-template-close")
+              .forEach((button) => {
+                button.addEventListener("click", () => {
+                  zoom.close();
+                });
               });
-            });
           }, 50);
         });
       });
     </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </body>
 </html>

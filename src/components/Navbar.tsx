@@ -30,8 +30,8 @@ export default function Navbar() {
       style="top: 0px"
     >
       <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost text-black lg:hidden">
+        <div class="dropdown bg-base-100 text-base-content">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
             <img
               src={`${BASE_URL}/icon/mdi-menu.svg`}
               alt="Menu"
@@ -42,7 +42,7 @@ export default function Navbar() {
           </label>
           <ul
             tabindex="0"
-            class="menu dropdown-content rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2 text-base shadow"
+            class="menu dropdown-content rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2"
           >
             <li>
               <a href={BASE_URL}>Início</a>
