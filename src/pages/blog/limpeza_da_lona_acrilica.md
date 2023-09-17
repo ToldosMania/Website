@@ -8,7 +8,7 @@ image:
 pubDate: 2023-4-9
 ---
 
-Acrylic deve ser limpa regularmente a cada duas ou três semanas.
+A lona acrílica deve ser limpa regularmente a cada duas ou três semanas.
 
 - A sujeira mais pesada deve ser removida previamente com uma escovação suave.
 
