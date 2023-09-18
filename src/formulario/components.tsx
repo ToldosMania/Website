@@ -1,5 +1,8 @@
 import type { ComponentChildren } from "preact";
 
+export const INPUT_FIELD_STYLE =
+  "input input-bordered input-primary input-md bg-base-300 text-base-content join-item";
+
 export const InputField = (props: {
   labelText: string;
   labelId: string;
@@ -8,6 +11,22 @@ export const InputField = (props: {
   return (
     <div class="m-3 flex w-full max-w-xl flex-col">
       <label htmlFor={props.labelId} class="text-base-content">
+        {props.labelText}
+      </label>
+      {props.children}
+    </div>
+  );
+};
+
+export const RequiredInputField = (props: {
+  labelText: string;
+  labelId: string;
+  children: ComponentChildren;
+}) => {
+  return (
+    <div class="m-3 flex w-full max-w-xl flex-col">
+      <label htmlFor={props.labelId} class="text-base-content">
+        <div class="badge badge-error badge-sm mr-1"></div>
         {props.labelText}
       </label>
       {props.children}

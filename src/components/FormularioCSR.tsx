@@ -1,12 +1,9 @@
 import type { ChangeEvent } from "preact/compat";
 import { useEffect, useState } from "preact/hooks";
-import { answers_init } from "../formulario/form_typing"; 
-import { RadioForm, RadioContainer, InputField } from "../formulario/components";
+import { answers_init } from "../formulario/form_typing";
+import { RadioForm, RadioContainer, InputField, RequiredInputField, INPUT_FIELD_STYLE } from "../formulario/components";
 import generate_raw_text from "../formulario/generator";
 import { CONTATO } from "../toldosmania_info";
-
-const INPUT_FIELD_STYLE =
-  "input input-bordered input-primary input-md bg-base-300 text-base-content join-item";
 
 let user_info = {
   "nome_completo": "",
@@ -48,43 +45,47 @@ export default function FormularioCSR() {
 
   return (
     <div class="flex min-h-screen flex-col flex-wrap items-center bg-base-100 p-3 py-10 text-base-content">
-      <InputField labelText="Nome Completo" labelId="nome_completo">
+      <RequiredInputField labelText="Nome Completo" labelId="nome_completo">
         <input
           id="nome_completo"
           type="text"
-          class={INPUT_FIELD_STYLE}
+          class={`${INPUT_FIELD_STYLE} required-element`}
           onChange={e => user_info.nome_completo = e.currentTarget.value}
           autocomplete="on"
+          required
         />
-      </InputField>
-      <InputField labelText="Email" labelId="email">
+      </RequiredInputField>
+      <RequiredInputField labelText="Email" labelId="email">
         <input
           id="email"
           type="text"
           placeholder="exemplo@site.com.br"
-          class={INPUT_FIELD_STYLE}
+          class={`${INPUT_FIELD_STYLE} required-element`}
           onChange={e => user_info.email = e.currentTarget.value}
           autocomplete="on"
+          required
         />
-      </InputField>
-      <InputField labelText="Celular ou Telefone" labelId="celular">
+      </RequiredInputField>
+      <RequiredInputField labelText="Celular ou Telefone" labelId="celular">
         <input
           id="celular"
           type="text"
           placeholder="(11) 91234-5678"
-          class={INPUT_FIELD_STYLE}
+          class={`${INPUT_FIELD_STYLE} required-element`}
           onChange={e => user_info.telefone = e.currentTarget.value}
+          required
         />
-      </InputField>
-      <InputField labelText="Endereço" labelId="endereco">
+      </RequiredInputField>
+      <RequiredInputField labelText="Endereço" labelId="endereco">
         <input
           id="endereco"
           type="text"
           placeholder="Rua Exemplo nº1234. São Paulo, SP"
-          class={INPUT_FIELD_STYLE}
+          class={`${INPUT_FIELD_STYLE} required-element`}
           onChange={e => user_info.endereco = e.currentTarget.value}
+          required
         />
-      </InputField>
+      </RequiredInputField>
 
       <div class="m-3 flex w-full max-w-xl flex-col">
         <label htmlFor="produto_selected">Produto</label>
@@ -115,15 +116,50 @@ export default function FormularioCSR() {
         />
       </InputField>
 
-      <button class="btn btn-accent mt-3" 
-        onClick={() => location.href = `${CONTATO.whatsapp}?text=${encodeURI(generate_raw_text(current_product,user_info, product_answers))}`}
+      <button class="btn btn-accent mt-3"
+        onClick={() => {
+          let anyfound = false;
+          (document.querySelectorAll(".required-element") as NodeListOf<HTMLInputElement>).forEach(
+            (element: HTMLInputElement) => {
+              if (element.value === "" || element.value.length == 0 || element.value == undefined) {
+                anyfound = true;
+                element.scrollIntoView();
+                return;
+              }
+            }
+          );
+          if (anyfound) {
+            return;
+          }
+          location.href = `${CONTATO.whatsapp}?text=${encodeURI(generate_raw_text(current_product, user_info, product_answers))}`
+        }}
       >
         Enviar Por Whatsapp
       </button>
-      <button class="btn btn-accent mt-3">Enviar Por Email</button>
+      <button 
+        class="btn btn-accent mt-3"
+        onClick={() => {
+          let anyfound = false;
+          (document.querySelectorAll(".required-element") as NodeListOf<HTMLInputElement>).forEach(
+            (element: HTMLInputElement) => {
+              if (element.value === "" || element.value.length == 0 || element.value == undefined) {
+                anyfound = true;
+                element.scrollIntoView();
+                return;
+              }
+            }
+          );
+          if (anyfound) {
+            return;
+          }
+          location.href = `${CONTATO.email}?subject=Resposta de Formulario de Orçamento ToldosMania&body=${encodeURI(generate_raw_text(current_product, user_info, product_answers))}`
+        }}
+      >Enviar Por Email
+      </button>
     </div>
   );
 }
+
 
 const CortinaSection =
   <InputField labelId="projecao_cortina" labelText="Projeção">

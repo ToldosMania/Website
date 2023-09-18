@@ -20,7 +20,7 @@ export default function genRawText(current_product: string, userinfo: Record<str
         product_specific_text = `Produto selecionado: ${current_product}
 Tipo: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.tipo)}
 Material: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.material)}
-Acionamento: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.acionamento)}
+Acionamento: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.tipo_acionamento)}
 Projeção: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.projecao)}
 Altura: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.altura)}
 `;
