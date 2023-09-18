@@ -1,9 +1,9 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import FooterMain from "../components/FooterMain.astro";
 import Navbar from "../components/Navbar";
 import { BASE_URL } from "../toldosmania_info";
-
+import StandardLayout from "./StandardLayout.astro";
+StandardLayout;
 interface Props {
   title: string;
   description: string;
@@ -12,43 +12,26 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={`${BASE_URL}/favicon.svg`} />
-    <meta name="generator" content={Astro.generator} />
-    <ViewTransitions />
-    <title>{title}</title>
-  </head>
-  <body>
-    <Navbar client:only />
-    <main class="min-h-screen bg-base-100">
-      <div
-        class="hero min-h-screen"
-        style={`min-height: 30vh; background-image: url(${BASE_URL}/hero_bg/vidro_sample.jpg);`}
-      >
-        <div class="hero-overlay bg-base-100 bg-opacity-70"></div>
-        <div class="hero-content">
-          <div class="max-w-xl text-base-content">
-            <h1 class="mt-16 text-xl font-bold lg:mt-10 lg:text-2xl">
-              {title}
-            </h1>
-            <h3 class="text-sm font-semibold lg:text-lg">
-              {description}
-            </h3>
-          </div>
+<StandardLayout title={title}>
+  <Navbar client:only />
+  <main class="min-h-screen bg-base-100">
+    <div
+      class="hero min-h-screen"
+      style={`min-height: 30vh; background-image: url(${BASE_URL}/hero_bg/vidro_sample.jpg);`}
+    >
+      <div class="hero-overlay bg-base-100 bg-opacity-70"></div>
+      <div class="hero-content">
+        <div class="max-w-xl text-base-content">
+          <h1 class="mt-16 text-xl font-bold lg:mt-10 lg:text-2xl">
+            {title}
+          </h1>
+          <h3 class="text-sm font-semibold lg:text-lg">
+            {description}
+          </h3>
         </div>
       </div>
-      <slot />
-    </main>
-    <FooterMain />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </body>
-</html>
+    </div>
+    <slot />
+  </main>
+  <FooterMain />
+</StandardLayout>

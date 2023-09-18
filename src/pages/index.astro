@@ -114,15 +114,16 @@ import { BASE_URL } from "../toldosmania_info.ts";
       >
         Nossa História
       </h1>
-      <div class="flex flex-row flex-wrap">
+      <div class="flex flex-row flex-wrap justify-center">
         <Image
           src={`${BASE_URL}/hero_bg/tela_sample.jpg`}
-          alt="Toldos Mania - Exemplo de Toldo"
+          alt="Exemplo de Tela"
           width={256}
           height={256}
-          class="h-64 w-max rounded-2xl lg:h-96"
+          class="zoomable-item h-64 w-max rounded-2xl lg:h-96"
           format="avif"
           quality="mid"
+          data-description=""
         />
         <div class="m-3 mx-6 flex flex-col text-base-content">
           <p class="max-w-md">
@@ -159,7 +160,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
               height={224}
               format="avif"
               quality="high"
-              class="h-56 w-1/2"
+              class="zoomable-item h-56 w-1/2"
             />
           </figure>
 
@@ -178,12 +179,12 @@ import { BASE_URL } from "../toldosmania_info.ts";
           <figure>
             <Image
               src={`${BASE_URL}/materiais/policarbonato_sample1.png`}
-              alt="Material de Lona"
+              alt="Material de Policarbonato"
               width={224}
               height={224}
               format="avif"
               quality="high"
-              class="h-56"
+              class="zoomable-item h-56"
             />
           </figure>
 
@@ -202,12 +203,12 @@ import { BASE_URL } from "../toldosmania_info.ts";
           <figure>
             <Image
               src={`${BASE_URL}/materiais/tela_sombreamento.jpg`}
-              alt="Material de Lona"
+              alt="Tela de Sombreamento"
               width={224}
               height={224}
               format="avif"
               quality="high"
-              class="h-56"
+              class="zoomable-item h-56"
             />
           </figure>
 
@@ -229,8 +230,8 @@ import { BASE_URL } from "../toldosmania_info.ts";
               height={224}
               format="avif"
               quality="high"
-              alt="Material de Lona"
-              class="h-56"
+              alt="Aço Galvanizado"
+              class="zoomable-item h-56"
             />
           </figure>
           <div class="card-body">
@@ -249,8 +250,8 @@ import { BASE_URL } from "../toldosmania_info.ts";
               height={224}
               format="avif"
               quality="high"
-              alt="Material de Zinco"
-              class="h-56"
+              alt="Telha Isotérmica"
+              class="zoomable-item h-56"
             />
           </figure>
           <div class="card-body">
@@ -272,8 +273,8 @@ import { BASE_URL } from "../toldosmania_info.ts";
               height={224}
               format="avif"
               quality="high"
-              alt="Material de Zinco"
-              class="h-56"
+              alt="Telha Simples"
+              class="zoomable-item h-56"
             />
           </figure>
           <div class="card-body">

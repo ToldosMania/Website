@@ -1,0 +1,88 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`${import.meta.env.BASE_URL}/favicon.svg`}
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <slot />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <template id="zoom-template">
+      <section data-zoom-container></section>
+      <div
+        class="fixed bottom-0 left-0 right-0 top-auto flex flex-col items-center"
+      >
+        <div
+          class="mb-6 max-h-56 max-w-screen-md rounded-xl border-4 border-base-200 bg-base-200 p-5 text-base-content shadow-xl"
+        >
+          <div class="flex flex-col lg:flex-row">
+            <h1 class="grow text-xl lg:text-2xl" id="zoom-template-title">
+              Title Here
+            </h1>
+          </div>
+
+          <p class="text-md lg:text-xl" id="zoom-template-description">
+            Description
+          </p>
+        </div>
+      </div>
+    </template>
+    <script>
+      import mediumZoom from "medium-zoom";
+
+      let zoom = null;
+
+      zoom = mediumZoom(".zoomable-item", {
+        template: "#zoom-template",
+      });
+
+      const set_current_title = (text) => {
+        document.querySelector("h1#zoom-template-title").innerHTML = text;
+      };
+
+      const set_current_description = (text) => {
+        document.querySelector("p#zoom-template-description").innerHTML = text;
+      };
+
+      document.querySelectorAll("img.zoomable-item").forEach((button) => {
+        button.addEventListener("click", () => {
+          setTimeout(() => {
+            if (button.dataset.description == undefined) {
+              set_current_description("");
+            } else {
+              set_current_description(button.dataset.description);
+            }
+            set_current_title(button.alt);
+
+            document
+              .querySelectorAll("img.zoom-template-close")
+              .forEach((button) => {
+                button.addEventListener("click", () => {
+                  zoom.close();
+                });
+              });
+          }, 50);
+        });
+      });
+    </script>
+  </body>
+</html>
