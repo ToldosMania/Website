@@ -1,92 +1,47 @@
-import type { ComponentChildren } from "preact";
 import type { ChangeEvent } from "preact/compat";
 import { useEffect, useState } from "preact/hooks";
-import * as forminfo from "../formulario/forminfo";
+import { answers_init } from "../formulario/form_typing"; 
+import { RadioForm, RadioContainer, InputField } from "../formulario/components";
 import generate_raw_text from "../formulario/generator";
+import { CONTATO } from "../toldosmania_info";
 
-const VALID_PRODUTOS: string[] = [
-  "toldos",
-  "coberturas",
-  "telas",
-  "vidros",
-  "cortina rolô",
-];
 const INPUT_FIELD_STYLE =
   "input input-bordered input-primary input-md bg-base-300 text-base-content join-item";
 
-let answers: Map<string, Map<string, string>> = new Map();
-
-const InputField = (props: {
-  labelText: string;
-  labelId: string;
-  children: ComponentChildren;
-}) => {
-  return (
-    <div class="m-3 flex w-full max-w-xl flex-col">
-      <label htmlFor={props.labelId} class="text-base-content">
-        {props.labelText}
-      </label>
-        <input
-          id={props.labelId}
-          type="text"
-          class={INPUT_FIELD_STYLE}
-          onChange={e => element.get("userinfo").set("nome",e.currentTarget.value)}
-          onChange={e => answers.userinfo.nome = e.currentTarget.value}
-        />
-      {props.children}
-    </div>
-  );
+let user_info = {
+  "nome_completo": "",
+  "email": "",
+  "telefone": "",
+  "endereco": "",
+  "outros_dados": "",
 };
 
-const RadioContainer = (props: {
-  labelText: string;
-  labelId: string;
-  children: ComponentChildren;
-}) => {
-  return (
-    <InputField labelText={props.labelText} labelId={props.labelId}>
-      <div class="rounded-xl border border-primary-focus bg-base-300 p-3">
-        {props.children}
-      </div>
-    </InputField>
-  );
-};
-
-const RadioForm = (props: { title: string; children: ComponentChildren }) => {
-  return (
-    <div class="form-control">
-      <label class="label cursor-pointer">
-        <span class="label-text text-base-content">{props.title}</span>
-        {props.children}
-      </label>
-    </div>
-  );
-};
+let product_answers = answers_init;
 
 export default function FormularioCSR() {
   const [product_element, set_product_element] = useState(<></>);
   const [current_product, set_product] = useState("");
 
   useEffect(() => {
-    answers = new Map(); 
+    product_answers = answers_init;
     switch (current_product) {
-      case "toldos":
+      case "Toldos":
         set_product_element(ToldosSection);
         break;
-      case "coberturas":
+      case "Coberturas":
         set_product_element(CoberturaSection);
         break;
-      case "vidros":
+      case "Vidros":
         set_product_element(VidrosSection);
         break;
-      case "telas":
+      case "Telas":
         set_product_element(TelaSection);
         break;
-      case "cortinas":
+      case "Cortinas Rolô":
         set_product_element(CortinaSection);
         break;
       default:
-        set_product_element(GenericSection);
+        set_product_element(<></>);
         break;
     }
   }, [current_product]);
@@ -94,7 +49,13 @@ export default function FormularioCSR() {
   return (
     <div class="flex min-h-screen flex-col flex-wrap items-center bg-base-100 p-3 py-10 text-base-content">
       <InputField labelText="Nome Completo" labelId="nome_completo">
-
+        <input
+          id="nome_completo"
+          type="text"
+          class={INPUT_FIELD_STYLE}
+          onChange={e => user_info.nome_completo = e.currentTarget.value}
+          autocomplete="on"
+        />
       </InputField>
       <InputField labelText="Email" labelId="email">
         <input
@@ -102,7 +63,7 @@ export default function FormularioCSR() {
           type="text"
           placeholder="exemplo@site.com.br"
           class={INPUT_FIELD_STYLE}
-          onChange={e => answers.userinfo.email = e.currentTarget.value}
+          onChange={e => user_info.email = e.currentTarget.value}
           autocomplete="on"
         />
       </InputField>
@@ -112,7 +73,7 @@ export default function FormularioCSR() {
           type="text"
           placeholder="(11) 91234-5678"
           class={INPUT_FIELD_STYLE}
-          onChange={e => answers.userinfo.telefone = e.currentTarget.value}
+          onChange={e => user_info.telefone = e.currentTarget.value}
         />
       </InputField>
       <InputField labelText="Endereço" labelId="endereco">
@@ -121,7 +82,7 @@ export default function FormularioCSR() {
           type="text"
           placeholder="Rua Exemplo nº1234. São Paulo, SP"
           class={INPUT_FIELD_STYLE}
-          onChange={e => answers.userinfo.endereco = e.currentTarget.value}
+          onChange={e => user_info.endereco = e.currentTarget.value}
         />
       </InputField>
 
@@ -135,9 +96,9 @@ export default function FormularioCSR() {
             set_product(e.currentTarget.value)
           }
         >
-          {VALID_PRODUTOS.map((key) => (
-            <option value={key} key={key} class="uppercase">
-              {key}
+          {Object.values(answers_init).map(product => (
+            <option value={product.pretty_name} key={product.pretty_name} class="uppercase">
+              {product.pretty_name}
             </option>
           ))}
         </select>
@@ -150,11 +111,13 @@ export default function FormularioCSR() {
           id="outros_dados"
           type="text"
           class={INPUT_FIELD_STYLE}
-          onChange={e => answers.userinfo.outros_dados = e.currentTarget.value}
+          onChange={e => user_info.outros_dados = e.currentTarget.value}
         />
       </InputField>
 
-      <button class="btn btn-accent mt-3" onClick={() => console.log(generate_raw_text(answers))}>
+      <button class="btn btn-accent mt-3" 
+        onClick={() => location.href = `${CONTATO.whatsapp}?text=${encodeURI(generate_raw_text(current_product,user_info, product_answers))}`}
+      >
         Enviar Por Whatsapp
       </button>
       <button class="btn btn-accent mt-3">Enviar Por Email</button>
@@ -162,58 +125,65 @@ export default function FormularioCSR() {
   );
 }
 
-const GenericSection = <></>;
-
-const CortinaSection = <InputField labelId="projecao_cortina" labelText="Projeção">
-  <input
-    id="projecao_tela"
-    type="text"
-    class={INPUT_FIELD_STYLE}
-    onChange={(e) => (answers.cortina.projecao = e.currentTarget.value)}
-  />
-</InputField>;
+const CortinaSection =
+  <InputField labelId="projecao_cortina" labelText="Projeção">
+    <input
+      id="projecao_tela"
+      type="text"
+      class={INPUT_FIELD_STYLE}
+      onChange={(e) => (product_answers.cortina_rolo!.data!.projecao = e.currentTarget.value)}
+    />
+  </InputField>;
 
 const TelaSection = <InputField labelId="projecao_toldo" labelText="Projeção">
   <input
     id="projecao_tela"
     type="text"
     class={INPUT_FIELD_STYLE}
-    onChange={(e) => (answers.tela.projecao = e.currentTarget.value)}
+    onChange={(e) => (product_answers["tela"]!.data["projecao"] = e.currentTarget.value)}
   />
 </InputField>;
 
-const VidrosSection =
-  (
-    <RadioContainer labelId="vidro_tipo" labelText="Tipo de Produto de Vidro">
-      <RadioForm title="Box">
-        <input
-          type="radio"
-          name="vidro_tipo"
-          class="radio checked:bg-primary-focus"
-          checked={answers.vidro.tipo === forminfo.TipoVidro.Box}
-          onChange={() => answers.vidro.tipo = forminfo.TipoVidro.Box}
-        />
-      </RadioForm>
-      <RadioForm title="Janela">
-        <input
-          type="radio"
-          name="vidro_tipo"
-          class="radio checked:bg-primary-focus"
-          checked={answers.vidro.tipo === forminfo.TipoVidro.Janela}
-          onChange={() => answers.vidro.tipo = forminfo.TipoVidro.Janela}
-        />
-      </RadioForm>
-      <RadioForm title="Porta">
-        <input
-          type="radio"
-          name="vidro_tipo"
-          class="radio checked:bg-primary-focus"
-          checked={answers.vidro.tipo === forminfo.TipoVidro.Porta}
-          onChange={() => answers.vidro.tipo = forminfo.TipoVidro.Porta}
-        />
-      </RadioForm>
-    </RadioContainer>
-  );
+const VidrosSection = (
+  <RadioContainer labelId="vidro_tipo" labelText="Tipo de Produto de Vidro">
+    <RadioForm title="Box">
+      <input
+        type="radio"
+        name="vidro_tipo"
+        class="radio checked:bg-primary-focus"
+        checked={product_answers["vidro"]!.data["tipo"] === "box"}
+        onChange={() => product_answers["vidro"]!.data["tipo"] = "box"}
+      />
+    </RadioForm>
+    <RadioForm title="Janela 2 Folhas">
+      <input
+        type="radio"
+        name="vidro_tipo"
+        class="radio checked:bg-primary-focus"
+        checked={product_answers["vidro"]!.data["tipo"] === "janela_2_folhas"}
+        onChange={() => product_answers["vidro"]!.data["tipo"] = "janela_2_folhas"}
+      />
+    </RadioForm>
+    <RadioForm title="Janela 4 Folhas">
+      <input
+        type="radio"
+        name="vidro_tipo"
+        class="radio checked:bg-primary-focus"
+        checked={product_answers["vidro"]!.data["tipo"] === "janela_4_folhas"}
+        onChange={() => product_answers["vidro"]!.data["tipo"] = "janela_4_folhas"}
+      />
+    </RadioForm>
+    <RadioForm title="Porta">
+      <input
+        type="radio"
+        name="vidro_tipo"
+        class="radio checked:bg-primary-focus"
+        checked={product_answers["vidro"]!.data["tipo"] === "porta"}
+        onChange={() => product_answers["vidro"]!.data["tipo"] = "porta"}
+      />
+    </RadioForm>
+  </RadioContainer>
+);
 
 const CoberturaSection = <>
   <RadioContainer labelId="cobertura_material" labelText="Material da Cobertura">
@@ -222,8 +192,8 @@ const CoberturaSection = <>
         type="radio"
         name="cobertura_material"
         class="radio checked:bg-primary-focus"
-        checked={answers.cobertura.material === forminfo.MaterialCobertura.Lona}
-        onChange={() => (answers.cobertura.material = forminfo.MaterialCobertura.Lona)}
+        checked={product_answers["cobertura"]!.data["material"] === "lona"}
+        onChange={() => (product_answers["cobertura"]!.data["material"] = "lona")}
       />
     </RadioForm>
     <RadioForm title="Policarbonato">
@@ -231,8 +201,8 @@ const CoberturaSection = <>
         type="radio"
         name="cobertura_material"
         class="radio checked:bg-primary-focus"
-        checked={answers.cobertura.material === forminfo.MaterialCobertura.Policarbonato}
-        onChange={() => (answers.cobertura.material = forminfo.MaterialCobertura.Policarbonato)}
+        checked={product_answers["cobertura"]!.data["material"] === "policarbonato"}
+        onChange={() => (product_answers["cobertura"]!.data["material"] = "policarbonato")}
       />
     </RadioForm>
     <RadioForm title="Zinco">
@@ -240,8 +210,8 @@ const CoberturaSection = <>
         type="radio"
         name="cobertura_material"
         class="radio checked:bg-primary-focus"
-        checked={answers.cobertura.material === forminfo.MaterialCobertura.Zinco}
-        onChange={() => (answers.cobertura.material = forminfo.MaterialCobertura.Zinco)}
+        checked={product_answers["cobertura"]!.data["material"] === "zinco"}
+        onChange={() => (product_answers["cobertura"]!.data["material"] = "zinco")}
       />
     </RadioForm>
   </RadioContainer>
@@ -250,7 +220,7 @@ const CoberturaSection = <>
       id="cobertura_projecao"
       type="text"
       class={INPUT_FIELD_STYLE}
-      onChange={(e) => (answers.cobertura.projecao = e.currentTarget.value)}
+      onChange={(e) => (product_answers["cobertura"]!.data["projecao"] = e.currentTarget.value)}
     />
   </InputField>
 </>;
@@ -263,30 +233,33 @@ const ToldosSection = (
           type="radio"
           name="tipo_toldo"
           class="radio checked:bg-primary-focus"
-          checked={answers.toldo.tipo === forminfo.TipoToldo.Fixo}
-          onChange={() => (answers.toldo.tipo = forminfo.TipoToldo.Fixo)}
+          checked={product_answers["toldo"]!.data["tipo"] === "fixo"}
+          onChange={() => (product_answers["toldo"]!.data["tipo"] = "fixo")}
         />
       </RadioForm>
-      <RadioForm title="Enrolavel">
+      <RadioForm title="Enrolável">
         <input
           type="radio"
           name="tipo_toldo"
           class="radio checked:bg-primary-focus"
-          checked={answers.toldo.tipo === forminfo.TipoToldo.Enrolavel}
-          onChange={() => (answers.toldo.tipo = forminfo.TipoToldo.Enrolavel)}
+          checked={product_answers["toldo"]!.data["tipo"] === "enrolavel"}
+          onChange={() => (product_answers["toldo"]!.data["tipo"] = "enrolavel")}
         />
       </RadioForm>
     </RadioContainer>
-
     <RadioContainer labelId="toldo_tipo" labelText="Material de Toldo">
       <RadioForm title="Lona">
         <input
           type="radio"
           name="material_toldo"
           class="radio checked:bg-primary-focus"
-          checked={answers.toldo.material === forminfo.MaterialToldo.Lona}
+          checked={
+            product_answers["toldo"]!.data["material"] ===
+            "lona"
+          }
           onChange={() =>
-            (answers.toldo.material = forminfo.MaterialToldo.Lona)
+            product_answers["toldo"]!.data["material"] =
+            "lona"
           }
         />
       </RadioForm>
@@ -296,10 +269,12 @@ const ToldosSection = (
           name="material_toldo"
           class="radio checked:bg-primary-focus"
           checked={
-            answers.toldo.material === forminfo.MaterialToldo.Policarbonato
+            product_answers["toldo"]!.data["material"] ===
+            "policarbonato"
           }
           onChange={() =>
-            (answers.toldo.material = forminfo.MaterialToldo.Policarbonato)
+            product_answers["toldo"]!.data["material"] =
+            "policarbonato"
           }
         />
       </RadioForm>
@@ -312,12 +287,12 @@ const ToldosSection = (
           name="acionamento_toldo"
           class="radio checked:bg-primary-focus"
           checked={
-            answers.toldo.tipo_acionamento ===
-            forminfo.TipoAcionamentoToldo.Manual
+            product_answers["toldo"]!.data["tipo_acionamento"] ===
+            "manual"
           }
           onChange={() =>
-          (answers.toldo.tipo_acionamento =
-            forminfo.TipoAcionamentoToldo.Manual)
+          (product_answers["toldo"]!.data["tipo_acionamento"] =
+            "manual")
           }
         />
       </RadioForm>
@@ -327,12 +302,12 @@ const ToldosSection = (
           name="acionamento_toldo"
           class="radio checked:bg-primary-focus"
           checked={
-            answers.toldo.tipo_acionamento ===
-            forminfo.TipoAcionamentoToldo.Retratil
+            product_answers["toldo"]!.data["tipo_acionamento"] ===
+            "retratil"
           }
           onChange={() =>
-          (answers.toldo.tipo_acionamento =
-            forminfo.TipoAcionamentoToldo.Retratil)
+          (product_answers["toldo"]!.data["tipo_acionamento"] =
+            "retratil")
           }
         />
       </RadioForm>
@@ -343,7 +318,7 @@ const ToldosSection = (
         id="projecao_toldo"
         type="text"
         class={INPUT_FIELD_STYLE}
-        onChange={(e) => (answers.toldo.projecao = e.currentTarget.value)}
+        onChange={(e) => (product_answers["toldo"]!.data["projecao"] = e.currentTarget.value)}
       />
     </InputField>
     <InputField labelId="altura_toldo" labelText="Altura">
@@ -352,7 +327,7 @@ const ToldosSection = (
         type="text"
         placeholder="2.31m"
         class={INPUT_FIELD_STYLE}
-        onChange={(e) => (answers.toldo.altura = e.currentTarget.value)}
+        onChange={(e) => (product_answers["toldo"]!.data["altura"] = e.currentTarget.value)}
       />
     </InputField>
   </>

@@ -1,32 +1,64 @@
-import * as forminfo from './forminfo';
+import type ProductData from "./form_typing";
 
-export default function gen_raw_text(answers: forminfo.UserAnswers) {
+const isNullable = (value: any) => {
+  return (value === undefined || value === "" || value === null);
+}
+
+const defaultOrValue = <T>(default_thing: T, value: T) => {
+  return isNullable(value) && default_thing || value;
+}
+
+export default function genRawText(current_product: string, userinfo: Record<string, string>, product_answers: Record<string, ProductData>) {
   const DEFAULT_NO_ANSWER: string = "Não informado";
   let product_specific_text: string | null = null;
-  let selected_product: forminfo.ValidProduct | undefined = {} as forminfo.CortinaInfo;
 
-  [
-    answers.cobertura,
-    answers.cortina,
-    answers.vidro,
-    answers.tela,
-    answers.toldo
-  ].every((infoelement: forminfo.ValidProduct | undefined) => {
-    if (infoelement != undefined || infoelement != null) {
-      selected_product = infoelement; 
-      return false;
+  if (isNullable(current_product)) {
+    product_specific_text = "Nenhum produto selecionado."
+  } else {
+    switch (current_product) {
+      case "Toldos":
+        product_specific_text = `Produto selecionado: ${current_product}
+Tipo: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.tipo)}
+Material: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.material)}
+Acionamento: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.acionamento)}
+Projeção: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.projecao)}
+Altura: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.altura)}
+`;
+        break;
+      case "Coberturas":
+        product_specific_text = `Produto selecionado: ${current_product}
+Material: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cobertura!.data.material)}
+Altura: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cobertura!.data.altura)}
+`;
+        break;
+      case "Telas":
+        product_specific_text = `Produto selecionado: ${current_product}
+Projeção: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.tela!.data.projecao)}
+`;
+        break;
+      case "Vidros":
+        product_specific_text = `Produto selecionado: ${current_product}
+Tipo de Vidro: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.vidro!.data.tipo)}
+`;
+        break;
+      case "Cortinas Rolô":
+        product_specific_text = `Produto selecionado: ${current_product}
+Projeção: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cortina_rolo!.data.projecao)}
+Material: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cortina_rolo!.data.material)}
+`;
+        break;
+      default:
+        break;
     }
-    return true;
-  });
+  }
 
   return `---
-Nome: ${answers.userinfo.nome ?? DEFAULT_NO_ANSWER}
-Email para contato: ${answers.userinfo.email ?? DEFAULT_NO_ANSWER}
-Endereço: ${answers.userinfo.endereco ?? DEFAULT_NO_ANSWER}
-Telefone: ${answers.userinfo.telefone ?? DEFAULT_NO_ANSWER}
-Outras observações para contato: ${answers.userinfo.outros_dados ?? DEFAULT_NO_ANSWER}
+Nome: ${defaultOrValue(DEFAULT_NO_ANSWER, userinfo.nome_completo)}
+Email para contato: ${defaultOrValue(DEFAULT_NO_ANSWER, userinfo.email)}
+Endereço: ${defaultOrValue(DEFAULT_NO_ANSWER, userinfo.endereco)}
+Telefone: ${defaultOrValue(DEFAULT_NO_ANSWER, userinfo.telefone)}
+Outras observações para contato: ${defaultOrValue(DEFAULT_NO_ANSWER, userinfo.outros_dados)}
 ---
 
-Gostaria de entrar em contato sobre o seguinte produto:
-${typeof selected_product}
+${product_specific_text}
 `}
