@@ -1,6 +1,6 @@
 export type Nullable<T> = T | undefined | null;
 
-export default interface Product {
+export interface Product {
   pretty_name: string | undefined,
   data: Record<string, Nullable<string>>
 }
