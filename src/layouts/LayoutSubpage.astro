@@ -1,6 +1,4 @@
 ---
-import FooterMain from "../components/FooterMain.astro";
-import Navbar from "../components/Navbar";
 import { BASE_URL } from "../toldosmania_info";
 import StandardLayout from "./StandardLayout.astro";
 StandardLayout;
@@ -13,7 +11,6 @@ const { title, description } = Astro.props;
 ---
 
 <StandardLayout title={title}>
-  <Navbar client:only />
   <main class="min-h-screen bg-base-100">
     <div
       class="hero min-h-screen"
@@ -33,5 +30,4 @@ const { title, description } = Astro.props;
     </div>
     <slot />
   </main>
-  <FooterMain />
 </StandardLayout>

@@ -1,0 +1,184 @@
+---
+import Icon from "astro-icon";
+import { Image } from "astro:assets";
+import { BASE_URL, CONTATO } from "../toldosmania_info";
+---
+
+<script>
+  let prevScrollpos = window.scrollY;
+  const scrollHandler = () => {
+    let currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar_init_main")!.style.top = "0";
+    } else {
+      document.getElementById("navbar_init_main")!.style.top = "-60px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+  window.addEventListener("scroll", scrollHandler);
+</script>
+
+<nav
+  id="navbar_init_main"
+  class="navbar sticky top-10 z-50 border-b-2 border-base-300 bg-base-100 p-2 text-neutral-content shadow-md transition-all"
+  style="top: 0px"
+>
+  <section class="navbar-start">
+    <div class="dropdown bg-base-100 text-base-content">
+      <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <Icon
+          name="menu"
+          pack="mdi"
+          class="h-12 w-12 object-scale-down lg:hidden"
+        />
+      </label>
+      <ul
+        tabindex="0"
+        class="menu dropdown-content rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2"
+      >
+        <li>
+          <a href={BASE_URL}>Início</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/dicas`}>Dicas</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/orcamento`}>Orçamento</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/#contato`}>Contato</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/galeria/toldos`}>Toldos</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/galeria/coberturas`}>Coberturas</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/galeria/telas`}>Telas</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/galeria/vidros`}>Vidros</a>
+        </li>
+        <li>
+          <a href={`${BASE_URL}/galeria/cortinas`}>Cortinas</a>
+        </li>
+      </ul>
+    </div>
+    <a
+      class="btn btn-ghost hidden text-xl normal-case lg:block"
+      href={BASE_URL}
+    >
+      <Image
+        src={`${BASE_URL}/logo.jpg`}
+        width={388}
+        height={388}
+        alt="Logo ToldosMania"
+        class="h-12 w-32 rounded-xl border-4 border-white bg-white object-scale-down"
+      />
+    </a>
+  </section>
+  <section class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 text-base-content xl:text-lg">
+      <li>
+        <a href={BASE_URL}>Início</a>
+      </li>
+      <li>
+        <a href={`${BASE_URL}/dicas`}>Dicas</a>
+      </li>
+      <li>
+        <a href={`${BASE_URL}/orcamento`}>Orçamento</a>
+      </li>
+      <li>
+        <details>
+          <summary>Toldos</summary>
+          <ul class="bg-base-200 p-2 text-base-content">
+            <li>
+              <a href={`${BASE_URL}/galeria/toldos#lona`}>Lona</a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}/galeria/toldos#policarbonato`}>
+                Policarbonato
+              </a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Coberturas</summary>
+          <ul class="bg-base-200 p-2 text-base-content">
+            <li>
+              <a href={`${BASE_URL}/galeria/coberturas#lona`}>Lona</a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}/galeria/coberturas#policarbonato`}>
+                Policarbonato
+              </a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}/galeria/coberturas#zincada`}>Zincada</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Vidros</summary>
+          <ul class="bg-base-200 p-2 text-base-content">
+            <li>
+              <a href={`${BASE_URL}/galeria/vidros#box`}>Box</a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}/galeria/vidros#portas`}>Portas</a>
+            </li>
+            <li>
+              <a href={`${BASE_URL}/galeria/vidros#janela_2_folhas`}>
+                Janelas
+              </a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <a href={`${BASE_URL}/galeria/telas`}>Telas</a>
+      </li>
+      <li>
+        <a href={`${BASE_URL}/galeria/cortinas`}>Cortinas</a>
+      </li>
+    </ul>
+  </section>
+  <section class="navbar-end">
+    <a class="btn btn-ghost ml-10 hidden lg:flex" href={CONTATO.phone}>
+      <Icon
+        name="phone"
+        pack="mdi"
+        class="h-10 w-10 text-base-content"
+        alt="Telefone"
+      />
+    </a>
+    <a class="btn btn-ghost hidden lg:flex" href={CONTATO.whatsapp}>
+      <Icon
+        name="whatsapp"
+        pack="mdi"
+        class="h-10 w-10 text-base-content"
+        alt="Telefone"
+      />
+    </a>
+    <a
+      href={`${BASE_URL}/#contato`}
+      class="btn btn-primary hidden border-b-4 border-primary-focus text-primary-content sm:btn-md hover:border-primary-focus hover:bg-primary-focus lg:flex"
+    >
+      Contato
+    </a>
+    <a class="btn btn-ghost text-xl normal-case lg:hidden" href={BASE_URL}>
+      <Image
+        src={`${BASE_URL}/logo.jpg`}
+        width={388}
+        height={388}
+        alt="Logo ToldosMania"
+        class="h-12 w-32 rounded-xl border-4 border-white bg-white object-scale-down"
+      />
+    </a>
+  </section>
+</nav>

@@ -1,8 +1,6 @@
 ---
 import Icon from "astro-icon";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/FooterMain.astro";
-import Navbar from "../components/Navbar";
 import SectionContato from "../components/SectionContato.astro";
 import ImageButton from "../components/ImageButton.astro";
 import { Image } from "astro:assets";
@@ -10,7 +8,6 @@ import { BASE_URL } from "../toldosmania_info.ts";
 ---
 
 <Layout title="ToldosMania">
-  <Navbar client:only />
   <main class="scroll-smooth">
     <div
       class="hero"
@@ -291,5 +288,4 @@ import { BASE_URL } from "../toldosmania_info.ts";
       <SectionContato />
     </section>
   </main>
-  <Footer />
 </Layout>
