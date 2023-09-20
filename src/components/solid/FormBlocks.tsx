@@ -3,15 +3,16 @@ import type { JSX, ParentComponent, VoidComponent } from "solid-js";
 export const INPUT_FIELD_STYLE =
   "input input-bordered input-primary input-md bg-base-300 text-base-content join-item";
 
-export const InputField: VoidComponent<{ id: string, text: string, placeholder?: string, onInput: JSX.EventHandler<HTMLInputElement, InputEvent> }> = (props) => {
+export const InputField: VoidComponent<{ labelId: string, labelText: string, placeholder?: string, type?: string, onInput: JSX.EventHandler<HTMLInputElement, InputEvent> }> = (props) => {
+  props.type = props.type ?? "text"
   return (
     <div class="m-3 flex w-full max-w-xl flex-col">
-      <label for={props.id} class="text-base-content">
-        {props.text}
+      <label for={props.labelId} class="text-base-content">
+        {props.labelText}
       </label>
       <input
-        id={props.id}
-        type="text"
+        id={props.labelId}
+        type={props.type}
         class={INPUT_FIELD_STYLE}
         placeholder={props.placeholder}
         onInput={props.onInput}
@@ -42,11 +43,14 @@ export const RequiredInputField: VoidComponent<{ id: string, text: string, place
 
 export const RadioContainer: ParentComponent<{ labelText: string, labelId: string; }> = (props) => {
   return (
-    <InputField text={props.labelText} id={props.labelId}>
-      <div class="rounded-xl border border-primary-focus bg-base-300 p-3">
+    <div class="m-3 flex w-full max-w-xl flex-col">
+      <label for={props.labelId} class="text-base-content">
+        {props.labelText}
+      </label>
+      <div class="rounded-xl border border-primary-focus bg-base-300 p-3 w-full max-w-xl">
         {props.children}
       </div>
-    </InputField>
+    </div>
   );
 };
 
@@ -57,7 +61,7 @@ export const RadioForm: VoidComponent<{ title: string, name: string, checked: bo
         <span class="label-text text-base-content">{props.title}</span>
         <input
           type="radio"
-          name="tipo_toldo"
+          name={props.name}
           class="radio checked:bg-primary-focus"
           checked={props.checked}
           onInput={props.onInput}
