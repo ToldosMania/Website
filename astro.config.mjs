@@ -11,5 +11,5 @@ export default defineConfig({
     }
   )],
   site: "https://toldosmania.github.io",
-  base: "/website"
+  base: "/Website"
 });
