@@ -10,6 +10,6 @@ export default defineConfig({
       include: ['**/solid/*'],
     }
   )],
-  site: "https://tulilirockz.github.io",
-  base: "/toldosmania-web"
+  site: "https://toldosmania.github.io",
+  base: "/website"
 });
