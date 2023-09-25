@@ -1,5 +1,5 @@
 ---
-import { BASE_URL } from "../toldosmania_info";
+import { Image } from "astro:assets";
 import type { GalleryItem } from "../toldosmania_info";
 
 interface Props {
@@ -17,8 +17,10 @@ const { id, title, product_type, gallery_items } = Astro.props;
   <div class="flex flex-row flex-wrap items-center justify-center">
     {
       gallery_items.map((item) => (
-        <img
-          src={`${BASE_URL}/gallery/${product_type}/${item.url}`}
+        <Image
+          src={import(`../assets/gallery/${product_type}/${item.url}`).then(
+            (obj) => obj,
+          )}
           alt={item.title}
           data-description={item.description}
           decoding="async"

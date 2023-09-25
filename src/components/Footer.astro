@@ -2,13 +2,15 @@
 import { Image } from "astro:assets";
 import Icon from "astro-icon";
 import { BASE_URL, CONTATO } from "../toldosmania_info";
+
+import logo_toldos from "../assets/logo.jpg";
 ---
 
 <footer class="footer bg-base-300 p-10 text-base-content">
   <div>
     <a href={BASE_URL}>
       <Image
-        src={`${BASE_URL}/logo.jpg`}
+        src={logo_toldos}
         width={256}
         height={96}
         alt="Logo ToldosMania"

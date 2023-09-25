@@ -2,6 +2,9 @@
 import Icon from "astro-icon";
 import { Image } from "astro:assets";
 import { BASE_URL, CONTATO } from "../toldosmania_info";
+
+import logo_slim from "../assets/logo_slim.png";
+import logo from "../assets/logo.jpg";
 ---
 
 <script>
@@ -70,7 +73,7 @@ import { BASE_URL, CONTATO } from "../toldosmania_info";
       href={BASE_URL}
     >
       <Image
-        src={`${BASE_URL}/logo.jpg`}
+        src={logo_slim}
         width={388}
         height={388}
         alt="Logo ToldosMania"
@@ -173,7 +176,7 @@ import { BASE_URL, CONTATO } from "../toldosmania_info";
     </a>
     <a class="btn btn-ghost text-xl normal-case lg:hidden" href={BASE_URL}>
       <Image
-        src={`${BASE_URL}/logo.jpg`}
+        src={logo}
         width={388}
         height={388}
         alt="Logo ToldosMania"

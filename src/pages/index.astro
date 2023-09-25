@@ -5,6 +5,18 @@ import SectionContato from "../components/SectionContato.astro";
 import ImageButton from "../components/ImageButton.astro";
 import { Image } from "astro:assets";
 import { BASE_URL } from "../toldosmania_info.ts";
+
+import toldo_sample from "../assets/produtos/toldo.jpg";
+import cortina_rolo_sample from "../assets/produtos/lona.jpg";
+import vidro_sample from "../assets/produtos/vidros.jpeg";
+import tela_sample from "../assets/produtos/tela_sombreamento.jpg";
+import cobertura_sample from "../assets/produtos/cortina_rolo.png";
+import materiais_policarbonato_sample from "../assets/materiais/policarbonato_sample1.png";
+import materiais_zincado from "../assets/materiais/zincado.jpeg";
+import materiais_tela_sample from "../assets/materiais/tela_sombreamento.jpg";
+import materiais_lona_sample from "../assets/materiais/lona_sample.jpg";
+import materiais_aco_sample from "../assets/materiais/aço_galvanizado.jpg";
+import hero_tela from "../assets/hero_bg/tela_sample.jpg";
 ---
 
 <Layout title="ToldosMania">
@@ -46,7 +58,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
       <div class="flex flex-wrap justify-center">
         <a href={`${BASE_URL}/galeria/toldos`}>
           <ImageButton
-            src={`${BASE_URL}/produtos/toldo.jpg`}
+            src={toldo_sample}
             alt="Toldos"
             width={384}
             height={256}
@@ -58,7 +70,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
 
         <a href={`${BASE_URL}/galeria/coberturas`}>
           <ImageButton
-            src={`${BASE_URL}/produtos/lona.jpg`}
+            src={cobertura_sample}
             alt="Coberturas"
             width={384}
             height={256}
@@ -69,7 +81,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         </a>
         <a href={`${BASE_URL}/galeria/telas`}>
           <ImageButton
-            src={`${BASE_URL}/produtos/tela_sombreamento.jpg`}
+            src={tela_sample}
             alt="Telas de Sombreamento"
             width={384}
             height={256}
@@ -80,7 +92,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         </a>
         <a href={`${BASE_URL}/galeria/vidros`}>
           <ImageButton
-            src={`${BASE_URL}/produtos/vidros.jpeg`}
+            src={vidro_sample}
             alt="Vidros"
             width={384}
             height={256}
@@ -92,7 +104,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
 
         <a href={`${BASE_URL}/galeria/cortinas`}>
           <ImageButton
-            src={`${BASE_URL}/produtos/cortina_rolo.png`}
+            src={cortina_rolo_sample}
             alt="Cortinas Rolô"
             width={384}
             height={256}
@@ -113,9 +125,9 @@ import { BASE_URL } from "../toldosmania_info.ts";
       </h1>
       <div class="flex flex-row flex-wrap justify-center">
         <Image
-          src={`${BASE_URL}/hero_bg/tela_sample.jpg`}
+          src={hero_tela}
           alt="Exemplo de Tela"
-          width={256}
+          width={512}
           height={256}
           class="zoomable-item h-64 w-max rounded-2xl lg:h-96"
           format="avif"
@@ -151,7 +163,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         <div class="card m-5 w-96 bg-base-200 shadow-xl">
           <figure>
             <Image
-              src={`${BASE_URL}/materiais/lona_sample1.png`}
+              src={materiais_lona_sample}
               alt="Material de Lona"
               width={224}
               height={224}
@@ -175,7 +187,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         <div class="card m-5 w-96 bg-base-200 shadow-xl">
           <figure>
             <Image
-              src={`${BASE_URL}/materiais/policarbonato_sample1.png`}
+              src={materiais_policarbonato_sample}
               alt="Material de Policarbonato"
               width={224}
               height={224}
@@ -199,7 +211,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
           <figure>
             <Image
-              src={`${BASE_URL}/materiais/tela_sombreamento.jpg`}
+              src={materiais_tela_sample}
               alt="Tela de Sombreamento"
               width={224}
               height={224}
@@ -222,7 +234,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
           <figure>
             <Image
-              src={`${BASE_URL}/materiais/aço_galvanizado.jpg`}
+              src={materiais_aco_sample}
               width={224}
               height={224}
               format="avif"
@@ -242,7 +254,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
         <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
           <figure>
             <Image
-              src={`${BASE_URL}/materiais/zincado.jpeg`}
+              src={materiais_zincado}
               width={224}
               height={224}
               format="avif"
@@ -254,18 +266,19 @@ import { BASE_URL } from "../toldosmania_info.ts";
           <div class="card-body">
             <h2 class="card-title">Telha Isotérmica/Acustica</h2>
             <p>
-              Conhecida como telha sanduiche, tem maior, confeccionada pelo
+              [PLACEHOLDER]
+              <!--Conhecida como telha sanduiche, tem maior, confeccionada pelo
               conjunto de aço natural ou pré-pintada mais nucleo isolante na cor
               branca Tem durabilidade maior, não precisa de cuidados especiais.
               Pode ter pintura eletrostática na parte superior e inferior ou cor
-              natural.
+              natural. -->
             </p>
           </div>
         </div>
         <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
           <figure>
             <Image
-              src={`${BASE_URL}/materiais/zincado.jpeg`}
+              src={materiais_zincado}
               width={224}
               height={224}
               format="avif"
@@ -276,7 +289,7 @@ import { BASE_URL } from "../toldosmania_info.ts";
           </figure>
           <div class="card-body">
             <h2 class="card-title">Telha Simples</h2>
-            <p></p>
+            <p>[PLACEHOLDER]</p>
           </div>
         </div>
       </div>
