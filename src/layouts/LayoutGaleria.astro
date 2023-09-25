@@ -16,7 +16,7 @@ const { title, description, sections } = Astro.props;
   <main class="min-h-screen bg-base-100">
     <div
       class="hero min-h-screen"
-      style={`min-height: 30vh; background-image: url(${BASE_URL}/hero_bg/tela_sample.jpg);`}
+      style={`min-height: 30vh; background-image: url(${BASE_URL}/hero_bg/tela_sample.png);`}
     >
       <div class="hero-overlay bg-base-100 bg-opacity-70"></div>
       <div class="hero-content">
@@ -31,7 +31,7 @@ const { title, description, sections } = Astro.props;
             sections?.map((sect) => (
               <a
                 href={"#" + sect}
-                class="btn btn-accent mx-1 my-3 rounded-2xl py-3 text-accent-content"
+                class="btn btn-accent mx-1 my-3 py-3 text-accent-content"
               >
                 {sect}
               </a>

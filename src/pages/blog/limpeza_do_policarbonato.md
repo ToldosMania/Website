@@ -2,9 +2,8 @@
 layout: ../../layouts/LayoutMarkdownBlog.astro
 title: Limpeza do Policarbonato
 description: "Como você deve fazer a manutenção de produtos de Policarbonato"
-image:
-  url: "/toldosmania-web/materiais/policarbonato_sample1.png"
-  alt: "Policarbonato"
+image_preview: "materiais/policarbonato_sample1"
+image_alt: "Policarbonato"
 pubDate: 2023-4-9
 ---
 

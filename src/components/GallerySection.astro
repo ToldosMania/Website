@@ -18,7 +18,7 @@ const { id, title, product_type, gallery_items } = Astro.props;
     {
       gallery_items.map((item) => (
         <Image
-          src={import(`../assets/gallery/${product_type}/${item.url}`).then(
+          src={import(`../assets/gallery/${product_type}/${item.url}.png`).then(
             (obj) => obj,
           )}
           alt={item.title}

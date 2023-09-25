@@ -2,9 +2,8 @@
 layout: ../../layouts/LayoutMarkdownBlog.astro
 title: Limpeza da Lona Sintética
 description: "Como você deve fazer a manutenção e limpeza da Lona Sintética"
-image:
-  url: "/toldosmania-web/materiais/lona_sample1.png"
-  alt: "Lona Sintética"
+image_preview: "materiais/lona_sample1"
+image_alt: "Lona Sintética"
 pubDate: 2023-4-9
 ---
 
