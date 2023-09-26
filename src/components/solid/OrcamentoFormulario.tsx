@@ -4,6 +4,7 @@ import generate_raw_text from "../../formulario/generator";
 import { CONTATO } from "../../toldosmania_info";
 import { createEffect, createSignal, For, type JSX } from "solid-js";
 import { CoberturaSection, CortinaSection, TelaSection, ToldosSection, VidrosSection } from "./FormSections";
+
 export default function OrcamentoFormulario(): JSX.Element {
   const [product_element, setProductElement] = createSignal<JSX.Element>(<></>);
   const [current_product, setProduct] = createSignal<string>("");
