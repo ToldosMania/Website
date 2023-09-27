@@ -1,102 +1,62 @@
 [
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura é em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona de PVC na cor azul. Toldo também é conhecido como braço invisível. Toldo fechado.",
-    "url": "1b"
+    "title": "Toldo Automático",
+    "description": "Em Lona Vinílica Laranja",
+    "url": "1"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura é em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona de PVC na cor azul. Toldo também é conhecido como braço invisível. Toldo aberto.",
-    "url": "2b"
+    "title": "Toldo Automático",
+    "description": "Em Lona Vinílica Laranja",
+    "url": "2"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura é em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona de PVC na cor bege. Toldo também é conhecido como braço invisível. Toldo fechado.",
-    "url": "3b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Acrílica na cor Vinho sem jogo",
+    "url": "3"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura é em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona de PVC na cor bege. Toldo também é conhecido como braço invisível. Toldo aberto vista lateral.",
-    "url": "4b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Acrílica na cor Vinho sem jogo",
+    "url": "4"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona acrílica lembra tecido na cor verde. Toldo também é conhecido como braço invisível. Toldo aberto vista frontal.",
-    "url": "5b"
+    "title": "Toldo Retrátil",
+    "description": "Em lona na cor cinza com jogo",
+    "url": "5"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Confeccionado em Lona.",
-    "url": "6b"
+    "title": "Toldo Retrátil",
+    "description": "Em lona na cor cinza com jogo",
+    "url": "6"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Confeccionado em lona.",
-    "url": "7b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Vinílica Caramelo",
+    "url": "7"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura é em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona acrílica lembra tecido na cor verde. Toldo também é conhecido como braço invisível. Toldo fechado vista lateral.",
-    "url": "8b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Vinílica Caramelo",
+    "url": "8"
   },
   {
-    "title": "Toldo Articulado",
-    "description": "Toldo braço articulado tem tecnologia italiana, sua estrutura é em alumínio e cabos de aço, com pintura eletrostática na cor branca, lona acrílica lembra tecido na cor verde Toldo também é conhecido como braço invisível. Toldo aberto vista lateral.",
-    "url": "9b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Vinílica Caramelo com fundo Gelo",
+    "url": "9"
   },
   {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor preta, lona acrílica lembra tecido na cor preta. Toldo aberto, vista lateral.",
-    "url": "10b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Vinílica Caramelo com fundo Gelo",
+    "url": "10"
   },
   {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor preta, lona acrílica lembra tecido na cor preta. Toldo aberto, vista lateral.",
-    "url": "11b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Vinílica Cinza com fundo Gelo",
+    "url": "11"
   },
   {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. Com jogo, sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor branca, lona PVC na cor branca. Toldo aberto, vista frente.",
-    "url": "12b"
+    "title": "Toldo Retrátil",
+    "description": "Em Lona Vinílica Cinza com fundo Gelo",
+    "url": "12"
   },
-  {
-    "title": "Toldo Fixo",
-    "description": "Toldo fixo em lona acrílica, lembra tecido na cor marrom, sua estrutura é em tubo galvanizado com pintura em esmalte sintético",
-    "url": "13b"
-  },
-  {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. Com jogo, sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor branca, lona PVC na cor branca. Toldo aberto, vista lateral.",
-    "url": "14b"
-  },
-  {
-    "title": "Toldo Fixo",
-    "description": "Toldo fixo em lona acrílica, lembra tecido na cor marrom, sua estrutura é em tubo galvanizado com pintura em esmalte sintético.",
-    "url": "15b"
-  },
-  {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. Com jogo, sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor bronze, lona PVC na cor bronze. Toldo aberto.",
-    "url": "16b"
-  },
-  {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor branca, lona acrílica, lembra tecido na cor azul. Toldo aberto.",
-    "url": "17b"
-  },
-  {
-    "title": "Toldo Articulado ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil, sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor branca, lona PVC na cor branca. Toldo aberto, vista lateral.",
-    "url": "19b"
-  },
-  {
-    "title": "Toldo Articulado ou Toldo Retrátil",
-    "description": "Toldo automático com máquina de redução manual, também conhecido como toldo retrátil, sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor branca, lona PVC na cor branca. Toldo aberto, vista frontal.",
-    "url": "20b"
-  },
-  {
-    "title": "Toldo Automático ou Toldo Retrátil",
-    "description": "RETRÁTIL Toldo automático com máquina de redução manual, também conhecido como toldo retrátil. sua estrutura é em tubo galvanizado, com pintura em esmalte sintético na cor branca, lona acrílica, lembra tecido na cor azul. Toldo aberto.",
-    "url": "21b"
-  }
 ]
