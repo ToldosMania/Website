@@ -7,19 +7,6 @@ import logo_slim from "../assets/logo_slim.png";
 import logo from "../assets/logo.png";
 ---
 
-<script>
-  let prevScrollpos = window.scrollY;
-  const scrollHandler = () => {
-    let currentScrollPos = window.scrollY;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar_init_main")!.style.top = "0";
-    } else {
-      document.getElementById("navbar_init_main")!.style.top = "-60px";
-    }
-    prevScrollpos = currentScrollPos;
-  };
-  window.addEventListener("scroll", scrollHandler);
-</script>
 
 <nav
   id="navbar_init_main"
