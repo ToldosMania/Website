@@ -5,6 +5,7 @@ import SectionContato from "../components/SectionContato.astro";
 import ImageButton from "../components/ImageButton.astro";
 import { Image } from "astro:assets";
 import { BASE_URL } from "../toldosmania_info.ts";
+import MateriaisBlock from "../components/MateriaisBlock.astro";
 
 import toldo_sample from "../assets/produtos/toldo.png";
 import cortina_rolo_sample from "../assets/produtos/cortina_rolo.png";
@@ -13,6 +14,7 @@ import tela_sample from "../assets/produtos/tela_sombreamento.png";
 import cobertura_sample from "../assets/produtos/cobertura.png";
 import materiais_policarbonato_sample from "../assets/materiais/policarbonato_sample1.png";
 import materiais_zincado from "../assets/materiais/zincado.png";
+import materiais_telha_simples from "../assets/materiais/telha_simples.png";
 import materiais_tela_sample from "../assets/materiais/tela_sombreamento.png";
 import materiais_lona_sample from "../assets/materiais/lona_sample.png";
 import materiais_aco_sample from "../assets/materiais/aço_galvanizado.png";
@@ -26,7 +28,7 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
       style={`min-height: 80vh; background-image: url(${BASE_URL}/hero_bg/toldo_sample.webp);`}
     >
       <div class="hero-overlay bg-opacity-70 backdrop-blur-sm"></div>
-      <div class="hero-content text-center text-neutral-content">
+      <div class="hero-content text-center text-white">
         <div class="max-w-xl">
           <h1 class="mb-5 mt-16 text-2xl font-bold lg:mt-10 lg:text-4xl">
             Especializados na fabricação e instalação de toldos e coberturas com
@@ -134,8 +136,8 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
           quality="mid"
           data-description=""
         />
-        <div class="m-3 mx-6 flex flex-col text-base-content">
-          <p class="max-w-md">
+        <div class="m-3 mx-6 p-3 text-base-content">
+          <p class="xl:max-w-md">
             Fundada em 2005, a ToldosMania é uma empresa dedicada à fabricação e
             instalação de toldos e coberturas. Ao longo dos anos, estabelecemos
             nossa presença no mercado por meio do desenvolvimento de produtos de
@@ -149,7 +151,7 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
           </p>
           <a
             href="#contato"
-            class="btn btn-primary m-4 mx-6 border-b-4 border-primary-focus text-primary-content sm:btn-md xl:btn-lg hover:border-primary-focus hover:bg-primary-focus"
+            class="btn btn-primary btn-wide mt-4 border-b-4 border-primary-focus text-primary-content sm:btn-md xl:btn-lg hover:border-primary-focus hover:bg-primary-focus"
             >Entre em Contato
           </a>
         </div>
@@ -160,145 +162,105 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
         Nossos Materiais
       </h1>
       <div class="flex flex-wrap justify-center">
-        <div class="card m-5 w-96 bg-base-200 shadow-xl">
-          <figure>
-            <Image
-              src={materiais_lona_sample}
-              alt="Material de Lona"
-              width={224}
-              height={224}
-              format="avif"
-              quality="high"
-              class="zoomable-item h-56 w-1/2"
-            />
-          </figure>
+        <MateriaisBlock
+          title="Lona"
+          description="O produto é aditivado para resistir aos raios UV dando maior durabilidade, e garantindo cores vivas por mais tempo. Auto-extinguível: não propaga o fogo desde que eliminada sua fonte. Antioxidante: promove maior durabilidade e reduz o efeito de oxidação. Antifungo: reduz a ação dos fungos no toldo."
+          href={`${BASE_URL}/galeria/toldos#lona`}
+        >
+          <Image
+            src={materiais_lona_sample}
+            alt="Material de Lona"
+            width={224}
+            height={224}
+            format="avif"
+            quality="high"
+            class="zoomable-item h-56 w-1/2"
+          />
+        </MateriaisBlock>
 
-          <div class="card-body">
-            <h2 class="card-title text-center">Lona</h2>
-            <p>
-              O produto é aditivado para resistir aos raios UV dando maior
-              durabilidade, e garantindo cores vivas por mais tempo.
-              Auto-extinguível: não propaga o fogo desde que eliminada sua
-              fonte. Antioxidante: promove maior durabilidade e reduz o efeito
-              de oxidação. Antifungo: reduz a ação dos fungos no toldo.
-            </p>
-          </div>
-        </div>
-        <div class="card m-5 w-96 bg-base-200 shadow-xl">
-          <figure>
-            <Image
-              src={materiais_policarbonato_sample}
-              alt="Material de Policarbonato"
-              width={224}
-              height={224}
-              format="avif"
-              quality="high"
-              class="zoomable-item h-56"
-            />
-          </figure>
+        <MateriaisBlock
+          title="Policarbonato"
+          description="Placa de policarbonato compacta 3mm ou alveolar 6mm recebe proteção UV na parte superior que será exposta ao sol, garantindo assim maior durabilidade e evitando o ressecamento, amarelecimento e descoloração da chapa. Placa compacta é maciça lembra o vidro liso à placa alveolar lembra o vidro canelado."
+          href={`${BASE_URL}/galeria/toldos#policarbonato`}
+        >
+          <Image
+            src={materiais_policarbonato_sample}
+            alt="Material de Policarbonato"
+            width={224}
+            height={224}
+            format="avif"
+            quality="high"
+            class="zoomable-item h-56"
+          />
+        </MateriaisBlock>
 
-          <div class="card-body">
-            <h2 class="card-title">Policarbonato</h2>
-            <p>
-              Placa de policarbonato compacta 3mm ou alveolar 6mm recebe
-              proteção UV na parte superior que será exposta ao sol, garantindo
-              assim maior durabilidade e evitando o ressecamento, amarelecimento
-              e descoloração da chapa. Placa compacta é maciça lembra o vidro
-              liso à placa alveolar lembra o vidro canelado.
-            </p>
-          </div>
-        </div>
-        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
-          <figure>
-            <Image
-              src={materiais_tela_sample}
-              alt="Tela de Sombreamento"
-              width={224}
-              height={224}
-              format="avif"
-              quality="high"
-              class="zoomable-item h-56"
-            />
-          </figure>
-
-          <div class="card-body">
-            <h2 class="card-title">Tela de Sombreamento</h2>
-            <p>
-              Confeccionada em polietileno de alta densidade e com aditivos
-              especiais que proporcionam caracteríscas importantes. <br
-              />Possuem proteção contra raios ultra violetas e redução da
-              luminosidade solar. Produto passa água, não é impermeabilizado.
-            </p>
-          </div>
-        </div>
-        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
-          <figure>
-            <Image
-              src={materiais_aco_sample}
-              width={224}
-              height={224}
-              format="avif"
-              quality="high"
-              alt="Aço Galvanizado"
-              class="zoomable-item h-56"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Aço Galvanizado</h2>
-            <p>
-              Para confecção de nossas estruturas utilizamos tubos de aço
-              galvanizado.
-            </p>
-          </div>
-        </div>
-        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
-          <figure>
-            <Image
-              src={materiais_zincado}
-              width={224}
-              height={224}
-              format="avif"
-              quality="high"
-              alt="Telha Isotérmica"
-              class="zoomable-item h-56"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Telha Isotérmica/Acustica</h2>
-            <p>
-              [PLACEHOLDER]
-              <!--Conhecida como telha sanduiche, tem maior, confeccionada pelo
-              conjunto de aço natural ou pré-pintada mais nucleo isolante na cor
-              branca Tem durabilidade maior, não precisa de cuidados especiais.
-              Pode ter pintura eletrostática na parte superior e inferior ou cor
-              natural. -->
-            </p>
-          </div>
-        </div>
-        <div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
-          <figure>
-            <Image
-              src={materiais_zincado}
-              width={224}
-              height={224}
-              format="avif"
-              quality="high"
-              alt="Telha Simples"
-              class="zoomable-item h-56"
-            />
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">Telha Simples</h2>
-            <p>[PLACEHOLDER]</p>
-          </div>
-        </div>
+        <MateriaisBlock
+          title="Tela de Sombreamento"
+          description="Confeccionada em polietileno de alta densidade e com aditivos especiais que proporcionam caracteríscas importantes. Possuem proteção contra raios ultra violetas e redução da luminosidade solar. Produto passa água, não é impermeabilizado."
+          href={`${BASE_URL}/galeria/telas`}
+        >
+          <Image
+            src={materiais_tela_sample}
+            alt="Tela de Sombreamento"
+            width={224}
+            height={224}
+            format="avif"
+            quality="high"
+            class="zoomable-item h-56"
+          />
+        </MateriaisBlock>
+        <MateriaisBlock
+          title="Aço Galvanizado"
+          description="Para confecção de nossas estruturas utilizamos tubos de aço galvanizado."
+          href={`${BASE_URL}/galeria/toldos`}
+        >
+          <Image
+            src={materiais_aco_sample}
+            width={224}
+            height={224}
+            format="avif"
+            quality="high"
+            alt="Aço Galvanizado"
+            class="zoomable-item h-56"
+          />
+        </MateriaisBlock>
+        <MateriaisBlock
+          title="Telha Isométrica/Sanduíche"
+          description="Telha isotérmica, também conhecida como telha sanduíche, A Telha isotérmica/sanduíche possui duas camadas de chapas de aço e entre elas uma camada de isopor. A vantagem do isopor é o isolamento térmico e acústico, já que é um isopor é material isolante. Além de reduzir os barulhos, ele ajuda a bloquear a entrada do calor e do sol, tornando o ambiente mais agradável."
+          href={`${BASE_URL}/galeria/coberturas#zincada`}
+        >
+          <Image
+            src={materiais_zincado}
+            width={224}
+            height={224}
+            format="avif"
+            quality="high"
+            alt="Telha Isotérmica"
+            class="zoomable-item h-56"
+          />
+        </MateriaisBlock>
+        <MateriaisBlock
+          title="Telha Simples"
+          href={`${BASE_URL}/galeria/coberturas#zincada`}
+          description="A telha galvanizada simples é um produto com ótimo custo-benefício, de boa durabilidade em média 40 anos, a telha galvanizada não absorver água, tem alta resistência à exposição ao sol e chuvas. Não propaga fogo se tornando mais seguras. Ecologicamente correta por conter em sua composição de 25% a 95% de material reciclável, totalmente reciclável ao fim da sua vida útil."
+        >
+          <Image
+            src={materiais_telha_simples}
+            width={224}
+            height={224}
+            format="avif"
+            quality="high"
+            alt="Telha Simples"
+            class="zoomable-item h-56"
+          />
+        </MateriaisBlock>
       </div>
     </section>
-    <section class="bg-base-100 p-3 py-10" id="contato">
-      <h1 class="divider pb-4 text-center text-2xl text-base-content">
-        Entre em Contato
-      </h1>
-      <SectionContato />
-    </section>
   </main>
+  <section class="bg-base-100 p-3 py-10" id="contato">
+    <h1 class="divider pb-4 text-center text-2xl text-base-content">
+      Entre em Contato
+    </h1>
+    <SectionContato />
+  </section>
 </Layout>

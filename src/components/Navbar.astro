@@ -7,7 +7,6 @@ import logo_slim from "../assets/logo_slim.png";
 import logo from "../assets/logo.png";
 ---
 
-
 <nav
   id="navbar_init_main"
   class="navbar sticky top-10 z-50 border-b-2 border-base-300 bg-base-100 p-2 text-neutral-content shadow-md transition-all"
@@ -139,7 +138,7 @@ import logo from "../assets/logo.png";
     </ul>
   </section>
   <section class="navbar-end">
-    <a class="btn btn-ghost ml-10 hidden lg:flex" href={CONTATO.phone}>
+    <a class="btn btn-ghost ml-10" href={CONTATO.phone}>
       <Icon
         name="phone"
         pack="mdi"
@@ -147,11 +146,11 @@ import logo from "../assets/logo.png";
         alt="Telefone"
       />
     </a>
-    <a class="btn btn-ghost hidden lg:flex" href={CONTATO.whatsapp}>
+    <a class="btn btn-ghost" href={CONTATO.whatsapp}>
       <Icon
         name="whatsapp"
-        pack="mdi"
-        class="h-10 w-10 text-base-content"
+        pack="logos"
+        class="h-10 w-10 text-green-600"
         alt="Telefone"
       />
     </a>

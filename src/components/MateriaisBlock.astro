@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { title, description, href } = Astro.props;
+---
+
+<div class="card m-5 w-96 bg-base-200 text-base-content shadow-xl">
+  <figure>
+    <slot />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>
+      {description}
+    </p>
+    <a
+      href={href}
+      rel="prefetch"
+      class="btn btn-secondary border-b-4 border-b-secondary-focus text-secondary-content hover:bg-secondary-focus"
+      >Ver Exemplos</a
+    >
+  </div>
+</div>

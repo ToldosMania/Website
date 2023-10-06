@@ -1,12 +1,11 @@
-FROM node:lts-slim AS build
+FROM docker.io/oven/bun:latest AS build
 WORKDIR /app
 COPY package*.json ./
-COPY pnpm*.yaml ./
-RUN corepack enable pnpm
+COPY bun.lockb ./
 
-RUN pnpm install --frozen-lockfile
+RUN bun install --frozen-lockfile
 COPY . .
-RUN pnpm run -r build
+RUN bun x astro build 
 
 FROM docker.io/nginx:alpine AS runtime
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
