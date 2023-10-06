@@ -15,10 +15,13 @@ const allPosts = await Astro.glob("./blog/*.md");
       {
         allPosts.map((post) => (
           <li>
-            <div class="card m-3 max-h-96 w-96 border-b-4 border-b-accent-focus bg-accent shadow-xl hover:bg-accent-focus">
-              <a href={post.url} class="card-body text-accent-content">
+            <div class="card m-3 max-h-96 w-96 bg-base-200 text-base-content shadow-xl">
+              <a href={post.url} class="card-body">
                 <h2 class="card-title">{post.frontmatter.title}</h2>
                 <p>{post.frontmatter.description}</p>
+                <span class="badge badge-info badge-lg text-info-content">
+                  Ver mais
+                </span>
               </a>
             </div>
           </li>
