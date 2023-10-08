@@ -19,6 +19,7 @@ import materiais_tela_sample from "../assets/materiais/tela_sombreamento.png";
 import materiais_lona_sample from "../assets/materiais/lona_sample.png";
 import materiais_aco_sample from "../assets/materiais/aço_galvanizado.png";
 import hero_tela from "../assets/hero_bg/tela_sample.png";
+import ContentBlock from "../components/ContentBlock.astro";
 ---
 
 <Layout title="ToldosMania">
@@ -117,15 +118,9 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
         </a>
       </div>
     </section>
-    <section
-      class="flex flex-col flex-wrap items-center justify-center bg-base-200 p-3 py-10 text-base-content"
-    >
-      <h1
-        class="divider break-words pb-10 text-center text-2xl text-base-content"
-      >
-        Nossa História
-      </h1>
-      <div class="flex flex-row flex-wrap justify-center">
+    <section class="bg-base-100 p-3 py-10 text-base-content">
+      <h1 class="text-bold divider break-all pb-2 text-2xl">Nossa História</h1>
+      <div class="flex flex-wrap justify-center">
         <Image
           src={hero_tela}
           alt="Exemplo de Tela"
@@ -136,8 +131,8 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
           quality="mid"
           data-description=""
         />
-        <div class="m-3 mx-6 p-3 text-base-content">
-          <p class="xl:max-w-md">
+        <ContentBlock classes="">
+          <p class="break-all lg:max-w-md">
             Fundada em 2005, a ToldosMania é uma empresa dedicada à fabricação e
             instalação de toldos e coberturas. Ao longo dos anos, estabelecemos
             nossa presença no mercado por meio do desenvolvimento de produtos de
@@ -154,7 +149,7 @@ import hero_tela from "../assets/hero_bg/tela_sample.png";
             class="btn btn-primary btn-wide mt-4 border-b-4 border-primary-focus text-primary-content sm:btn-md xl:btn-lg hover:border-primary-focus hover:bg-primary-focus"
             >Entre em Contato
           </a>
-        </div>
+        </ContentBlock>
       </div>
     </section>
     <section class="bg-base-100 p-3 py-10 text-base-content" id="materiais">
