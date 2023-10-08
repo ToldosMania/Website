@@ -1,15 +1,32 @@
 ---
 import Layout from "../../layouts/LayoutGaleria.astro";
+import GallerySection from "../../components/GallerySection.astro";
+import vidros_box from "../../json/vidros_box.json";
+import vidros_portas from "../../json/vidros_portas.json";
+import vidros_janelas from "../../json/vidros_janelas.json";
 ---
 
 <Layout
   title="Galeria de Vidros"
   description="Veja todas as opções de vidros. Pressione para ver mais"
-  sections={["box", "portas", "janela_2_folhas", "janela_4_folhas"]}
+  sections={["box", "portas", "janelas"]}
 >
-  <div class="p-3 py-20 bg-base-100">
-    <h1 class="text-2xl text-base-content text-center">
-      Nada aqui por enquanto!
-    </h1>
-  </div>
+  <GallerySection
+    id="box"
+    title="Box"
+    product_type="vidros_box"
+    gallery_items={vidros_box}
+  />
+  <GallerySection
+    id="portas"
+    title="Portas"
+    product_type="vidros_portas"
+    gallery_items={vidros_portas}
+  />
+  <GallerySection
+    id="janelas"
+    title="Janelas"
+    product_type="vidros_janelas"
+    gallery_items={vidros_janelas}
+  />
 </Layout>

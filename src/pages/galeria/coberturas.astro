@@ -4,6 +4,8 @@ import GallerySection from "../../components/GallerySection.astro";
 
 import coberturas_lona from "../../json/coberturas_lona.json";
 import coberturas_policarbonato from "../../json/coberturas_policarbonato.json";
+import coberturas_policarbonato_retratil from "../../json/coberturas_policarbonato_retratil.json";
+import coberturas_policarbonato_fixa from "../../json/coberturas_policarbonato_fixa.json";
 import coberturas_zincada from "../../json/coberturas_zincada.json";
 ---
 
@@ -23,6 +25,18 @@ import coberturas_zincada from "../../json/coberturas_zincada.json";
     title="Policarbonato"
     product_type="coberturas_policarbonato"
     gallery_items={coberturas_policarbonato}
+  />
+  <GallerySection
+    id="policarbonato fixa"
+    title="Policarbonato Fixa"
+    product_type="coberturas_policarbonato_fixa"
+    gallery_items={coberturas_policarbonato_fixa}
+  />
+  <GallerySection
+    id="policarbonato retratil"
+    title="Policarbonato Retrátil"
+    product_type="coberturas_policarbonato_retratil"
+    gallery_items={coberturas_policarbonato_retratil}
   />
   <GallerySection
     id="zincada"
