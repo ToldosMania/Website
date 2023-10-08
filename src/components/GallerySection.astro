@@ -25,7 +25,7 @@ const { id, title, product_type, gallery_items } = Astro.props;
           data-description={item.description}
           decoding="async"
           loading="lazy"
-          class="zoomable-item m-3 h-full w-full rounded-2xl transition-transform ease-in-out hover:scale-105 lg:h-1/6 lg:w-1/6"
+          class="zoomable-item m-3 h-full w-full rounded-2xl object-scale-down transition-transform ease-in-out hover:scale-105 lg:h-1/6 lg:w-64"
         />
       ))
     }
