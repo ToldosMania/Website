@@ -34,9 +34,11 @@ const { title } = Astro.props;
     <slot />
     <Footer />
     <template id="zoom-template">
-      <section data-zoom-container></section>
+      <div class="z-0 h-10 w-10">
+        <section data-zoom-container></section>
+      </div>
       <div
-        class="fixed bottom-0 left-0 right-0 top-auto flex flex-col items-center"
+        class="fixed bottom-0 left-0 right-0 top-auto z-50 flex flex-col items-center"
       >
         <div
           class="mb-6 max-h-56 max-w-screen-md rounded-xl border-4 border-base-200 bg-base-200 p-5 text-base-content shadow-xl"
@@ -91,14 +93,13 @@ const { title } = Astro.props;
         });
       });
     </script>
-    <style>
+    <style is:global>
       html {
         scroll-behavior: smooth;
       }
       body {
         font-family: "Noto Sans", sans-serif;
       }
-      .medium-zoom-overlay,
       .medium-zoom-image--opened {
         z-index: 1;
       }
