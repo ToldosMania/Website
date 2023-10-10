@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.BASE_URL ?? "/toldosmania-web";
+let BASE_URL = "https://toldosmania.com.br";
+
 const CONTATO = {
   facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",
   instagram: "https://www.instagram.com/toldosmania/?ref=badge",

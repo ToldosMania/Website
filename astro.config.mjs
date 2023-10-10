@@ -17,6 +17,6 @@ export default defineConfig({
         'https://toldosmania.github.io/sitemap-index.xml',
       ],
     })],
-  site: "https://toldosmania.github.io",
+  site: "https://toldosmania.com.br",
   base: "/Website"
 });
