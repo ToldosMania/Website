@@ -28,4 +28,4 @@ jobs:
           server: ${{ secrets.ftp_host }} 
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: www.toldosmania.com.br/web
+          server-dir: www.toldosmania.com.br/web/
