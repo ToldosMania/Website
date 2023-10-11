@@ -1,4 +1,4 @@
-let BASE_URL = "https://toldosmania.com.br";
+let BASE_URL = import.meta.env.SITE;
 
 const CONTATO = {
   facebook: "https://www.facebook.com/Toldos-Mania-976788302365509/?fref=ts",

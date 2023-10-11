@@ -14,9 +14,8 @@ export default defineConfig({
     include: ['**/solid/*']
   }), sitemap(), prefetch(), robotsTxt({
       sitemap: [
-        'https://toldosmania.github.io/sitemap-index.xml',
+        'https://toldosmania.com.br/sitemap-index.xml',
       ],
     })],
   site: "https://toldosmania.com.br",
-  base: "/Website"
 });
