@@ -13,7 +13,14 @@ import coberturas_zincada from "../../json/coberturas_zincada.json";
 <Layout
   title="Galeria de Coberturas"
   description="Veja todas as opções de coberturas. Pressione para ver mais"
-  sections={["lona", "policarbonato", "telha_simples", "zincada"]}
+  sections={[
+    "lona",
+    "policarbonato",
+    "policarbonato_fixa",
+    "policarbonato_retratil",
+    "telha_simples",
+    "zincada",
+  ]}
 >
   <GallerySection
     id="lona"
@@ -28,13 +35,13 @@ import coberturas_zincada from "../../json/coberturas_zincada.json";
     gallery_items={coberturas_policarbonato}
   />
   <GallerySection
-    id="policarbonato fixa"
+    id="policarbonato_fixa"
     title="Policarbonato Fixa"
     product_type="coberturas_policarbonato_fixa"
     gallery_items={coberturas_policarbonato_fixa}
   />
   <GallerySection
-    id="policarbonato retratil"
+    id="policarbonato_retratil"
     title="Policarbonato Retrátil"
     product_type="coberturas_policarbonato_retratil"
     gallery_items={coberturas_policarbonato_retratil}
