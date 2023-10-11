@@ -1,27 +1,32 @@
 [
   {
-    "title": "Toldo de Trilho",
+    "title": "Toldo Retrátil de Trilho",
     "description": "Aberto na Lona Vinílica verde",
     "url": "18b"
   },
   {
-    "title": "Toldo de Trilho",
+    "title": "Toldo Retrátil de Trilho",
     "description": "Fechado na Lona Vínilica verde",
     "url": "21b"
   },
   {
-    "title": "Toldo de Trilho",
+    "title": "Toldo Retrátil de Trilho",
     "description": "Fechado na Lona Vínilica marrom café",
     "url": "19b"
   },
   {
-    "title": "Cobertura em Lona Fechada",
-    "description": "Cobertura em Lona na Lona Vinílica Marrom",
+    "title": "Toldo Retrátil de Trilho",
+    "description": "Fechado na Lona Vínilica marrom café",
+    "url": "19a"
+  },
+  {
+    "title": "Toldo Retrátil de Trilho",
+    "description": "Fechada Cobertura em Lona na Lona Vinílica Preta",
     "url": "3b"
   },
   {
-    "title": "Cobertura em Lona Aberta",
-    "description": "Cobertura em Lona na Lona Vinílica Marrom",
+    "title": "Toldo Retrátil de Trilho",
+    "description": "Cobertura em Lona na Lona Vinílica Preta",
     "url": "4b"
   }
 ]

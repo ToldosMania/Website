@@ -3,11 +3,10 @@ import Layout from "../../layouts/LayoutGaleria.astro";
 import GallerySection from "../../components/GallerySection.astro";
 
 import coberturas_lona from "../../json/coberturas_lona.json";
-import coberturas_policarbonato from "../../json/coberturas_policarbonato.json";
 import coberturas_policarbonato_retratil from "../../json/coberturas_policarbonato_retratil.json";
 import coberturas_policarbonato_fixa from "../../json/coberturas_policarbonato_fixa.json";
 import coberturas_telha_simples from "../../json/coberturas_telha_simples.json";
-import coberturas_zincada from "../../json/coberturas_zincada.json";
+import coberturas_telha_isotermica from "../../json/coberturas_telha_isotermica.json";
 ---
 
 <Layout
@@ -15,11 +14,10 @@ import coberturas_zincada from "../../json/coberturas_zincada.json";
   description="Veja todas as opções de coberturas. Pressione para ver mais"
   sections={[
     "lona",
-    "policarbonato",
     "policarbonato_fixa",
     "policarbonato_retratil",
     "telha_simples",
-    "zincada",
+    "telha_isotérmica",
   ]}
 >
   <GallerySection
@@ -27,12 +25,6 @@ import coberturas_zincada from "../../json/coberturas_zincada.json";
     title="Lona"
     product_type="coberturas_lona"
     gallery_items={coberturas_lona}
-  />
-  <GallerySection
-    id="policarbonato"
-    title="Policarbonato"
-    product_type="coberturas_policarbonato"
-    gallery_items={coberturas_policarbonato}
   />
   <GallerySection
     id="policarbonato_fixa"
@@ -55,7 +47,7 @@ import coberturas_zincada from "../../json/coberturas_zincada.json";
   <GallerySection
     id="zincada"
     title="Telha Isotérmica/Sanduíche"
-    product_type="coberturas_zincada"
-    gallery_items={coberturas_zincada}
+    product_type="coberturas_telha_isotermica"
+    gallery_items={coberturas_telha_isotermica}
   />
 </Layout>
