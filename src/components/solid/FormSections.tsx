@@ -9,7 +9,7 @@ export const CortinaSection = (product_answers: AccessorProduct, setProductAnswe
   return (
     <InputField
       labelId="projecao_tela"
-      labelText="Projeção"
+      labelText="Medidas"
       onInput={(e) => {
         product_answers().cortina!.data.projecao = e.currentTarget.value;
         setProductAnswers(product_answers());
@@ -23,7 +23,7 @@ export const TelaSection = (product_answers: AccessorProduct, setProductAnswers:
   return (
     <InputField
       labelId="projecao_tela"
-      labelText="Projeção"
+      labelText="Medidas"
       onInput={
         (e) => {
           product_answers().tela!.data.projecao = e.currentTarget.value
@@ -90,15 +90,9 @@ export const CoberturaSection = (product_answers: AccessorProduct, setProductAns
         />
       </RadioContainer>
       <InputField
-        labelText="Projeção"
+        labelText="Medidas"
         labelId="cobertura_projecao"
         onInput={(e) => { product_answers().cobertura!.data.projecao = e.currentTarget.value; setProductAnswers(product_answers()) }}
-      />
-      <InputField
-        labelText="Altura"
-        labelId="cobertura_projecao"
-        placeholder="2.31m"
-        onInput={(e) => { product_answers().cobertura!.data.altura = e.currentTarget.value; setProductAnswers(product_answers()) }}
       />
     </>
   );
@@ -154,14 +148,8 @@ export const ToldosSection = (product_answers: AccessorProduct, setProductAnswer
 
       <InputField
         labelId="projecao_toldo"
-        labelText="Projeção"
+        labelText="Medidas"
         onInput={(e) => { product_answers().toldo!.data.projecao = e.currentTarget.value; setProductAnswers(product_answers()) }}
-      />
-      <InputField
-        labelId="altura_toldo"
-        labelText="Altura"
-        placeholder="2.31m"
-        onInput={(e) => { product_answers().toldo!.data.altura = e.currentTarget.value; setProductAnswers(product_answers()) }}
       />
     </>
   );
