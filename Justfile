@@ -1,3 +1,5 @@
+!include deployment.just
+
 container_default_name := "test_toldos"
 
 prod-image:

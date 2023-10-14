@@ -21,14 +21,13 @@ export default function genRawText(current_product: string, userinfo: Record<str
 Tipo: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.tipo)}
 Material: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.material)}
 Acionamento: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.tipo_acionamento)}
-Projeção: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.projecao)}
-Altura: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.altura)}
+Medidas: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.toldo!.data.projecao)}
 `;
         break;
       case "Coberturas":
         product_specific_text = `Produto selecionado: ${current_product}
 Material: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cobertura!.data.material)}
-Altura: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cobertura!.data.altura)}
+Medidas: ${defaultOrValue(DEFAULT_NO_ANSWER, product_answers.cobertura!.data.medidas)}
 `;
         break;
       case "Telas":
