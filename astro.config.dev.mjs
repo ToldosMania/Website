@@ -17,5 +17,5 @@ export default defineConfig({
         'https://toldosmania.com.br/sitemap-index.xml',
       ],
     })],
-  site: "https://toldosmania.com.br",
+  site: "http://localhost:4321",
 });
