@@ -1,13 +1,9 @@
-FROM docker.io/oven/bun:latest AS build
+FROM node:lts AS build
 WORKDIR /app
-COPY package*.json ./
-COPY bun.lockb ./
-
-RUN bun install --frozen-lockfile
 COPY . .
-RUN bun x astro build 
+RUN npm i
+RUN npm run build
 
-FROM docker.io/nginx:alpine AS runtime
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 8080
+FROM httpd:2.4 AS runtime
+COPY --from=build /app/dist /usr/local/apache2/htdocs/
+EXPOSE 80

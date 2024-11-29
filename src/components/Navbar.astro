@@ -35,7 +35,10 @@ import logo from "../assets/logo.png";
           <a href={`${BASE_URL}/orcamento`}>Orçamento</a>
         </li>
         <li>
-          <a href={`#contato`}>Contato</a>
+          <a           
+          onclick={`return gtag_report_conversion('${BASE_URL}/#contato');`}
+          href={`#contato`}
+          >Contato</a>
         </li>
         <li>
           <a href={`${BASE_URL}/galeria/toldos`}>Toldos</a>
@@ -160,6 +163,7 @@ import logo from "../assets/logo.png";
       />
     </a>
     <a
+      onclick={`return gtag_report_conversion('${BASE_URL}/#contato');`}
       href={`#contato`}
       class="btn btn-primary hidden border-b-4 border-primary-focus text-primary-content sm:btn-md hover:border-primary-focus hover:bg-primary-focus lg:flex"
     >
